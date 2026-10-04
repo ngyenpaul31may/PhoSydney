@@ -1392,7 +1392,344 @@ button {
 }
 
 /* ==========================================================================
-   6. Interactive Menu Section
+   6. Our Menu Section (Deep Crimson Canvas - "DISCOVER FLAVORS YOU’LL LOVE")
+   ========================================================================== */
+.discover-menu-section {
+  padding: 90px 0 100px;
+  background-color: var(--color-hero-red);
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.discover-menu-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 80% 20%,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.discover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.discover-header-left {
+  max-width: 680px;
+}
+
+.discover-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+}
+
+.discover-eyebrow::before {
+  content: "•";
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.discover-title {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4.4vw, 56px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.discover-subtitle {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+
+.discover-header-right {
+  flex-shrink: 0;
+}
+
+.discover-book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(30, 4, 8, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  padding: 13px 28px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  white-space: nowrap;
+}
+
+.discover-book-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.discover-arrow {
+  font-size: 15px;
+  transition: transform 0.25s ease;
+}
+
+.discover-book-btn:hover .discover-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* 3-Column Dishes Grid */
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.discover-card {
+  background-color: #580610;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.discover-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.38);
+}
+
+.discover-card-img-wrap {
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  position: relative;
+  background-color: #3b030a;
+}
+
+.discover-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.discover-card:hover .discover-card-img-wrap img {
+  transform: scale(1.06);
+}
+
+.discover-card-body {
+  padding: 24px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.discover-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.discover-dish-name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.discover-dish-price {
+  font-family: var(--font-ui);
+  font-size: 19px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  flex-shrink: 0;
+}
+
+.discover-dish-desc {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 400;
+}
+
+/* Secondary Action: Explore Full Menu */
+.full-menu-toggle-wrap {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-toggle-full-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(30, 4, 8, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  padding: 13px 32px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.btn-toggle-full-menu:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.toggle-chevron {
+  font-size: 13px;
+  transition: transform 0.3s ease;
+}
+
+.btn-toggle-full-menu[aria-expanded="true"] .toggle-chevron {
+  transform: rotate(180deg);
+}
+
+/* Collapsible Full Menu Drawer */
+.full-menu-collapsible {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.4s ease,
+    margin-top 0.4s ease;
+  margin-top: 0;
+}
+
+.full-menu-collapsible.is-open {
+  max-height: 3500px;
+  opacity: 1;
+  margin-top: 48px;
+}
+
+.full-menu-collapsible .category-filter-bar {
+  margin-bottom: 36px;
+}
+
+.full-menu-collapsible .cat-pill {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.full-menu-collapsible .cat-pill.active {
+  background-color: #ffffff;
+  color: var(--color-hero-red);
+}
+
+.full-menu-collapsible .cat-count {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.full-menu-collapsible .cat-pill.active .cat-count {
+  background-color: #f8e2e4;
+  color: var(--color-hero-red);
+}
+
+/* Responsive styles for Discover Menu Section */
+@media (max-width: 992px) {
+  .discover-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .discover-card:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .discover-menu-section {
+    padding: 70px 0 80px;
+  }
+
+  .discover-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+
+  .discover-title {
+    font-size: 34px;
+  }
+
+  .discover-subtitle {
+    font-size: 14px;
+  }
+
+  .discover-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .discover-card:last-child {
+    grid-column: auto;
+  }
+
+  .discover-card-img-wrap {
+    height: 230px;
+  }
+
+  .discover-dish-name {
+    font-size: 22px;
+  }
+
+  .btn-toggle-full-menu {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================================
+   Legacy Filterable Menu Styles (inside collapsible)
    ========================================================================== */
 .menu-section {
   padding: 60px 0 80px;

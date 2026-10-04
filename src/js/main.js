@@ -69,13 +69,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Category Cards in Carousel Click -> Filter Menu & Smooth Scroll
+  // 3. Full Menu Collapsible Toggle Logic
+  const toggleBtn = document.getElementById('toggleFullMenuBtn');
+  const fullMenu = document.getElementById('fullMenuCollapsible');
+
+  if (toggleBtn && fullMenu) {
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = fullMenu.classList.toggle('is-open');
+      toggleBtn.setAttribute('aria-expanded', isOpen);
+      const chevron = toggleBtn.querySelector('.toggle-chevron');
+      if (chevron) chevron.textContent = isOpen ? '▴' : '▾';
+      const label = toggleBtn.querySelector('span:not(.toggle-icon):not(.toggle-chevron)');
+      if (label) {
+        label.textContent = isOpen
+          ? 'Hide Complete Menu'
+          : 'Explore Complete Categorized Menu (75+ Dishes)';
+      }
+    });
+  }
+
+  // 4. Category Cards in Carousel Click -> Open Full Menu & Filter
   const categoryCards = document.querySelectorAll('.category-card');
   categoryCards.forEach((card) => {
     card.addEventListener('click', (e) => {
       const cat = card.dataset.category;
       if (cat) {
+        if (fullMenu && !fullMenu.classList.contains('is-open')) {
+          fullMenu.classList.add('is-open');
+          if (toggleBtn) {
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            const chevron = toggleBtn.querySelector('.toggle-chevron');
+            if (chevron) chevron.textContent = '▴';
+            const label = toggleBtn.querySelector('span:not(.toggle-icon):not(.toggle-chevron)');
+            if (label) label.textContent = 'Hide Complete Menu';
+          }
+        }
         filterMenu(cat);
+        const menuElem = document.getElementById('menu-showcase');
+        if (menuElem) {
+          menuElem.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     });
   });
