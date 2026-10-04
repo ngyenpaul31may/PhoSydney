@@ -11,6 +11,7 @@
 
 <p align="center">
   <a href="https://github.com/huynhnguyenbao3105/PhoSydney"><img src="https://img.shields.io/badge/Repo-PhoSydney-red?style=flat-square&logo=github" alt="Repository"></a>
+  <a href="https://maps.app.goo.gl/9xizRKacCeMM31Ly5"><img src="https://img.shields.io/badge/Google%20Rating-4.1%20%E2%98%85%20(800%2B%20reviews)-gold?style=flat-square&logo=googlemaps" alt="Google Maps"></a>
   <img src="https://img.shields.io/badge/Status-Active%20Development-success?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/Branch-production-blue?style=flat-square" alt="Branch">
   <img src="https://img.shields.io/badge/Menu%20Items-70%2B-orange?style=flat-square" alt="Items">
@@ -20,10 +21,13 @@
 
 ## 📍 Thông tin nhà hàng (Location & Contact)
 
-- **Địa chỉ:** [2323 Atlantic Ave, Atlantic City, NJ 08401, United States](https://maps.app.goo.gl/9xizRKacCeMM31Ly5)
-- **Điện thoại liên hệ:** [+1 (609) 348-5946](tel:+16093485946)
-- **Giờ mở cửa:** Thứ Hai – Chủ Nhật: 10:00 AM – 9:00 PM
-- **Chỉ đường Google Maps:** [Google Maps - Phở Sydney](https://maps.app.goo.gl/9xizRKacCeMM31Ly5)
+- **Tên nhà hàng:** **Phở Sydney**
+- **Địa chỉ:** [2323 Atlantic Ave, Atlantic City, NJ 08401, Hoa Kỳ](https://maps.app.goo.gl/9xizRKacCeMM31Ly5)
+- **Số điện thoại:** [+1 609-348-5946](tel:+16093485946)
+- **Giờ mở cửa:** Tất cả các ngày trong tuần (Thứ Hai – Chủ Nhật) từ **10:00 – 21:00**
+- **Đánh giá Google Maps:** ⭐ **4.1 / 5 sao** *(với hơn 800+ lượt đánh giá trên [Google Maps](https://maps.app.goo.gl/9xizRKacCeMM31Ly5))*
+- **Chỉ đường trực tiếp:** [Xem vị trí trên Google Maps](https://maps.app.goo.gl/9xizRKacCeMM31Ly5)
+- **Mô tả:** Quán ăn Việt Nam ấm cúng, bình dân tại Atlantic City, chuyên phục vụ các món phở, hủ tiếu, mỳ, cơm tấm, bánh mì và các món ăn truyền thống đậm đà bản sắc Việt.
 
 ---
 
@@ -33,7 +37,7 @@
 
 - **Ẩm thực đa dạng:** Hơn 70+ món ăn truyền thống đặc trưng từ Phở bò, Hủ tiếu, Bún thịt nướng, Cơm tấm đến các món nhậu và giải khát.
 - **Hình ảnh sắc nét:** Toàn bộ thư viện ảnh món ăn thực tế đã được chuẩn hóa định dạng PNG.
-- **Hỗ trợ song ngữ:** Danh mục món ăn có song ngữ Việt - Anh giúp phục vụ tối ưu cho cả thực khách bản địa và quốc tế.
+- **Hỗ trợ song ngữ:** Danh mục món ăn có song ngữ Việt - Anh giúp phục vụ tối ưu cho cả thực khách bản địa và du khách quốc tế.
 
 ---
 
