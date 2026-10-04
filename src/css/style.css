@@ -130,17 +130,6 @@ button {
   text-shadow: 1px 1px 0 rgba(230, 81, 0, 0.25);
 }
 
-.brand-location-tag {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background-color: #fee8d8;
-  color: #c82418;
-  padding: 3px 9px;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(200, 36, 24, 0.2);
-}
 
 .main-nav {
   display: flex;
