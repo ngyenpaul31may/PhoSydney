@@ -605,7 +605,173 @@ button {
 }
 
 /* ==========================================================================
-   4. Interactive Menu Section
+   4. Explore Our Popular Categories Carousel (Dribbble Concept 2)
+   ========================================================================== */
+.categories-section {
+  background-color: var(--color-cream-bg);
+  padding: 60px 0 65px;
+  position: relative;
+  z-index: 20;
+}
+
+.categories-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 38px;
+}
+
+.cat-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #85121c;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.cat-eyebrow::before {
+  content: "•";
+  color: #85121c;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.cat-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.4vw, 56px);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: #2a0c12;
+  line-height: 1.05;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.cat-section-subtext {
+  font-size: 15px;
+  color: #6a575a;
+  line-height: 1.6;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.categories-carousel-wrapper {
+  position: relative;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.categories-track {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 10px 4px 20px;
+}
+
+.categories-track::-webkit-scrollbar {
+  display: none;
+}
+
+.category-card {
+  flex: 0 0 calc((100% - 5 * 24px) / 6);
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.category-card-surface {
+  width: 100%;
+  aspect-ratio: 1 / 1.02;
+  background-color: #fee9cf;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(220, 160, 100, 0.12);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+}
+
+.category-card:hover .category-card-surface {
+  transform: translateY(-8px);
+  background-color: #fdddb5;
+  box-shadow: 0 16px 32px rgba(133, 18, 28, 0.16);
+}
+
+.category-card-img {
+  width: 95%;
+  height: 95%;
+  max-height: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-card-img {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.category-card-name {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #22080b;
+  margin-top: 14px;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.category-card:hover .category-card-name {
+  color: #85121c;
+}
+
+.cat-carousel-arrow {
+  position: absolute;
+  top: 38%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  color: #2b0e14;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.25s ease;
+}
+
+.cat-arrow-prev {
+  left: -14px;
+  display: none;
+}
+
+.cat-arrow-next {
+  right: -14px;
+}
+
+.cat-carousel-arrow:hover {
+  background-color: #85121c;
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* ==========================================================================
+   5. Interactive Menu Section
    ========================================================================== */
 .menu-section {
   padding: 60px 0 80px;
