@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Phở Sydney - Design System & Stylesheet
+   Brand Colors: Magenta (#C2185B), Warm Orange (#E65100), Ochre (#D4A359)
+   ========================================================================== */
+
+:root {
+  /* Core Brand Colors */
+  --color-primary: #C2185B;
+  --color-primary-hover: #A01249;
+  --color-primary-light: #FCE4EC;
+  
+  --color-accent: #E65100;
+  --color-accent-hover: #BF4300;
+  --color-accent-gold: #D4A359;
+  
+  --color-burgundy: #6B1D2F;
+  --color-teal: #00838F;
+
+  /* Surfaces & Backgrounds */
+  --color-bg: #FFFDF9;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #F9F5EE;
+  --color-border: #E8E0D5;
+  --color-border-light: #F0EAE1;
+
+  /* Typography Colors */
+  --color-text-main: #2A1A1E;
+  --color-text-muted: #665C5E;
+  --color-text-light: #948A8D;
+  --color-text-white: #FFFFFF;
+
+  /* Typography */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Elevations */
+  --shadow-sm: 0 2px 8px rgba(42, 26, 30, 0.06);
+  --shadow-md: 0 6px 20px rgba(42, 26, 30, 0.08);
+  --shadow-lg: 0 12px 32px rgba(42, 26, 30, 0.12);
+  --shadow-glow: 0 0 24px rgba(230, 81, 0, 0.25);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  /* Transition */
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

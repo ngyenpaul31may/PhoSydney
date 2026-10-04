@@ -56,12 +56,20 @@
 ```text
 PhoSydney/
 ├── img/                  # Thư viện hình ảnh món ăn & không gian quán (định dạng .png)
-│   ├── storefront.png    # Ảnh thực tế toàn cảnh mặt tiền nhà hàng
-│   ├── interior.png      # Ảnh thực tế không gian nội thất bên trong quán
+│   ├── storefront.png    # Ảnh thực tế mặt tiền nhà hàng
+│   ├── interior.png      # Ảnh thực tế không gian nội thất quán
+│   ├── hero-banner.png   # Banner quảng cáo món ăn chủ đạo cho Landing Page
+│   ├── pho-hero.png      # Ảnh nghệ thuật món Phở Bò Đặc Biệt
+│   ├── com-tam-hero.png  # Ảnh nghệ thuật món Cơm Tấm Sườn Bì Chả
 │   ├── 1.png             # Gỏi cuốn
 │   ├── 2.png             # Gỏi cuốn chay
 │   ├── ...
 │   └── 36.png
+├── src/                  # Mã nguồn phục vụ phát triển Website / Landing Page
+│   ├── assets/images/    # Tài nguyên ảnh đồ họa cao cấp cho giao diện
+│   ├── css/style.css     # Hệ thống Design System & Stylesheet (CSS Tokens)
+│   ├── js/main.js        # Script điều khiển tương tác trang
+│   └── index.html        # Giao diện Landing Page khởi đầu
 ├── Menu.md               # Chi tiết bảng thực đơn song ngữ Việt - Anh và giá bán (USD)
 └── README.md             # Tài liệu tổng quan dự án
 ```
@@ -84,14 +92,19 @@ Chi tiết đầy đủ bảng giá và mô tả từng món được lưu trữ
 
 ---
 
-## 🖼️ Bộ sưu tập hình ảnh (Food Gallery)
+## 🖼️ Bộ sưu tập hình ảnh & Đồ họa quảng bá (Hero Assets & Food Gallery)
 
-Một số hình ảnh tiêu biểu trong thư mục `img/`:
+### 🌟 Banner quảng cáo chủ đạo (Landing Page Hero Banner)
+<p align="center">
+  <img src="img/hero-banner.png" alt="Phở Sydney - Served with Perfection" width="100%" style="border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.18);" />
+</p>
 
-| Món Khai Vị (Gỏi Cuốn) | Phở Đặc Biệt | Cơm / Món Xào |
+### 🍜 Món ăn đặc trưng (Signature Dishes)
+
+| Phở Bò Đặc Biệt (Signature Beef Pho) | Cơm Tấm Sườn Bì Chả (Broken Rice) | Gỏi Cuốn Tươi Ngon (Spring Rolls) |
 | :---: | :---: | :---: |
-| <img src="img/1.png" width="220" /> | <img src="img/9.png" width="220" /> | <img src="img/12.png" width="220" /> |
-| *Gỏi Cuốn tươi ngon* | *Tô Phở truyền thống* | *Món ăn hấp dẫn* |
+| <img src="img/pho-hero.png" width="280" style="border-radius: 8px;" /> | <img src="img/com-tam-hero.png" width="280" style="border-radius: 8px;" /> | <img src="img/1.png" width="280" style="border-radius: 8px;" /> |
+| *Tô Phở bò thơm lừng với gia vị bay bổng* | *Cơm tấm sườn nướng đậm đà sốt nước mắm* | *Gỏi cuốn tôm thịt chấm tương đậu phộng* |
 
 ---
 
