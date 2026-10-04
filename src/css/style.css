@@ -330,120 +330,43 @@ button {
   display: block;
 }
 
-/* Scatter Garnishes (Floating Chilies, Slices, Tomatoes, Basil) */
-.scatter-element {
+/* Scatter Garnishes (High-Resolution AI-Crafted Culinary Art Panels) */
+.hero-scatter-panel {
   position: absolute;
+  top: 40px;
   pointer-events: none;
-  z-index: 30;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
+  z-index: 15;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.38));
 }
 
-.garnish-img {
+.hero-scatter-panel-left {
+  left: 2%;
+  width: 320px;
+  max-width: 22vw;
+  animation: floatSubtleLeft 6.5s ease-in-out infinite alternate;
+}
+
+.hero-scatter-panel-right {
+  right: 2%;
+  width: 300px;
+  max-width: 20vw;
+  animation: floatSubtleRight 7.5s ease-in-out infinite alternate-reverse;
+}
+
+.scatter-panel-img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Left side elements */
-.garnish-chili-left {
-  top: 90px;
-  left: 4%;
-  width: 86px;
-  transform: rotate(-22deg);
-  animation: floatSubtle 6s ease-in-out infinite alternate;
+@keyframes floatSubtleLeft {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-10px) rotate(-1.5deg); }
 }
 
-.garnish-ring-1 {
-  top: 200px;
-  left: 9%;
-  width: 38px;
-  transform: rotate(18deg);
-  animation: floatSubtle 5s ease-in-out infinite alternate-reverse;
-}
-
-.garnish-ring-2 {
-  top: 280px;
-  left: 4%;
-  width: 44px;
-  transform: rotate(-35deg);
-  animation: floatSubtle 7s ease-in-out infinite alternate;
-}
-
-.garnish-ring-3 {
-  top: 380px;
-  left: 11%;
-  width: 34px;
-  transform: rotate(45deg);
-}
-
-.garnish-basil-left {
-  top: 150px;
-  left: 13%;
-  width: 38px;
-  transform: rotate(28deg);
-  animation: floatSubtle 8s ease-in-out infinite alternate;
-}
-
-/* Right side elements */
-.garnish-tomato-1 {
-  top: 100px;
-  right: 10%;
-  width: 52px;
-  transform: rotate(12deg);
-  animation: floatSubtle 6.5s ease-in-out infinite alternate;
-}
-
-.garnish-tomato-2 {
-  top: 240px;
-  right: 14%;
-  width: 48px;
-  transform: rotate(-15deg);
-  animation: floatSubtle 5.5s ease-in-out infinite alternate-reverse;
-}
-
-.garnish-tomato-3 {
-  top: 360px;
-  right: 18%;
-  width: 38px;
-  transform: rotate(8deg);
-  animation: floatSubtle 6s ease-in-out infinite alternate;
-}
-
-.garnish-basil-1 {
-  top: 140px;
-  right: 5%;
-  width: 44px;
-  transform: rotate(38deg);
-  animation: floatSubtle 8s ease-in-out infinite alternate;
-}
-
-.garnish-basil-2 {
-  top: 300px;
-  right: 7%;
-  width: 46px;
-  transform: rotate(-22deg);
-  animation: floatSubtle 7s ease-in-out infinite alternate-reverse;
-}
-
-.garnish-basil-3 {
-  top: 450px;
-  right: 5%;
-  width: 48px;
-  transform: rotate(25deg);
-  animation: floatSubtle 9s ease-in-out infinite alternate;
-}
-
-.garnish-basil-4 {
-  top: 520px;
-  right: 14%;
-  width: 40px;
-  transform: rotate(-35deg);
-  animation: floatSubtle 6s ease-in-out infinite alternate;
-}
-
-@keyframes floatSubtle {
-  0% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
-  100% { transform: translateY(-8px) rotate(var(--rot, 0deg)); }
+@keyframes floatSubtleRight {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-10px) rotate(1.5deg); }
 }
 
 /* Organic Bottom Wave Transition into Cream Background */
