@@ -3487,70 +3487,288 @@ button {
 }
 
 /* ==========================================================================
-   13. Footer
+   14. CTA Banner ("Hungry? We're Ready Come and Enjoy")
+   ========================================================================== */
+.cta-banner-section {
+  position: relative;
+  background: linear-gradient(135deg, #f9be28 0%, #f7b420 50%, #f5a618 100%);
+  padding: 95px 0 130px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cta-sunburst-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.cta-container {
+  position: relative;
+  z-index: 3;
+}
+
+.cta-center-content {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-family: var(--font-display);
+  font-size: 58px;
+  line-height: 1.05;
+  color: var(--color-hero-red);
+  letter-spacing: 0.02em;
+  margin-bottom: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.cta-subtitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: #72161b;
+  max-width: 480px;
+  margin: 0 auto 28px;
+  font-weight: 500;
+}
+
+.cta-order-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-hero-red);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 34px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(133, 18, 28, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-order-btn:hover {
+  background: #6e0e16;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(133, 18, 28, 0.45);
+  color: #ffffff;
+}
+
+.cta-arrow {
+  font-size: 17px;
+  transition: transform 0.25s ease;
+}
+
+.cta-order-btn:hover .cta-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Platter Cutouts */
+.cta-plate {
+  position: absolute;
+  top: 48%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cta-plate-left {
+  left: -80px;
+  width: 440px;
+  height: 440px;
+}
+
+.cta-plate-right {
+  right: -90px;
+  width: 470px;
+  height: 470px;
+}
+
+.cta-plate-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Organic Wave Transition into Footer */
+.cta-wave-divider {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.cta-wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 85px;
+}
+
+/* ==========================================================================
+   15. Grand Footer ("PHO SYDNEY" - Deep Crimson)
    ========================================================================== */
 .site-footer {
-  background-color: var(--color-hero-dark-red);
-  color: var(--color-text-white);
-  padding: 60px 0 30px;
+  background-color: var(--color-hero-red);
+  color: #ffffff;
+  padding: 55px 0 26px;
+  position: relative;
+  z-index: 5;
 }
 
-.footer-top {
+.footer-main-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
+  grid-template-columns: 340px 1fr;
+  gap: 60px;
+  margin-bottom: 50px;
 }
 
-.footer-brand-title {
-  font-family: var(--font-display);
-  font-size: 36px;
-  color: var(--color-text-white);
-  margin-bottom: 12px;
-}
-
-.footer-text {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 380px;
-  line-height: 1.6;
-}
-
-.footer-col-title {
-  font-family: var(--font-display);
-  font-size: 20px;
-  color: var(--color-accent-gold);
-  letter-spacing: 0.05em;
-  margin-bottom: 16px;
-}
-
-.footer-links {
-  list-style: none;
+.footer-brand-col {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+}
+
+.footer-logo-title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1;
+  color: #f8b824;
+  letter-spacing: 0.03em;
+  margin-bottom: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.footer-section-subtitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer-address-line {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 4px;
 }
 
-.footer-links a:hover {
-  color: var(--color-accent-gold);
+.footer-phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.footer-bottom {
+.footer-phone-link:hover {
+  color: #f8b824;
+  transform: translateX(2px);
+}
+
+.footer-nav-groups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.footer-group-heading {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.footer-menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-menu-links a {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.footer-menu-links a:hover {
+  color: #f8b824;
+  transform: translateX(3px);
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.65);
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.social-icon-link {
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.social-icon-link:hover {
+  color: #f8b824;
+  transform: translateY(-2px);
 }
 
 /* Responsive */
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
+  .cta-plate-left {
+    left: -120px;
+    width: 380px;
+    height: 380px;
+  }
+  .cta-plate-right {
+    right: -130px;
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 992px) {
   .main-nav {
     display: none;
   }
@@ -3563,7 +3781,38 @@ button {
   .food-centerpiece {
     max-width: 380px;
   }
-  .footer-top {
+  .cta-plate {
+    display: none;
+  }
+  .footer-main-grid {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .footer-nav-groups {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
   }
 }
+
+@media (max-width: 600px) {
+  .cta-banner-section {
+    padding: 70px 0 110px;
+  }
+  .cta-title {
+    font-size: 38px;
+  }
+  .cta-subtitle {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+  .footer-nav-groups {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
