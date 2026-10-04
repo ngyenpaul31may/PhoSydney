@@ -62,8 +62,11 @@ PhoSydney/
 │   ├── pho-hero.png      # Ảnh nghệ thuật món Phở Bò Đặc Biệt
 │   ├── com-tam-hero.png  # Ảnh nghệ thuật món Cơm Tấm Sườn Bì Chả
 │   ├── goi-cuon-hero.png # Ảnh nghệ thuật món Gỏi Cuốn Tươi Ngon
+│   ├── banh-mi-hero.png  # Ảnh nghệ thuật món Bánh Mì Thịt Nướng
+│   ├── bun-bo-hue-hero.png # Ảnh nghệ thuật món Bún Bò Huế
+│   ├── bun-thit-nuong-hero.png # Ảnh nghệ thuật món Bún Thịt Nướng Chả Giò
+│   ├── ca-phe-hero.png   # Ảnh nghệ thuật món Cà Phê Sữa Đá Phin
 │   ├── 1.png             # Gỏi cuốn (ảnh gốc)
-│   ├── 2.png             # Gỏi cuốn chay
 │   ├── ...
 │   └── 36.png
 ├── src/                  # Mã nguồn phục vụ phát triển Website / Landing Page
@@ -100,12 +103,19 @@ Chi tiết đầy đủ bảng giá và mô tả từng món được lưu trữ
   <img src="img/hero-banner.png" alt="Phở Sydney - Served with Perfection" width="100%" style="border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.18);" />
 </p>
 
-### 🍜 Món ăn đặc trưng (Signature Dishes)
+### 🍜 Bộ ảnh món ăn nghệ thuật phục vụ Website (Signature Dishes)
 
+**Nhóm 1: Món chính & Khai vị nổi bật**
 | Phở Bò Đặc Biệt (Signature Beef Pho) | Cơm Tấm Sườn Bì Chả (Broken Rice) | Gỏi Cuốn Tươi Ngon (Spring Rolls) |
 | :---: | :---: | :---: |
 | <img src="img/pho-hero.png" width="280" style="border-radius: 8px;" /> | <img src="img/com-tam-hero.png" width="280" style="border-radius: 8px;" /> | <img src="img/goi-cuon-hero.png" width="280" style="border-radius: 8px;" /> |
 | *Tô Phở bò thơm lừng với gia vị bay bổng* | *Cơm tấm sườn nướng đậm đà sốt nước mắm* | *Gỏi cuốn tôm thịt chấm tương đậu phộng* |
+
+**Nhóm 2: Món ăn quê hương & Đồ uống đặc sắc**
+| Bánh Mì Thịt Nướng (Vietnamese Sandwich) | Bún Bò Huế (Spicy Beef Noodles) | Bún Thịt Nướng Chả Giò (Noodle Bowl) | Cà Phê Sữa Đá Phin (Iced Coffee) |
+| :---: | :---: | :---: | :---: |
+| <img src="img/banh-mi-hero.png" width="210" style="border-radius: 8px;" /> | <img src="img/bun-bo-hue-hero.png" width="210" style="border-radius: 8px;" /> | <img src="img/bun-thit-nuong-hero.png" width="210" style="border-radius: 8px;" /> | <img src="img/ca-phe-hero.png" width="210" style="border-radius: 8px;" /> |
+| *Bánh mì giòn rụm, pate béo ngậy* | *Nước dùng cay nồng thơm mùi sả ớt* | *Bún thịt nướng, chả giò giòn tan* | *Cà phê phin truyền thống béo ngọt* |
 
 ---
 
