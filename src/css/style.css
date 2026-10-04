@@ -7,24 +7,25 @@
 
 :root {
   /* Color Palette */
-  --color-hero-red: #7E0E1B;
-  --color-hero-dark-red: #5D0712;
+  --color-hero-red: #7e0e1b;
+  --color-hero-dark-red: #5d0712;
   --color-hero-crimson: #921323;
-  --color-accent-orange: #E65100;
-  --color-accent-gold: #F59E0B;
-  
-  --color-cream-bg: #FFF8EE;
-  --color-cream-surface: #FDF4E7;
-  --color-card-white: #FFFFFF;
-  
-  --color-text-dark: #22080B;
-  --color-text-muted: #6B5558;
-  --color-text-light: #9C8588;
-  --color-text-white: #FFFFFF;
+  --color-accent-orange: #e65100;
+  --color-accent-gold: #f59e0b;
+
+  --color-cream-bg: #fff8ee;
+  --color-cream-surface: #fdf4e7;
+  --color-card-white: #ffffff;
+
+  --color-text-dark: #22080b;
+  --color-text-muted: #6b5558;
+  --color-text-light: #9c8588;
+  --color-text-white: #ffffff;
 
   /* Typography */
-  --font-display: 'Bebas Neue', 'Barlow Condensed', Impact, sans-serif;
-  --font-ui: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Bebas Neue", "Barlow Condensed", Impact, sans-serif;
+  --font-ui:
+    "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Radius */
   --radius-sm: 8px;
@@ -43,7 +44,9 @@
 }
 
 /* Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -102,7 +105,7 @@ button {
 .header-inner {
   max-width: 1180px;
   margin: 0 auto;
-  background-color: #FFF6EC;
+  background-color: #fff6ec;
   border-radius: 0 0 28px 28px;
   display: flex;
   align-items: center;
@@ -121,7 +124,7 @@ button {
   font-family: var(--font-display);
   font-size: 34px;
   letter-spacing: 0.05em;
-  color: #C82418;
+  color: #c82418;
   line-height: 1;
   font-weight: 900;
   text-shadow: 1px 1px 0 rgba(230, 81, 0, 0.25);
@@ -132,8 +135,8 @@ button {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background-color: #FEE8D8;
-  color: #C82418;
+  background-color: #fee8d8;
+  color: #c82418;
   padding: 3px 9px;
   border-radius: var(--radius-pill);
   border: 1px solid rgba(200, 36, 24, 0.2);
@@ -149,27 +152,27 @@ button {
 .nav-item a {
   font-size: 15px;
   font-weight: 700;
-  color: #5C0C15;
+  color: #5c0c15;
   transition: color 0.2s ease;
   position: relative;
 }
 
 .nav-item a:hover {
-  color: #C82418;
+  color: #c82418;
 }
 
 .nav-item.active a {
-  color: #C82418;
+  color: #c82418;
 }
 
 .nav-item.active a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
   right: 0;
   height: 2.5px;
-  background-color: #C82418;
+  background-color: #c82418;
   border-radius: 2px;
 }
 
@@ -177,8 +180,8 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #6C0A15;
-  color: #FFFFFF;
+  background-color: #6c0a15;
+  color: #ffffff;
   font-size: 14px;
   font-weight: 700;
   padding: 10px 24px;
@@ -188,7 +191,7 @@ button {
 }
 
 .header-cta-btn:hover {
-  background-color: #4A040D;
+  background-color: #4a040d;
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(108, 10, 21, 0.35);
 }
@@ -210,21 +213,15 @@ button {
   position: relative;
   background-color: var(--color-hero-red);
   padding-top: 24px;
-  padding-bottom: 0;
-  min-height: 820px;
-  height: 98vh;
-  max-height: 930px;
+  padding-bottom: 90px;
   text-align: center;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Header container */
+/* Container for content */
 .hero-content-container {
   position: relative;
-  z-index: 10;
-  padding-top: 10px;
+  z-index: 20;
 }
 
 /* Eyebrow Subtitle */
@@ -235,23 +232,23 @@ button {
   font-size: 13.5px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.95);
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .eyebrow-dot {
-  color: #FFA726;
+  color: #ffa726;
   font-size: 16px;
 }
 
 /* Giant 2-Line Headline */
 .hero-headline {
   font-family: var(--font-display);
-  font-size: clamp(48px, 6.8vw, 96px);
+  font-size: clamp(46px, 7.5vw, 94px);
   line-height: 0.92;
   letter-spacing: 0.025em;
-  color: #FFFFFF;
+  color: #ffffff;
   text-transform: uppercase;
   margin-bottom: 0px;
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
@@ -261,26 +258,27 @@ button {
   display: block;
 }
 
-/* Full-width Food Stage spanning entire viewport */
-.hero-food-stage {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 600px;
-  pointer-events: none;
-  z-index: 25;
+/* Centerpiece & Satellite Food Composition */
+.hero-food-composition {
+  position: relative;
+  max-width: 1380px;
+  height: 480px;
+  margin: 10px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Centerpiece Bowl with Massive Broth Splash Wings */
+/* Centerpiece Bowl (Phở) */
 .food-centerpiece {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -20px;
-  width: clamp(750px, 68vw, 1140px);
+  bottom: -50px;
+  width: 580px;
+  max-width: 86vw;
   z-index: 25;
-  filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 28px 45px rgba(0, 0, 0, 0.45));
 }
 
 .food-centerpiece img {
@@ -289,21 +287,21 @@ button {
   display: block;
 }
 
-/* Left Flanking Dish (Gỏi Cuốn) - Bleeding off the left edge */
+/* Left Flanking Dish (Gỏi Cuốn Tươi Ngon) */
 .food-satellite-left {
   position: absolute;
-  left: -50px;
+  left: 2%;
   bottom: 80px;
-  width: clamp(320px, 24vw, 420px);
-  z-index: 20;
+  width: 360px;
+  max-width: 28vw;
+  z-index: 18;
   filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.42));
-  transform: rotate(-6deg);
+  transform: rotate(-5deg);
   transition: transform 0.3s ease;
-  pointer-events: auto;
 }
 
 .food-satellite-left:hover {
-  transform: rotate(-3deg) scale(1.04);
+  transform: rotate(-2deg) scale(1.03);
 }
 
 .food-satellite-left img {
@@ -312,21 +310,21 @@ button {
   display: block;
 }
 
-/* Right Flanking Dish (Cơm Tấm) - Bleeding off the right edge */
+/* Right Flanking Dish (Cơm Tấm Sườn Bì Chả Trứng) */
 .food-satellite-right {
   position: absolute;
-  right: -40px;
+  right: 2%;
   bottom: 40px;
-  width: clamp(340px, 26vw, 460px);
-  z-index: 20;
+  width: 390px;
+  max-width: 30vw;
+  z-index: 18;
   filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.42));
   transform: rotate(5deg);
   transition: transform 0.3s ease;
-  pointer-events: auto;
 }
 
 .food-satellite-right:hover {
-  transform: rotate(2deg) scale(1.04);
+  transform: rotate(2deg) scale(1.03);
 }
 
 .food-satellite-right img {
@@ -335,57 +333,20 @@ button {
   display: block;
 }
 
-/* Floating Basil Leaves around Right Dish matching concept photo */
-.dish-basil {
-  position: absolute !important;
-  pointer-events: none;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
-  z-index: 25;
-}
-
-.dish-basil-1 {
-  left: -25px;
-  top: 42%;
-  width: 44px !important;
-  transform: rotate(-35deg);
-  animation: floatSubtleRight 6s ease-in-out infinite alternate;
-}
-
-.dish-basil-2 {
-  left: 25px;
-  bottom: -22px;
-  width: 50px !important;
-  transform: rotate(25deg);
-  animation: floatSubtleRight 7.5s ease-in-out infinite alternate-reverse;
-}
-
-.dish-basil-3 {
-  right: 90px;
-  bottom: -32px;
-  width: 40px !important;
-  transform: rotate(-15deg);
-  animation: floatSubtleRight 8s ease-in-out infinite alternate;
-}
-
-/* Scatter Garnishes Panels */
+/* Scatter Garnishes (High-Resolution AI-Crafted Culinary Art Panels) */
 .hero-scatter-panel {
   position: absolute;
-  top: 30px;
+  top: 40px;
   pointer-events: none;
   z-index: 15;
-  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.38));
 }
 
 .hero-scatter-panel-left {
-  left: 1%;
-  width: clamp(220px, 18vw, 300px);
+  left: 2%;
+  width: 320px;
+  max-width: 22vw;
   animation: floatSubtleLeft 6.5s ease-in-out infinite alternate;
-}
-
-.hero-scatter-panel-right {
-  right: 1%;
-  width: clamp(200px, 16vw, 280px);
-  animation: floatSubtleRight 7.5s ease-in-out infinite alternate-reverse;
 }
 
 .scatter-panel-img {
@@ -395,13 +356,139 @@ button {
 }
 
 @keyframes floatSubtleLeft {
-  0% { transform: translateY(0px) rotate(0deg); }
-  100% { transform: translateY(-10px) rotate(-1.5deg); }
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-10px) rotate(-1.5deg);
+  }
 }
 
-@keyframes floatSubtleRight {
-  0% { transform: translateY(0px) rotate(0deg); }
-  100% { transform: translateY(-10px) rotate(1.5deg); }
+/* Right Side Independent Floating Garnish Scatter Zone */
+.hero-garnish-scatter-zone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 440px;
+  max-width: 32vw;
+  pointer-events: none;
+  z-index: 19;
+}
+
+.floating-garnish {
+  position: absolute;
+  display: block;
+  height: auto;
+  filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.44));
+  will-change: transform;
+  transition: transform 0.4s ease;
+}
+
+/* 1. Whole Star Anise Pod (Top Right Accent) */
+.garnish-star-anise-1 {
+  top: 40px;
+  right: 140px;
+  width: 70px;
+  transform: rotate(16deg);
+  animation: floatGarnishA 6.4s ease-in-out infinite alternate;
+}
+
+/* 2. Thai Basil Leaf 1 (Top Corner Accent) */
+.garnish-basil-1 {
+  top: 25px;
+  right: 55px;
+  width: 55px;
+  transform: rotate(-28deg);
+  animation: floatGarnishB 5.6s ease-in-out infinite alternate;
+  animation-delay: -1s;
+}
+
+/* 3. Fresh Juicy Lime Wedge 1 (Upper-Mid Cascade) */
+.garnish-lime-wedge-1 {
+  top: 120px;
+  right: 40px;
+  width: 114px;
+  transform: rotate(-12deg);
+  animation: floatGarnishC 7.2s ease-in-out infinite alternate;
+  animation-delay: -2.2s;
+}
+
+/* 4. Sliced Translucent Lime Wheel (Mid Centerpiece Cascade) */
+.garnish-lime-wheel {
+  top: 215px;
+  right: 125px;
+  width: 122px;
+  transform: rotate(24deg);
+  animation: floatGarnishA 6.8s ease-in-out infinite alternate;
+  animation-delay: -3.5s;
+}
+
+/* 5. Thai Basil Leaf 2 (Mid-Right Accent) */
+.garnish-basil-2 {
+  top: 265px;
+  right: 25px;
+  width: 58px;
+  transform: rotate(36deg);
+  animation: floatGarnishB 6s ease-in-out infinite alternate;
+  animation-delay: -0.8s;
+}
+
+/* 6. Whole Star Anise Pod 2 (Lower-Mid Perspective) */
+.garnish-star-anise-2 {
+  top: 350px;
+  right: 70px;
+  width: 74px;
+  transform: rotate(-30deg);
+  animation: floatGarnishC 6.2s ease-in-out infinite alternate;
+  animation-delay: -4.1s;
+}
+
+/* 7. Lime Wedge 2 with Dewdrop (Lower Cascade) */
+.garnish-lime-wedge-2 {
+  top: 425px;
+  right: 140px;
+  width: 110px;
+  transform: rotate(18deg);
+  animation: floatGarnishA 7.5s ease-in-out infinite alternate;
+  animation-delay: -1.9s;
+}
+
+/* 8. Thai Basil Leaf 3 (Bottom Accent) */
+.garnish-basil-3 {
+  top: 475px;
+  right: 48px;
+  width: 54px;
+  transform: rotate(-15deg);
+  animation: floatGarnishB 5.8s ease-in-out infinite alternate;
+  animation-delay: -2.7s;
+}
+
+@keyframes floatGarnishA {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+
+@keyframes floatGarnishB {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translateY(-9px) rotate(-4deg) scale(1.03);
+  }
+}
+
+@keyframes floatGarnishC {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-14px) rotate(2.5deg);
+  }
 }
 
 /* Organic Bottom Wave Transition into Cream Background */
@@ -410,10 +497,10 @@ button {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 360px;
+  height: 280px;
   overflow: hidden;
   line-height: 0;
-  z-index: 8;
+  z-index: 12;
   pointer-events: none;
 }
 
@@ -487,7 +574,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-hero-red);
-  background-color: #F8E2E4;
+  background-color: #f8e2e4;
   padding: 6px 14px;
   border-radius: var(--radius-pill);
   margin-bottom: 12px;
@@ -576,7 +663,9 @@ button {
   overflow: hidden;
   box-shadow: var(--shadow-card);
   border: 1px solid rgba(126, 14, 27, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
 }
@@ -675,7 +764,9 @@ button {
   text-transform: uppercase;
   padding: 9px 18px;
   border-radius: var(--radius-pill);
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
 }
 
 .btn-add-order:hover {
@@ -826,7 +917,9 @@ button {
     display: none;
   }
   .food-satellite-left,
-  .food-satellite-right {
+  .food-satellite-right,
+  .hero-scatter-panel-left,
+  .hero-garnish-scatter-zone {
     display: none;
   }
   .food-centerpiece {
