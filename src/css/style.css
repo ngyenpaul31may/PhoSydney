@@ -435,18 +435,18 @@ button {
 
 /* 1. Whole Star Anise Pod (Top Right Accent) */
 .garnish-star-anise-1 {
-  top: 40px;
-  right: 140px;
-  width: 70px;
+  top: 42px;
+  right: 145px;
+  width: 56px;
   transform: rotate(16deg);
   animation: floatGarnishA 6.4s ease-in-out infinite alternate;
 }
 
 /* 2. Thai Basil Leaf 1 (Top Corner Accent) */
 .garnish-basil-1 {
-  top: 25px;
-  right: 55px;
-  width: 55px;
+  top: 28px;
+  right: 65px;
+  width: 44px;
   transform: rotate(-28deg);
   animation: floatGarnishB 5.6s ease-in-out infinite alternate;
   animation-delay: -1s;
@@ -454,9 +454,9 @@ button {
 
 /* 3. Fresh Juicy Lime Wedge 1 (Upper-Mid Cascade) */
 .garnish-lime-wedge-1 {
-  top: 120px;
-  right: 40px;
-  width: 114px;
+  top: 125px;
+  right: 48px;
+  width: 92px;
   transform: rotate(-12deg);
   animation: floatGarnishC 7.2s ease-in-out infinite alternate;
   animation-delay: -2.2s;
@@ -464,9 +464,9 @@ button {
 
 /* 4. Sliced Translucent Lime Wheel (Mid Centerpiece Cascade) */
 .garnish-lime-wheel {
-  top: 215px;
-  right: 125px;
-  width: 122px;
+  top: 220px;
+  right: 132px;
+  width: 98px;
   transform: rotate(24deg);
   animation: floatGarnishA 6.8s ease-in-out infinite alternate;
   animation-delay: -3.5s;
@@ -474,9 +474,9 @@ button {
 
 /* 5. Thai Basil Leaf 2 (Mid-Right Accent) */
 .garnish-basil-2 {
-  top: 265px;
-  right: 25px;
-  width: 58px;
+  top: 272px;
+  right: 32px;
+  width: 46px;
   transform: rotate(36deg);
   animation: floatGarnishB 6s ease-in-out infinite alternate;
   animation-delay: -0.8s;
@@ -484,9 +484,9 @@ button {
 
 /* 6. Whole Star Anise Pod 2 (Lower-Mid Perspective) */
 .garnish-star-anise-2 {
-  top: 350px;
-  right: 70px;
-  width: 74px;
+  top: 352px;
+  right: 76px;
+  width: 58px;
   transform: rotate(-30deg);
   animation: floatGarnishC 6.2s ease-in-out infinite alternate;
   animation-delay: -4.1s;
@@ -494,9 +494,9 @@ button {
 
 /* 7. Lime Wedge 2 with Dewdrop (Lower Cascade) */
 .garnish-lime-wedge-2 {
-  top: 425px;
-  right: 140px;
-  width: 110px;
+  top: 428px;
+  right: 142px;
+  width: 88px;
   transform: rotate(18deg);
   animation: floatGarnishA 7.5s ease-in-out infinite alternate;
   animation-delay: -1.9s;
@@ -504,9 +504,9 @@ button {
 
 /* 8. Thai Basil Leaf 3 (Bottom Accent) */
 .garnish-basil-3 {
-  top: 475px;
-  right: 48px;
-  width: 54px;
+  top: 478px;
+  right: 52px;
+  width: 44px;
   transform: rotate(-15deg);
   animation: floatGarnishB 5.8s ease-in-out infinite alternate;
   animation-delay: -2.7s;
