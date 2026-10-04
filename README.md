@@ -5,8 +5,8 @@
 </p>
 
 <p align="center">
-  <b>Hương vị ẩm thực Việt truyền thống đậm đà bản sắc tại Sydney</b><br>
-  <i>Authentic Vietnamese Cuisine & Digital Menu Management Platform</i>
+  <b>Hương vị ẩm thực Việt truyền thống đậm đà bản sắc</b><br>
+  <i>Authentic Vietnamese Cuisine & Digital Menu Platform</i>
 </p>
 
 <p align="center">
@@ -18,9 +18,18 @@
 
 ---
 
+## 📍 Thông tin nhà hàng (Location & Contact)
+
+- **Địa chỉ:** [2323 Atlantic Ave, Atlantic City, NJ 08401, United States](https://maps.app.goo.gl/9xizRKacCeMM31Ly5)
+- **Điện thoại liên hệ:** [+1 (609) 348-5946](tel:+16093485946)
+- **Giờ mở cửa:** Thứ Hai – Chủ Nhật: 10:00 AM – 9:00 PM
+- **Chỉ đường Google Maps:** [Google Maps - Phở Sydney](https://maps.app.goo.gl/9xizRKacCeMM31Ly5)
+
+---
+
 ## 📖 Giới thiệu (About the Project)
 
-**Phở Sydney** là dự án số hóa thực đơn và xây dựng nền tảng trải nghiệm ẩm thực trực tuyến cho nhà hàng Việt Nam. Dự án tập trung vào việc quản lý danh mục món ăn chuẩn xác, hình ảnh minh họa chân thực và chuẩn bị nền tảng giao diện website trực quan cho thực khách.
+**Phở Sydney** là dự án số hóa thực đơn và xây dựng nền tảng trải nghiệm ẩm thực trực tuyến cho nhà hàng Việt Nam tọa lạc tại Atlantic City, NJ. Dự án tập trung vào việc quản lý danh mục món ăn chuẩn xác, hình ảnh minh họa chân thực và chuẩn bị nền tảng giao diện website trực quan cho thực khách.
 
 - **Ẩm thực đa dạng:** Hơn 70+ món ăn truyền thống đặc trưng từ Phở bò, Hủ tiếu, Bún thịt nướng, Cơm tấm đến các món nhậu và giải khát.
 - **Hình ảnh sắc nét:** Toàn bộ thư viện ảnh món ăn thực tế đã được chuẩn hóa định dạng PNG.
