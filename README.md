@@ -83,6 +83,50 @@ Một số hình ảnh tiêu biểu trong thư mục `img/`:
 
 ---
 
+## 🎨 Nhận diện thương hiệu & Bảng màu (Brand Identity & Color Palette)
+
+Bảng màu nhận diện thương hiệu được phân tích trực tiếp từ hình ảnh biển hiệu thực tế của quán ([img/23.png](img/23.png)):
+
+<p align="center">
+  <img src="img/23.png" alt="Biển hiệu Phở Sydney" width="280" style="border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
+</p>
+
+### Bảng mã màu chủ đạo (Core Brand Colors)
+
+| Vai trò | Tên màu | HEX | RGB | Ứng dụng |
+| :--- | :--- | :---: | :---: | :--- |
+| **Brand Primary** | **Hồng Sen Đậm (Magenta)** | `#C2185B` | `194, 24, 91` | Tên thương hiệu **"PHỞ"** & **"Sydney"** |
+| **Brand Accent** | **Cam Rực Rỡ (Warm Orange)** | `#E65100` | `230, 81, 0` | Dải banner *"Authentic Vietnamese Cuisine"*, Nút Call-To-Action |
+| **Neutral Light** | **Trắng Sữa (Off-White)** | `#FFFFFF` | `255, 255, 255` | Màu nền biển hiệu, nền thẻ nội dung |
+| **Border / Frame** | **Đỏ Mận (Deep Burgundy)** | `#6B1D2F` | `107, 29, 47` | Khung viền bảng hiệu, viền trang trí |
+| **Architectural** | **Vàng Cát Ấm (Warm Ochre)** | `#D4A359` | `212, 163, 89` | Màu tường nhà hàng, viền nhấn phụ |
+
+### Gợi ý CSS Design Tokens cho giao diện Website / App
+
+```css
+:root {
+  /* Màu thương hiệu chính */
+  --color-primary: #C2185B;        /* Tiêu đề, Logo, điểm nhấn thương hiệu */
+  --color-primary-hover: #A01249;  
+
+  /* Màu bổ trợ & Nút hành động (CTA) */
+  --color-accent: #E65100;         /* Nút "Đặt Bàn", "Order Now", Giá tiền */
+  --color-accent-hover: #BF4300;   
+  --color-accent-gold: #D4A359;    /* Icon sao đánh giá, viền thẻ nổi bật */
+
+  /* Màu nền & Trung tính */
+  --color-bg-main: #FFFDF9;        /* Nền trang (kem ấm, tạo cảm giác thân thiện) */
+  --color-surface: #FFFFFF;        /* Nền thẻ món ăn (Card) */
+  --color-border: #E8E0D5;         /* Đường viền nhẹ */
+
+  /* Màu chữ */
+  --color-text-title: #2A1A1E;     /* Chữ đen pha ánh mận trầm ấm */
+  --color-text-body: #4A4A4A;      /* Nội dung mô tả món ăn */
+}
+```
+
+---
+
 ## 🚀 Lộ trình phát triển (Roadmap)
 
 - [x] **Giai đoạn 1:** Thu thập dữ liệu, phân loại thực đơn song ngữ (`Menu.md`).
