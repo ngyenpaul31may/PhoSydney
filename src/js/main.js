@@ -6,37 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('🍜 Phở Sydney Website initialized.');
 
-  // 1. Categories Carousel Navigation
-  const track = document.getElementById('categoriesTrack');
-  const prevBtn = document.getElementById('catPrevBtn');
-  const nextBtn = document.getElementById('catNextBtn');
-
-  if (track && nextBtn) {
-    const updateArrows = () => {
-      if (prevBtn) {
-        prevBtn.style.display = track.scrollLeft > 20 ? 'flex' : 'none';
-      }
-      if (nextBtn) {
-        const maxScroll = track.scrollWidth - track.clientWidth - 20;
-        nextBtn.style.display = track.scrollLeft >= maxScroll ? 'none' : 'flex';
-      }
-    };
-
-    nextBtn.addEventListener('click', () => {
-      track.scrollBy({ left: 340, behavior: 'smooth' });
-      setTimeout(updateArrows, 320);
-    });
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        track.scrollBy({ left: -340, behavior: 'smooth' });
-        setTimeout(updateArrows, 320);
-      });
-    }
-
-    track.addEventListener('scroll', updateArrows);
-    updateArrows();
-  }
+  // Popular Categories are displayed in a responsive grid (no horizontal scroll needed)
 
   // 2. Menu Filtering Logic
   const pills = document.querySelectorAll('.cat-pill');
