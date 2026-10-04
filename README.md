@@ -21,11 +21,16 @@
 
 ## 📍 Thông tin nhà hàng (Location & Contact)
 
+<p align="center">
+  <img src="img/storefront.png" alt="Mặt tiền nhà hàng Phở Sydney tại 2323 Atlantic Ave" width="550" style="border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.18);" />
+</p>
+
 - **Tên nhà hàng:** **Phở Sydney**
 - **Địa chỉ:** [2323 Atlantic Ave, Atlantic City, NJ 08401, Hoa Kỳ](https://maps.app.goo.gl/9xizRKacCeMM31Ly5)
 - **Số điện thoại:** [+1 609-348-5946](tel:+16093485946)
 - **Giờ mở cửa:** Tất cả các ngày trong tuần (Thứ Hai – Chủ Nhật) từ **10:00 – 21:00**
 - **Đánh giá Google Maps:** ⭐ **4.1 / 5 sao** *(với hơn 800+ lượt đánh giá trên [Google Maps](https://maps.app.goo.gl/9xizRKacCeMM31Ly5))*
+- **Tiện ích:** Có bãi đỗ xe riêng miễn phí cho thực khách (**Free Parking - 2nd Lot**)
 - **Chỉ đường trực tiếp:** [Xem vị trí trên Google Maps](https://maps.app.goo.gl/9xizRKacCeMM31Ly5)
 - **Mô tả:** Quán ăn Việt Nam ấm cúng, bình dân tại Atlantic City, chuyên phục vụ các món phở, hủ tiếu, mỳ, cơm tấm, bánh mì và các món ăn truyền thống đậm đà bản sắc Việt.
 
@@ -45,7 +50,8 @@
 
 ```text
 PhoSydney/
-├── img/                  # Thư viện hình ảnh món ăn đã chuẩn hóa (36 ảnh định dạng .png)
+├── img/                  # Thư viện hình ảnh món ăn & không gian quán (định dạng .png)
+│   ├── storefront.png    # Ảnh thực tế toàn cảnh mặt tiền nhà hàng
 │   ├── 1.png             # Gỏi cuốn
 │   ├── 2.png             # Gỏi cuốn chay
 │   ├── ...
