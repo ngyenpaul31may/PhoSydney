@@ -61,7 +61,8 @@ PhoSydney/
 │   ├── hero-banner.png   # Banner quảng cáo món ăn chủ đạo cho Landing Page
 │   ├── pho-hero.png      # Ảnh nghệ thuật món Phở Bò Đặc Biệt
 │   ├── com-tam-hero.png  # Ảnh nghệ thuật món Cơm Tấm Sườn Bì Chả
-│   ├── 1.png             # Gỏi cuốn
+│   ├── goi-cuon-hero.png # Ảnh nghệ thuật món Gỏi Cuốn Tươi Ngon
+│   ├── 1.png             # Gỏi cuốn (ảnh gốc)
 │   ├── 2.png             # Gỏi cuốn chay
 │   ├── ...
 │   └── 36.png
@@ -103,7 +104,7 @@ Chi tiết đầy đủ bảng giá và mô tả từng món được lưu trữ
 
 | Phở Bò Đặc Biệt (Signature Beef Pho) | Cơm Tấm Sườn Bì Chả (Broken Rice) | Gỏi Cuốn Tươi Ngon (Spring Rolls) |
 | :---: | :---: | :---: |
-| <img src="img/pho-hero.png" width="280" style="border-radius: 8px;" /> | <img src="img/com-tam-hero.png" width="280" style="border-radius: 8px;" /> | <img src="img/1.png" width="280" style="border-radius: 8px;" /> |
+| <img src="img/pho-hero.png" width="280" style="border-radius: 8px;" /> | <img src="img/com-tam-hero.png" width="280" style="border-radius: 8px;" /> | <img src="img/goi-cuon-hero.png" width="280" style="border-radius: 8px;" /> |
 | *Tô Phở bò thơm lừng với gia vị bay bổng* | *Cơm tấm sườn nướng đậm đà sốt nước mắm* | *Gỏi cuốn tôm thịt chấm tương đậu phộng* |
 
 ---
