@@ -328,8 +328,8 @@ button {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 420px;
-  max-width: 30vw;
+  width: 280px;
+  max-width: 25vw;
   pointer-events: none;
   z-index: 19;
 }
@@ -337,27 +337,27 @@ button {
 /* 1. Long Fresh Red Bird's Eye Chili 1 (Top Left Vertical-Angled) */
 .garnish-chili-whole-1 {
   top: 25px;
-  left: 80px;
-  width: 135px;
-  transform: rotate(64deg);
+  left: 30px;
+  width: 125px;
+  transform: rotate(56deg);
   animation: floatGarnishA 6.8s ease-in-out infinite alternate;
 }
 
 /* 2. Spearmint Leaf 1 (Top Left Corner Accent) */
 .garnish-mint-1 {
-  top: 20px;
-  left: 170px;
-  width: 62px;
-  transform: rotate(-32deg);
+  top: 22px;
+  left: 95px;
+  width: 52px;
+  transform: rotate(-30deg);
   animation: floatGarnishB 5.7s ease-in-out infinite alternate;
   animation-delay: -1.2s;
 }
 
 /* 3. Sliced Chili Ring 1 (Upper-Mid Left) */
 .garnish-chili-ring-1 {
-  top: 135px;
-  left: 155px;
-  width: 54px;
+  top: 130px;
+  left: 82px;
+  width: 48px;
   transform: rotate(18deg);
   animation: floatGarnishC 6.4s ease-in-out infinite alternate;
   animation-delay: -2.8s;
@@ -365,50 +365,50 @@ button {
 
 /* 4. Gracefully Curved Whole Red Chili 2 (Mid Left Cascade) */
 .garnish-chili-whole-2 {
-  top: 175px;
-  left: 48px;
-  width: 125px;
-  transform: rotate(-38deg);
+  top: 200px;
+  left: 18px;
+  width: 115px;
+  transform: rotate(-36deg);
   animation: floatGarnishA 7.4s ease-in-out infinite alternate;
   animation-delay: -3.5s;
 }
 
 /* 5. 3D Tilted Sliced Chili Ring 2 (Mid Flank) */
 .garnish-chili-ring-2 {
-  top: 265px;
-  left: 150px;
-  width: 64px;
-  transform: rotate(-24deg);
+  top: 295px;
+  left: 70px;
+  width: 52px;
+  transform: rotate(-22deg);
   animation: floatGarnishC 5.9s ease-in-out infinite alternate;
   animation-delay: -1.5s;
 }
 
 /* 6. Curved Mint Herb Leaf 2 (Mid-Left Accent) */
 .garnish-mint-2 {
-  top: 325px;
-  left: 55px;
-  width: 68px;
-  transform: rotate(26deg);
+  top: 365px;
+  left: 24px;
+  width: 56px;
+  transform: rotate(24deg);
   animation: floatGarnishB 6.3s ease-in-out infinite alternate;
   animation-delay: -4s;
 }
 
 /* 7. Thinly Sliced Chili Ring 3 (Lower-Mid Left) */
 .garnish-chili-ring-3 {
-  top: 405px;
-  left: 135px;
-  width: 48px;
-  transform: rotate(32deg);
+  top: 430px;
+  left: 68px;
+  width: 42px;
+  transform: rotate(30deg);
   animation: floatGarnishC 6.6s ease-in-out infinite alternate;
   animation-delay: -2s;
 }
 
 /* 8. Dewdrop Mint Leaf 3 (Bottom Left Accent) */
 .garnish-mint-3 {
-  top: 460px;
-  left: 75px;
-  width: 56px;
-  transform: rotate(-18deg);
+  top: 495px;
+  left: 30px;
+  width: 48px;
+  transform: rotate(-16deg);
   animation: floatGarnishB 7.1s ease-in-out infinite alternate;
   animation-delay: -0.5s;
 }
@@ -419,8 +419,8 @@ button {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 440px;
-  max-width: 32vw;
+  width: 280px;
+  max-width: 25vw;
   pointer-events: none;
   z-index: 19;
 }
@@ -436,18 +436,18 @@ button {
 
 /* 1. Whole Star Anise Pod (Top Right Accent) */
 .garnish-star-anise-1 {
-  top: 42px;
-  right: 145px;
-  width: 56px;
+  top: 38px;
+  right: 90px;
+  width: 54px;
   transform: rotate(16deg);
   animation: floatGarnishA 6.4s ease-in-out infinite alternate;
 }
 
 /* 2. Thai Basil Leaf 1 (Top Corner Accent) */
 .garnish-basil-1 {
-  top: 28px;
-  right: 65px;
-  width: 44px;
+  top: 24px;
+  right: 30px;
+  width: 42px;
   transform: rotate(-28deg);
   animation: floatGarnishB 5.6s ease-in-out infinite alternate;
   animation-delay: -1s;
@@ -455,9 +455,9 @@ button {
 
 /* 3. Fresh Juicy Lime Wedge 1 (Upper-Mid Cascade) */
 .garnish-lime-wedge-1 {
-  top: 125px;
-  right: 48px;
-  width: 92px;
+  top: 115px;
+  right: 28px;
+  width: 88px;
   transform: rotate(-12deg);
   animation: floatGarnishC 7.2s ease-in-out infinite alternate;
   animation-delay: -2.2s;
@@ -465,9 +465,9 @@ button {
 
 /* 4. Sliced Translucent Lime Wheel (Mid Centerpiece Cascade) */
 .garnish-lime-wheel {
-  top: 220px;
-  right: 132px;
-  width: 98px;
+  top: 205px;
+  right: 85px;
+  width: 92px;
   transform: rotate(24deg);
   animation: floatGarnishA 6.8s ease-in-out infinite alternate;
   animation-delay: -3.5s;
@@ -475,9 +475,9 @@ button {
 
 /* 5. Thai Basil Leaf 2 (Mid-Right Accent) */
 .garnish-basil-2 {
-  top: 272px;
-  right: 32px;
-  width: 46px;
+  top: 285px;
+  right: 20px;
+  width: 44px;
   transform: rotate(36deg);
   animation: floatGarnishB 6s ease-in-out infinite alternate;
   animation-delay: -0.8s;
@@ -485,9 +485,9 @@ button {
 
 /* 6. Whole Star Anise Pod 2 (Lower-Mid Perspective) */
 .garnish-star-anise-2 {
-  top: 352px;
-  right: 76px;
-  width: 58px;
+  top: 348px;
+  right: 58px;
+  width: 54px;
   transform: rotate(-30deg);
   animation: floatGarnishC 6.2s ease-in-out infinite alternate;
   animation-delay: -4.1s;
@@ -495,9 +495,9 @@ button {
 
 /* 7. Lime Wedge 2 with Dewdrop (Lower Cascade) */
 .garnish-lime-wedge-2 {
-  top: 428px;
-  right: 142px;
-  width: 88px;
+  top: 418px;
+  right: 28px;
+  width: 82px;
   transform: rotate(18deg);
   animation: floatGarnishA 7.5s ease-in-out infinite alternate;
   animation-delay: -1.9s;
@@ -505,9 +505,9 @@ button {
 
 /* 8. Thai Basil Leaf 3 (Bottom Accent) */
 .garnish-basil-3 {
-  top: 478px;
-  right: 52px;
-  width: 44px;
+  top: 490px;
+  right: 75px;
+  width: 40px;
   transform: rotate(-15deg);
   animation: floatGarnishB 5.8s ease-in-out infinite alternate;
   animation-delay: -2.7s;
