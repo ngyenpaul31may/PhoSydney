@@ -47,11 +47,11 @@ function initOrderActions() {
   orderButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       const card = btn.closest('.product-card');
-      const dishTitle = card ? card.querySelector('.product-title').textContent : 'Món ăn';
+      const dishTitle = card ? card.querySelector('.product-title').textContent : 'Item';
       
       // Temporary button state
       const originalText = btn.innerHTML;
-      btn.innerHTML = 'ĐÃ CHỌN ✓';
+      btn.innerHTML = 'ADDED ✓';
       btn.style.backgroundColor = '#4f0423';
       btn.style.borderColor = '#ffffff';
 
@@ -62,7 +62,7 @@ function initOrderActions() {
       }, 1500);
 
       // Toast feedback
-      showToast(`Đã thêm ${dishTitle} vào danh sách đặt món!`);
+      showToast(`Added ${dishTitle} to your order!`);
     });
   });
 }
