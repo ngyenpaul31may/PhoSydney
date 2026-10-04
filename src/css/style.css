@@ -2583,7 +2583,293 @@ button {
 }
 
 /* ==========================================================================
-   10. Footer
+   10. Testimonials Section ("WHAT OUR CUSTOMERS SAY")
+   ========================================================================== */
+.testimonials-section {
+  padding: 100px 0 110px;
+  background-color: var(--color-hero-red);
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.testimonials-card-wrapper {
+  display: grid;
+  grid-template-columns: 350px 1fr 180px;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+}
+
+/* Left: Featured Portrait Tile */
+.testimonial-portrait-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1.08;
+  background-color: #f5a623;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.testimonial-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  transition: opacity 0.35s ease, transform 0.4s ease;
+}
+
+/* Middle: Narrative Content */
+.testimonial-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 0;
+}
+
+.testimonial-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 12px;
+}
+
+.testimonial-eyebrow::before {
+  content: "•";
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1;
+}
+
+.testimonial-title {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4.2vw, 56px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.testimonial-quote-icon {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 74px;
+  line-height: 0.6;
+  color: #f8a532;
+  margin-bottom: 22px;
+  user-select: none;
+  display: block;
+}
+
+.testimonial-quote {
+  font-family: var(--font-ui);
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 400;
+  margin: 0 0 28px 0;
+  max-width: 600px;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.testimonial-author-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-ui);
+  font-size: 15.5px;
+  color: #ffffff;
+}
+
+.testimonial-author-name {
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.testimonial-author-divider {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 300;
+}
+
+.testimonial-author-role {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Right: Navigation Controls & Next Preview */
+.testimonial-action-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+  min-height: 380px;
+}
+
+.testimonial-nav-arrows {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testi-arrow-btn {
+  width: 48px;
+  height: 44px;
+  background-color: #ffffff;
+  color: var(--color-hero-red);
+  border: none;
+  border-radius: 12px 20px 12px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.testi-arrow-btn:hover {
+  background-color: #fee9cf;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+}
+
+.testi-prev-btn {
+  border-radius: 20px 12px 20px 12px;
+}
+
+.testimonial-next-preview {
+  width: 170px;
+  height: 180px;
+  background-color: #f5a623;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.testimonial-next-preview:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.38);
+}
+
+.testimonial-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.35s ease;
+}
+
+.testimonial-next-preview:hover .testimonial-thumb-img {
+  transform: scale(1.06);
+}
+
+.thumb-hint-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: rgba(25, 2, 6, 0.8);
+  color: #ffffff;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1100px) {
+  .testimonials-card-wrapper {
+    grid-template-columns: 300px 1fr 150px;
+    gap: 32px;
+  }
+
+  .testimonial-next-preview {
+    width: 140px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 900px) {
+  .testimonials-card-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .testimonial-portrait-frame {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .testimonial-content-col {
+    align-items: center;
+  }
+
+  .testimonial-quote {
+    text-align: center;
+  }
+
+  .testimonial-action-col {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    gap: 28px;
+  }
+
+  .testimonial-next-preview {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonials-section {
+    padding: 70px 0 80px;
+  }
+
+  .testimonial-title {
+    font-size: 34px;
+  }
+
+  .testimonial-quote {
+    font-size: 15px;
+  }
+
+  .testimonial-author-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .testimonial-author-divider {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   11. Footer
    ========================================================================== */
 .site-footer {
   background-color: var(--color-hero-dark-red);

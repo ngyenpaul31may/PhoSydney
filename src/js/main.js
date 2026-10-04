@@ -82,4 +82,105 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 5. Testimonials Interactive Carousel Logic
+  const testimonials = [
+    {
+      name: 'James Carter',
+      role: 'Food Blogger',
+      quote:
+        '“The food was absolutely amazing! Every bite was fresh, flavorful, and perfectly cooked. I\'ll definitely be coming back with great satisfaction, happiness, and memorable experience.”',
+      image: 'assets/images/testimonial-james-carter.jpg',
+      alt: 'James Carter - Food Blogger',
+    },
+    {
+      name: 'Minh Vu',
+      role: 'Executive Food Critic',
+      quote:
+        '“As someone who grew up with Saigon street food, Phở Sydney captures the real soul of Vietnamese cuisine. The 24-hour beef bone broth has exceptional depth and intoxicating aroma.”',
+      image: 'assets/images/testimonial-minh-vu.jpg',
+      alt: 'Minh Vu - Executive Food Critic',
+    },
+    {
+      name: 'Sophia Nguyen',
+      role: 'Culinary Travel Writer',
+      quote:
+        '“A gem in Atlantic City! From their crispy lemongrass bánh mì to the savory broken rice platter, every dish honors Vietnamese culinary heritage while serving modern, vibrant comfort.”',
+      image: 'assets/images/testimonial-sophia-nguyen.jpg',
+      alt: 'Sophia Nguyen - Culinary Travel Writer',
+    },
+  ];
+
+  let currentTestiIndex = 0;
+  const mainImg = document.getElementById('testimonialMainImg');
+  const quoteEl = document.getElementById('testimonialQuote');
+  const authorEl = document.getElementById('testimonialAuthor');
+  const roleEl = document.getElementById('testimonialRole');
+  const thumbImg = document.getElementById('testimonialThumbImg');
+  const prevTestiBtn = document.getElementById('testiPrevBtn');
+  const nextTestiBtn = document.getElementById('testiNextBtn');
+  const nextPreview = document.getElementById('testiNextPreview');
+
+  function renderTestimonial(index) {
+    if (!mainImg || !quoteEl) return;
+    const current = testimonials[index];
+    const nextIndex = (index + 1) % testimonials.length;
+    const upcoming = testimonials[nextIndex];
+
+    mainImg.style.opacity = '0';
+    quoteEl.style.opacity = '0';
+    if (thumbImg) thumbImg.style.opacity = '0';
+
+    setTimeout(() => {
+      mainImg.src = current.image;
+      mainImg.alt = current.alt;
+      quoteEl.textContent = current.quote;
+      if (authorEl) authorEl.textContent = current.name;
+      if (roleEl) roleEl.textContent = current.role;
+
+      if (thumbImg) {
+        thumbImg.src = upcoming.image;
+        thumbImg.alt = `Upcoming Reviewer: ${upcoming.name}`;
+      }
+      if (nextPreview) {
+        nextPreview.setAttribute(
+          'aria-label',
+          `View next review from ${upcoming.name}`
+        );
+      }
+
+      mainImg.style.opacity = '1';
+      quoteEl.style.opacity = '1';
+      if (thumbImg) thumbImg.style.opacity = '1';
+    }, 200);
+  }
+
+  if (nextTestiBtn) {
+    nextTestiBtn.addEventListener('click', () => {
+      currentTestiIndex = (currentTestiIndex + 1) % testimonials.length;
+      renderTestimonial(currentTestiIndex);
+    });
+  }
+
+  if (prevTestiBtn) {
+    prevTestiBtn.addEventListener('click', () => {
+      currentTestiIndex =
+        (currentTestiIndex - 1 + testimonials.length) % testimonials.length;
+      renderTestimonial(currentTestiIndex);
+    });
+  }
+
+  if (nextPreview) {
+    nextPreview.addEventListener('click', () => {
+      currentTestiIndex = (currentTestiIndex + 1) % testimonials.length;
+      renderTestimonial(currentTestiIndex);
+    });
+    nextPreview.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        currentTestiIndex = (currentTestiIndex + 1) % testimonials.length;
+        renderTestimonial(currentTestiIndex);
+      }
+    });
+  }
 });
