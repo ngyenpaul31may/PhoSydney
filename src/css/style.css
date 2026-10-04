@@ -2888,7 +2888,7 @@ button {
    11. Gallery Section ("A FEAST FOR YOUR EYES")
    ========================================================================== */
 .gallery-section {
-  padding: 100px 0 110px;
+  padding: 48px 0 56px;
   background-color: var(--color-cream-bg);
   position: relative;
 }
@@ -2896,7 +2896,7 @@ button {
 .gallery-header {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto 52px;
+  margin: 0 auto 36px;
 }
 
 .gallery-eyebrow {
@@ -2941,13 +2941,13 @@ button {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 16px;
 }
 
 .gallery-col {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .gallery-item {
@@ -3028,11 +3028,11 @@ button {
 @media (max-width: 992px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 14px;
   }
 
   .gallery-col {
-    gap: 20px;
+    gap: 14px;
   }
 
   .gallery-col:last-child {
@@ -3052,7 +3052,11 @@ button {
 
 @media (max-width: 640px) {
   .gallery-section {
-    padding: 70px 0 80px;
+    padding: 36px 0 44px;
+  }
+
+  .gallery-header {
+    margin: 0 auto 24px;
   }
 
   .gallery-title {
@@ -3061,11 +3065,11 @@ button {
 
   .gallery-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 14px;
   }
 
   .gallery-col {
-    gap: 18px;
+    gap: 14px;
   }
 
   .gallery-col:last-child {
@@ -3092,7 +3096,7 @@ button {
    12. FAQ Section ("FREQUENTLY ASKED QUESTIONS")
    ========================================================================== */
 .faq-section {
-  padding: 100px 0 115px;
+  padding: 80px 0 100px;
   background-color: var(--color-cream-bg);
   position: relative;
 }
@@ -3101,12 +3105,16 @@ button {
   display: grid;
   grid-template-columns: 380px 1fr;
   gap: 75px;
-  align-items: flex-start;
+  align-items: start;
+  min-height: 850px;
+  padding-bottom: 50px;
 }
 
 .faq-left {
   position: sticky;
   top: 100px;
+  align-self: start;
+  height: fit-content;
 }
 
 .faq-eyebrow {
