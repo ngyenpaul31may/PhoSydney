@@ -564,45 +564,6 @@ button {
   fill: var(--color-cream-bg);
 }
 
-/* ==========================================================================
-   3. Quick Trust & Highlights Strip
-   ========================================================================== */
-.trust-strip {
-  background-color: var(--color-cream-bg);
-  padding: 40px 0 20px;
-  position: relative;
-  z-index: 20;
-}
-
-.trust-grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.trust-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background-color: var(--color-card-white);
-  padding: 12px 24px;
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-subtle);
-  border: 1px solid rgba(126, 14, 27, 0.08);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text-dark);
-}
-
-.badge-icon {
-  font-size: 18px;
-}
-
-.badge-highlight {
-  color: var(--color-hero-red);
-}
 
 /* ==========================================================================
    4. Explore Our Popular Categories Carousel (Dribbble Concept 2)
