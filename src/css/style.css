@@ -201,7 +201,7 @@ button {
 .hero-content-container {
   position: relative;
   z-index: 20;
-  max-width: 1540px;
+  max-width: 1680px;
 }
 
 /* Eyebrow Subtitle */
@@ -241,8 +241,8 @@ button {
 /* Centerpiece & Satellite Food Composition */
 .hero-food-composition {
   position: relative;
-  max-width: 1480px;
-  height: 480px;
+  max-width: 1640px;
+  height: 500px;
   margin: 10px auto 0;
   display: flex;
   align-items: center;
@@ -255,7 +255,7 @@ button {
   left: 50%;
   transform: translateX(-50%);
   bottom: -45px;
-  width: 530px;
+  width: 575px;
   max-width: 86vw;
   z-index: 25;
   filter: drop-shadow(0 28px 45px rgba(0, 0, 0, 0.45));
@@ -270,9 +270,9 @@ button {
 /* Left Flanking Dish (Gỏi Cuốn Tươi Ngon) */
 .food-satellite-left {
   position: absolute;
-  left: 15px;
-  bottom: 45px;
-  width: 360px;
+  left: 0;
+  bottom: 40px;
+  width: 395px;
   max-width: 28vw;
   z-index: 18;
   filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.42));
@@ -293,9 +293,9 @@ button {
 /* Right Flanking Dish (Cơm Tấm Sườn Bì Chả Trứng) */
 .food-satellite-right {
   position: absolute;
-  right: 15px;
-  bottom: 25px;
-  width: 390px;
+  right: 0;
+  bottom: 20px;
+  width: 425px;
   max-width: 30vw;
   z-index: 18;
   filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.42));
