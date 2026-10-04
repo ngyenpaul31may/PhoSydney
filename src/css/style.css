@@ -342,26 +342,95 @@ button {
   filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.38));
 }
 
-.hero-scatter-panel-left {
-  left: 2%;
-  width: 320px;
-  max-width: 22vw;
-  animation: floatSubtleLeft 6.5s ease-in-out infinite alternate;
+/* Left Side Independent Floating Garnish Scatter Zone */
+.hero-garnish-scatter-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 420px;
+  max-width: 30vw;
+  pointer-events: none;
+  z-index: 19;
 }
 
-.scatter-panel-img {
-  width: 100%;
-  height: auto;
-  display: block;
+/* 1. Long Fresh Red Bird's Eye Chili 1 (Top Left Vertical-Angled) */
+.garnish-chili-whole-1 {
+  top: 25px;
+  left: 80px;
+  width: 135px;
+  transform: rotate(64deg);
+  animation: floatGarnishA 6.8s ease-in-out infinite alternate;
 }
 
-@keyframes floatSubtleLeft {
-  0% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  100% {
-    transform: translateY(-10px) rotate(-1.5deg);
-  }
+/* 2. Spearmint Leaf 1 (Top Left Corner Accent) */
+.garnish-mint-1 {
+  top: 20px;
+  left: 170px;
+  width: 62px;
+  transform: rotate(-32deg);
+  animation: floatGarnishB 5.7s ease-in-out infinite alternate;
+  animation-delay: -1.2s;
+}
+
+/* 3. Sliced Chili Ring 1 (Upper-Mid Left) */
+.garnish-chili-ring-1 {
+  top: 135px;
+  left: 155px;
+  width: 54px;
+  transform: rotate(18deg);
+  animation: floatGarnishC 6.4s ease-in-out infinite alternate;
+  animation-delay: -2.8s;
+}
+
+/* 4. Gracefully Curved Whole Red Chili 2 (Mid Left Cascade) */
+.garnish-chili-whole-2 {
+  top: 175px;
+  left: 48px;
+  width: 125px;
+  transform: rotate(-38deg);
+  animation: floatGarnishA 7.4s ease-in-out infinite alternate;
+  animation-delay: -3.5s;
+}
+
+/* 5. 3D Tilted Sliced Chili Ring 2 (Mid Flank) */
+.garnish-chili-ring-2 {
+  top: 265px;
+  left: 150px;
+  width: 64px;
+  transform: rotate(-24deg);
+  animation: floatGarnishC 5.9s ease-in-out infinite alternate;
+  animation-delay: -1.5s;
+}
+
+/* 6. Curved Mint Herb Leaf 2 (Mid-Left Accent) */
+.garnish-mint-2 {
+  top: 325px;
+  left: 55px;
+  width: 68px;
+  transform: rotate(26deg);
+  animation: floatGarnishB 6.3s ease-in-out infinite alternate;
+  animation-delay: -4s;
+}
+
+/* 7. Thinly Sliced Chili Ring 3 (Lower-Mid Left) */
+.garnish-chili-ring-3 {
+  top: 405px;
+  left: 135px;
+  width: 48px;
+  transform: rotate(32deg);
+  animation: floatGarnishC 6.6s ease-in-out infinite alternate;
+  animation-delay: -2s;
+}
+
+/* 8. Dewdrop Mint Leaf 3 (Bottom Left Accent) */
+.garnish-mint-3 {
+  top: 460px;
+  left: 75px;
+  width: 56px;
+  transform: rotate(-18deg);
+  animation: floatGarnishB 7.1s ease-in-out infinite alternate;
+  animation-delay: -0.5s;
 }
 
 /* Right Side Independent Floating Garnish Scatter Zone */
