@@ -390,8 +390,8 @@ button {
 
 /* 6. 3D Tilted Sliced Chili Ring 2 (Inner Mid-Left Accent) */
 .garnish-chili-ring-2 {
-  top: 285px;
-  left: 345px;
+  top: 220px;
+  left: 380px;
   width: 48px;
   --rot: -18deg;
   transform: rotate(var(--rot));
