@@ -210,15 +210,21 @@ button {
   position: relative;
   background-color: var(--color-hero-red);
   padding-top: 24px;
-  padding-bottom: 90px;
+  padding-bottom: 0;
+  min-height: 820px;
+  height: 98vh;
+  max-height: 930px;
   text-align: center;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Container for content */
+/* Header container */
 .hero-content-container {
   position: relative;
-  z-index: 20;
+  z-index: 10;
+  padding-top: 10px;
 }
 
 /* Eyebrow Subtitle */
@@ -229,9 +235,9 @@ button {
   font-size: 13.5px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.95);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .eyebrow-dot {
@@ -242,7 +248,7 @@ button {
 /* Giant 2-Line Headline */
 .hero-headline {
   font-family: var(--font-display);
-  font-size: clamp(46px, 7.5vw, 94px);
+  font-size: clamp(48px, 6.8vw, 96px);
   line-height: 0.92;
   letter-spacing: 0.025em;
   color: #FFFFFF;
@@ -255,27 +261,26 @@ button {
   display: block;
 }
 
-/* Centerpiece & Satellite Food Composition */
-.hero-food-composition {
-  position: relative;
-  max-width: 1380px;
-  height: 480px;
-  margin: 10px auto 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Full-width Food Stage spanning entire viewport */
+.hero-food-stage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  pointer-events: none;
+  z-index: 25;
 }
 
-/* Centerpiece Bowl (Phở) */
+/* Centerpiece Bowl with Massive Broth Splash Wings */
 .food-centerpiece {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -50px;
-  width: 580px;
-  max-width: 86vw;
+  bottom: -20px;
+  width: clamp(750px, 68vw, 1140px);
   z-index: 25;
-  filter: drop-shadow(0 28px 45px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.45));
 }
 
 .food-centerpiece img {
@@ -284,21 +289,21 @@ button {
   display: block;
 }
 
-/* Left Flanking Dish (Gỏi Cuốn Tươi Ngon) */
+/* Left Flanking Dish (Gỏi Cuốn) - Bleeding off the left edge */
 .food-satellite-left {
   position: absolute;
-  left: 2%;
+  left: -50px;
   bottom: 80px;
-  width: 360px;
-  max-width: 28vw;
-  z-index: 18;
+  width: clamp(320px, 24vw, 420px);
+  z-index: 20;
   filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.42));
-  transform: rotate(-5deg);
+  transform: rotate(-6deg);
   transition: transform 0.3s ease;
+  pointer-events: auto;
 }
 
 .food-satellite-left:hover {
-  transform: rotate(-2deg) scale(1.03);
+  transform: rotate(-3deg) scale(1.04);
 }
 
 .food-satellite-left img {
@@ -307,21 +312,21 @@ button {
   display: block;
 }
 
-/* Right Flanking Dish (Cơm Tấm Sườn Bì Chả Trứng) */
+/* Right Flanking Dish (Cơm Tấm) - Bleeding off the right edge */
 .food-satellite-right {
   position: absolute;
-  right: 2%;
+  right: -40px;
   bottom: 40px;
-  width: 390px;
-  max-width: 30vw;
-  z-index: 18;
+  width: clamp(340px, 26vw, 460px);
+  z-index: 20;
   filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.42));
   transform: rotate(5deg);
   transition: transform 0.3s ease;
+  pointer-events: auto;
 }
 
 .food-satellite-right:hover {
-  transform: rotate(2deg) scale(1.03);
+  transform: rotate(2deg) scale(1.04);
 }
 
 .food-satellite-right img {
@@ -330,26 +335,56 @@ button {
   display: block;
 }
 
-/* Scatter Garnishes (High-Resolution AI-Crafted Culinary Art Panels) */
+/* Floating Basil Leaves around Right Dish matching concept photo */
+.dish-basil {
+  position: absolute !important;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+  z-index: 25;
+}
+
+.dish-basil-1 {
+  left: -25px;
+  top: 42%;
+  width: 44px !important;
+  transform: rotate(-35deg);
+  animation: floatSubtleRight 6s ease-in-out infinite alternate;
+}
+
+.dish-basil-2 {
+  left: 25px;
+  bottom: -22px;
+  width: 50px !important;
+  transform: rotate(25deg);
+  animation: floatSubtleRight 7.5s ease-in-out infinite alternate-reverse;
+}
+
+.dish-basil-3 {
+  right: 90px;
+  bottom: -32px;
+  width: 40px !important;
+  transform: rotate(-15deg);
+  animation: floatSubtleRight 8s ease-in-out infinite alternate;
+}
+
+/* Scatter Garnishes Panels */
 .hero-scatter-panel {
   position: absolute;
-  top: 40px;
+  top: 30px;
   pointer-events: none;
   z-index: 15;
-  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.38));
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.35));
 }
 
 .hero-scatter-panel-left {
-  left: 2%;
-  width: 320px;
-  max-width: 22vw;
+  left: 1%;
+  width: clamp(220px, 18vw, 300px);
   animation: floatSubtleLeft 6.5s ease-in-out infinite alternate;
 }
 
 .hero-scatter-panel-right {
-  right: 2%;
-  width: 300px;
-  max-width: 20vw;
+  right: 1%;
+  width: clamp(200px, 16vw, 280px);
   animation: floatSubtleRight 7.5s ease-in-out infinite alternate-reverse;
 }
 
@@ -375,10 +410,10 @@ button {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 280px;
+  height: 360px;
   overflow: hidden;
   line-height: 0;
-  z-index: 12;
+  z-index: 8;
   pointer-events: none;
 }
 
