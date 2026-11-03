@@ -2378,122 +2378,37 @@ body.menu-popup-open {
   font-size: 12px;
 }
 
-/* Right Page: Interactive Table of Chapters */
+/* Right Page: Interactive Table of Chapters (Designed Like Dish Menu Items) */
 .menu-toc-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin: auto 0;
-  padding: 2px 0;
+  gap: 10px;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 4px 0;
 }
 
 .menu-toc-item {
   width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 7px 12px;
-  border-radius: 10px;
-  background: #fdf5e8;
-  border: 1px solid rgba(126, 14, 27, 0.15);
-  box-shadow: 0 2px 8px rgba(34, 8, 11, 0.04);
+  display: block;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
   text-align: left;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   position: relative;
   z-index: 5;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .menu-toc-item:hover {
-  background: #7e0e1b;
-  border-color: #7e0e1b;
+  background-color: rgba(126, 14, 27, 0.06);
   transform: translateX(4px);
-  box-shadow: 0 8px 20px rgba(126, 14, 27, 0.24);
 }
 
-.menu-toc-roman {
-  width: 30px;
-  height: 30px;
-  border-radius: 999px;
-  background: rgba(126, 14, 27, 0.1);
-  border: 1px solid rgba(126, 14, 27, 0.22);
+.menu-toc-item:hover .menu-item-vn {
   color: var(--color-hero-red);
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 800;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.menu-toc-item:hover .menu-toc-roman {
-  background: #fbbf24;
-  border-color: #fbbf24;
-  color: #2b050a;
-}
-
-.menu-toc-body {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.menu-toc-title {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: #241215;
-  text-transform: uppercase;
-  transition: color 0.2s ease;
-}
-
-.menu-toc-sub {
-  font-size: 11px;
-  color: #6e5256;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: color 0.2s ease;
-}
-
-.menu-toc-item:hover .menu-toc-title {
-  color: #ffffff;
-}
-
-.menu-toc-item:hover .menu-toc-sub {
-  color: rgba(255, 248, 238, 0.82);
-}
-
-.menu-toc-count {
-  padding: 3px 10px;
-  border-radius: 999px;
-  background: rgba(126, 14, 27, 0.1);
-  color: var(--color-hero-red);
-  font-size: 12px;
-  font-weight: 800;
-  flex-shrink: 0;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.menu-toc-item:hover .menu-toc-count {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-}
-
-.menu-toc-arrow {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--color-hero-red);
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.menu-toc-item:hover .menu-toc-arrow {
-  color: #fbbf24;
-  transform: translateX(3px);
 }
 
 .menu-index-btn.is-home {
