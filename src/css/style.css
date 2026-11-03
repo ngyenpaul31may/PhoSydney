@@ -2363,7 +2363,7 @@ body.menu-popup-open {
 .menu-toc-item {
   width: 100%;
   display: block;
-  padding: 8px 8px;
+  padding: 10px 12px;
   border: none;
   border-radius: 6px;
   background: transparent;
@@ -2522,13 +2522,14 @@ body.menu-popup-open {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 7px;
+  padding: 6px 0;
   flex-grow: 1;
 }
 
 .menu-book-item {
-  padding: 2px 5px;
-  border-radius: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
   transition: background-color 0.2s ease;
 }
 
