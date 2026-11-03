@@ -1409,7 +1409,7 @@ button {
   letter-spacing: 1px;
   color: #ffffff;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .discover-subtitle {
@@ -1771,6 +1771,7 @@ button {
   bottom: 0;
   right: 0;
   left: calc((1 - var(--board-open, 0)) * (50% - 18px));
+  opacity: var(--board-open, 0);
   background: linear-gradient(145deg, #3b0810 0%, #240409 100%);
   border-radius: 22px;
   box-shadow:
@@ -1808,6 +1809,7 @@ button {
 
 .menu-book-cover::after {
   right: 14px;
+  opacity: var(--board-open, 0);
   border-radius: 0 14px 14px 0;
 }
 
@@ -1841,6 +1843,7 @@ button {
 
 .menu-book-spread[data-spread-index="0"] {
   background-color: transparent;
+  overflow: visible;
 }
 
 .menu-book-spread.is-active {
@@ -2066,84 +2069,37 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ---- Spread 0: Minimalist Hardcover Menu Cover ---- */
+/* ---- Spread 0: Bespoke Linen & Stitched Leather Menu Book Cover ---- */
 .menu-cover-front {
   padding: 0 !important;
   background: transparent !important;
+  border-radius: 6px 14px 14px 6px !important;
+  overflow: hidden;
+  box-shadow:
+    4px 0 0 #dfd3be,
+    7px 0 0 #c9baa3,
+    10px 0 0 #361317,
+    0 26px 56px rgba(18, 2, 5, 0.52),
+    0 6px 18px rgba(18, 2, 5, 0.32);
 }
 
-.menu-cover-front::before {
+.strip-page-slice .menu-cover-front,
+.sb-half .menu-cover-front {
+  box-shadow: none;
+}
+
+.menu-cover-front::before,
+.menu-cover-front::after {
   display: none !important;
 }
 
-.menu-cover-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.menu-cover-plaque {
-  flex: 1;
+.menu-cover-img {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  padding: 48px 36px 40px;
-  border-radius: 0 14px 14px 0;
-  background: radial-gradient(circle at 50% 42%, #5c0a16 0%, #38050d 62%, #220307 100%);
-  box-shadow:
-    inset 0 0 0 14px #280308,
-    inset 0 0 0 15.5px rgba(251, 191, 36, 0.55),
-    inset 0 0 0 21px #280308,
-    inset 0 0 0 22px rgba(251, 191, 36, 0.25);
-  color: #fff8ee;
-  position: relative;
-}
-
-.menu-cover-center {
-  margin: auto 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  width: 100%;
-}
-
-.menu-cover-brand {
-  font-family: var(--font-display);
-  font-size: clamp(46px, 4.6vw, 64px);
-  line-height: 1;
-  letter-spacing: 0.08em;
-  color: #fbbf24;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
-  margin: 0;
-}
-
-.menu-cover-ornament {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: rgba(251, 191, 36, 0.85);
-  font-size: 13px;
-  width: 56%;
-}
-
-.menu-cover-ornament span {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.65), transparent);
-}
-
-.menu-cover-address {
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(251, 191, 36, 0.82);
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* ---- Spread 1 Left Page: Inside Front Cover & Signature Dish Cards ---- */
