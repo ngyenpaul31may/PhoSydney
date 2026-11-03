@@ -509,45 +509,74 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sbRight) sbRight.addEventListener('click', () => step('next'));
 
   const viewMenuBtn = document.getElementById('viewMenuBtn');
-  if (viewMenuBtn) {
-    viewMenuBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (fullMenu) fullMenu.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      if (idx === 0) setTimeout(() => flipToSpread(1), 280);
+  const closeMenuPopupBtn = document.getElementById('closeMenuPopupBtn');
+
+  function openMenuPopup(targetCategory) {
+    if (!fullMenu) return;
+    fullMenu.classList.add('is-open');
+    document.body.classList.add('menu-popup-open');
+    requestAnimationFrame(() => {
+      layout();
+      paint();
+      if (targetCategory) {
+        filterMenu(targetCategory);
+      }
     });
   }
 
+  function closeMenuPopup() {
+    if (!fullMenu) return;
+    fullMenu.classList.remove('is-open');
+    document.body.classList.remove('menu-popup-open');
+  }
+
+  if (viewMenuBtn) {
+    viewMenuBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openMenuPopup();
+    });
+  }
+
+  if (closeMenuPopupBtn) {
+    closeMenuPopupBtn.addEventListener('click', closeMenuPopup);
+  }
+
+  if (fullMenu) {
+    fullMenu.addEventListener('click', (e) => {
+      if (
+        e.target === fullMenu ||
+        e.target.classList.contains('menu-book-stage') ||
+        e.target === stage
+      ) {
+        closeMenuPopup();
+      }
+    });
+  }
+
+  document.querySelectorAll('.discover-card, .catering-btn').forEach((elItem) => {
+    elItem.style.cursor = 'pointer';
+    elItem.addEventListener('click', (e) => {
+      e.preventDefault();
+      openMenuPopup();
+    });
+  });
+
   document.addEventListener('keydown', (e) => {
     if (!fullMenu || !fullMenu.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeMenuPopup();
     if (e.key === 'ArrowRight') step('next');
     if (e.key === 'ArrowLeft') step('prev');
   });
 
   paint();
 
-  // 3. Category Cards in Carousel Click -> Open Full Menu & Flip to Chapter
+  // 3. Category Cards in Carousel Click -> Open Full Menu Popup & Flip to Chapter
   const categoryCards = document.querySelectorAll('.category-card');
   categoryCards.forEach((card) => {
     card.addEventListener('click', () => {
       const cat = card.dataset.category;
       if (cat) {
-        if (fullMenu && !fullMenu.classList.contains('is-open')) {
-          fullMenu.classList.add('is-open');
-          if (toggleBtn) {
-            toggleBtn.setAttribute('aria-expanded', 'true');
-            const chevron = toggleBtn.querySelector('.toggle-chevron');
-            if (chevron) chevron.textContent = '▴';
-            const label = toggleBtn.querySelector(
-              'span:not(.toggle-icon):not(.toggle-chevron)'
-            );
-            if (label) label.textContent = 'Hide Complete Menu Book';
-          }
-        }
-        filterMenu(cat);
-        const menuElem = document.getElementById('menu-showcase');
-        if (menuElem) {
-          menuElem.scrollIntoView({ behavior: 'smooth' });
-        }
+        openMenuPopup(cat);
       }
     });
   });

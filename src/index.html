@@ -478,8 +478,7 @@
           </div>
           <div class="discover-header-right">
             <a href="#fullMenuCollapsible" class="discover-book-btn" id="viewMenuBtn">
-              <span>Xem Menu</span>
-              <span class="discover-arrow">↗</span>
+              <span>View Menu</span>
             </a>
           </div>
         </div>
@@ -547,8 +546,11 @@
           </article>
         </div>
 
-        <!-- Interactive 3D Flipbook Menu -->
-        <div class="full-menu-collapsible is-open" id="fullMenuCollapsible">
+        <!-- Interactive 3D Flipbook Menu Popup Modal -->
+        <div class="full-menu-collapsible menu-popup-modal" id="fullMenuCollapsible" role="dialog" aria-modal="true" aria-label="Phở Sydney 3D Menu Book">
+          <button type="button" class="menu-popup-close" id="closeMenuPopupBtn" aria-label="Close menu">
+            <span aria-hidden="true">✕</span>
+          </button>
           <!-- 3D Sketchbook Flipbook Container (MengToSketchbook Engine) -->
           <div class="menu-book-stage sb-wrap" id="sbWrap">
             <div class="sb-stage" id="sbStage">
