@@ -1992,11 +1992,17 @@ body.menu-popup-open {
   overflow: visible;
 }
 
-.menu-book-spread.is-active {
+.full-menu-collapsible.is-open .menu-book-spread.is-active {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
   z-index: 3;
+}
+
+.full-menu-collapsible:not(.is-open),
+.full-menu-collapsible:not(.is-open) * {
+  pointer-events: none !important;
+  visibility: hidden !important;
 }
 
 .menu-page-blank,
