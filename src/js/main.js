@@ -8,60 +8,119 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Popular Categories are displayed in a responsive grid (no horizontal scroll needed)
 
-  // 2. Menu Filtering Logic
+  // 2. Interactive 3D Flipbook Menu Logic
   const pills = document.querySelectorAll('.cat-pill');
-  const dishCards = document.querySelectorAll('.dish-card');
+  const spreads = document.querySelectorAll('.menu-book-spread');
+  const bookCover = document.getElementById('menuBookCover');
+  const prevSpreadBtn = document.getElementById('menuPrevSpreadBtn');
+  const nextSpreadBtn = document.getElementById('menuNextSpreadBtn');
+  const spreadIndicator = document.getElementById('menuSpreadIndicator');
+  let currentSpread = 0;
+
+  function flipToSpread(targetIndex) {
+    if (!spreads.length) return;
+    const total = spreads.length;
+    const nextIdx = ((targetIndex % total) + total) % total;
+    const direction = nextIdx >= currentSpread ? 'next' : 'prev';
+
+    // Spawn 3D page-turning leaf effect when changing spreads
+    if (nextIdx !== currentSpread && bookCover) {
+      const leaf = document.createElement('div');
+      leaf.className =
+        'menu-turning-leaf ' +
+        (direction === 'next' ? 'turn-forward' : 'turn-backward');
+      bookCover.appendChild(leaf);
+      setTimeout(() => leaf.remove(), 580);
+    }
+
+    currentSpread = nextIdx;
+    const activeSpread = spreads[currentSpread];
+    const activeCat = activeSpread ? activeSpread.dataset.category : 'pho';
+
+    spreads.forEach((sp, idx) => {
+      sp.classList.remove('is-active', 'flip-next-anim', 'flip-prev-anim');
+      if (idx === currentSpread) {
+        sp.classList.add(
+          'is-active',
+          direction === 'next' ? 'flip-next-anim' : 'flip-prev-anim'
+        );
+      }
+    });
+
+    pills.forEach((p) => {
+      p.classList.toggle('active', p.dataset.category === activeCat);
+    });
+
+    if (spreadIndicator && activeSpread) {
+      const p1 = currentSpread * 2 + 1;
+      const p2 = currentSpread * 2 + 2;
+      const title = activeSpread.dataset.title || '';
+      spreadIndicator.textContent = `Trang ${p1}–${p2} / ${total * 2} • ${title}`;
+    }
+  }
 
   function filterMenu(category) {
-    pills.forEach((p) => {
-      if (p.dataset.category === category) {
-        p.classList.add('active');
-      } else {
-        p.classList.remove('active');
-      }
-    });
-
-    dishCards.forEach((dish) => {
-      const dishCat = dish.dataset.category;
-      if (category === 'all' || dishCat === category) {
-        dish.style.display = '';
-        dish.style.animation = 'fadeInUp 0.4s ease forwards';
-      } else {
-        dish.style.display = 'none';
-      }
-    });
+    const idx = Array.from(spreads).findIndex(
+      (sp) => sp.dataset.category === category
+    );
+    flipToSpread(idx >= 0 ? idx : 0);
   }
 
   pills.forEach((pill) => {
     pill.addEventListener('click', () => {
-      const cat = pill.dataset.category || 'all';
-      filterMenu(cat);
+      const spreadIdx = Number(pill.dataset.spread);
+      if (!Number.isNaN(spreadIdx)) {
+        flipToSpread(spreadIdx);
+      } else {
+        filterMenu(pill.dataset.category || 'pho');
+      }
     });
   });
 
-  // 3. Full Menu Collapsible Toggle Logic
+  if (prevSpreadBtn) {
+    prevSpreadBtn.addEventListener('click', () => {
+      flipToSpread(currentSpread - 1);
+    });
+  }
+
+  if (nextSpreadBtn) {
+    nextSpreadBtn.addEventListener('click', () => {
+      flipToSpread(currentSpread + 1);
+    });
+  }
+
+  // Allow clicking right/left page edges or using Left/Right arrow keys when menu is open
   const toggleBtn = document.getElementById('toggleFullMenuBtn');
   const fullMenu = document.getElementById('fullMenuCollapsible');
 
+  document.addEventListener('keydown', (e) => {
+    if (!fullMenu || !fullMenu.classList.contains('is-open')) return;
+    if (e.key === 'ArrowRight') flipToSpread(currentSpread + 1);
+    if (e.key === 'ArrowLeft') flipToSpread(currentSpread - 1);
+  });
+
+  // 3. Full Menu Collapsible Toggle Logic
   if (toggleBtn && fullMenu) {
     toggleBtn.addEventListener('click', () => {
       const isOpen = fullMenu.classList.toggle('is-open');
       toggleBtn.setAttribute('aria-expanded', isOpen);
       const chevron = toggleBtn.querySelector('.toggle-chevron');
       if (chevron) chevron.textContent = isOpen ? '▴' : '▾';
-      const label = toggleBtn.querySelector('span:not(.toggle-icon):not(.toggle-chevron)');
+      const label = toggleBtn.querySelector(
+        'span:not(.toggle-icon):not(.toggle-chevron)'
+      );
       if (label) {
         label.textContent = isOpen
-          ? 'Hide Complete Menu'
+          ? 'Hide Complete Menu Book'
           : 'Explore Complete Categorized Menu (75+ Dishes)';
       }
     });
   }
 
-  // 4. Category Cards in Carousel Click -> Open Full Menu & Filter
+  // 4. Category Cards in Carousel Click -> Open Full Menu & Flip to Chapter
   const categoryCards = document.querySelectorAll('.category-card');
   categoryCards.forEach((card) => {
-    card.addEventListener('click', (e) => {
+    card.addEventListener('click', () => {
       const cat = card.dataset.category;
       if (cat) {
         if (fullMenu && !fullMenu.classList.contains('is-open')) {
@@ -70,8 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleBtn.setAttribute('aria-expanded', 'true');
             const chevron = toggleBtn.querySelector('.toggle-chevron');
             if (chevron) chevron.textContent = '▴';
-            const label = toggleBtn.querySelector('span:not(.toggle-icon):not(.toggle-chevron)');
-            if (label) label.textContent = 'Hide Complete Menu';
+            const label = toggleBtn.querySelector(
+              'span:not(.toggle-icon):not(.toggle-chevron)'
+            );
+            if (label) label.textContent = 'Hide Complete Menu Book';
           }
         }
         filterMenu(cat);

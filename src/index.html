@@ -560,402 +560,663 @@
           </button>
         </div>
 
-        <!-- Collapsible Full Menu Drawer -->
+        <!-- Collapsible Full Menu Drawer (Interactive 3D Flipbook Menu) -->
         <div class="full-menu-collapsible" id="fullMenuCollapsible">
-          <!-- Category Filter Pills -->
-          <div class="category-filter-bar">
-          <button class="cat-pill active" data-category="all">
-            <span>All Items</span>
-            <span class="cat-count">13</span>
-          </button>
-          <button class="cat-pill" data-category="pho">
-            <span>Beef & Chicken Pho</span>
-            <span class="cat-count">16</span>
-          </button>
-          <button class="cat-pill" data-category="rice">
-            <span>Broken Rice Plates</span>
-            <span class="cat-count">18</span>
-          </button>
-          <button class="cat-pill" data-category="appetizers">
-            <span>Appetizers</span>
-            <span class="cat-count">6</span>
-          </button>
-          <button class="cat-pill" data-category="noodles">
-            <span>Vermicelli Bowls</span>
-            <span class="cat-count">10</span>
-          </button>
-          <button class="cat-pill" data-category="specialties">
-            <span>Banh Mi & Specialties</span>
-            <span class="cat-count">17</span>
-          </button>
-          <button class="cat-pill" data-category="drinks">
-            <span>Beverages</span>
-            <span class="cat-count">10</span>
-          </button>
-        </div>
+          <!-- Category Bookmarks / Chapter Pills -->
+          <div class="category-filter-bar" role="tablist" aria-label="Menu Book Chapters">
+            <button class="cat-pill active" data-category="pho" data-spread="0">
+              <span>I. Beef &amp; Chicken Phở</span>
+              <span class="cat-count">16</span>
+            </button>
+            <button class="cat-pill" data-category="rice" data-spread="1">
+              <span>II. Broken Rice Plates</span>
+              <span class="cat-count">19</span>
+            </button>
+            <button class="cat-pill" data-category="appetizers" data-spread="2">
+              <span>III. Appetizers &amp; Noodle Soup</span>
+              <span class="cat-count">14</span>
+            </button>
+            <button class="cat-pill" data-category="noodles" data-spread="3">
+              <span>IV. Vermicelli Bowls</span>
+              <span class="cat-count">12</span>
+            </button>
+            <button class="cat-pill" data-category="specialties" data-spread="4">
+              <span>V. Bánh Mì &amp; Specialties</span>
+              <span class="cat-count">16</span>
+            </button>
+            <button class="cat-pill" data-category="drinks" data-spread="5">
+              <span>VI. Beverages</span>
+              <span class="cat-count">10</span>
+            </button>
+          </div>
 
-        <!-- Dishes Grid -->
-        <div class="dishes-grid">
-          <!-- Dish 1: Phở Bò Đặc Biệt -->
-          <article class="dish-card" data-category="pho">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">PHỞ #9</span>
-              <img src="assets/images/pho-hero.png" alt="Phở Bò Đặc Biệt" />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">PHỞ ĐẶC BIỆT</h3>
-              <p class="dish-sub">Special Combination Beef Noodle Soup</p>
-              <p class="dish-desc">
-                Silky rice noodles in an aromatic 24-hour beef bone broth with
-                star anise. Loaded with rare steak, flank, brisket, tendon,
-                tripe, and beef meatballs.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price"
-                  >$16.99
-                  <small style="font-size: 14px; color: var(--color-text-muted)"
-                    >/ L: $18.99</small
-                  ></span
-                >
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
+          <!-- 3D Flipbook Container -->
+          <div class="menu-book-stage">
+            <div class="menu-book-cover" id="menuBookCover">
+              <div class="menu-book-spine" aria-hidden="true"></div>
+
+              <!-- SPREAD 1: PHO (Pages 1-2) -->
+              <div class="menu-book-spread is-active" data-spread-index="0" data-category="pho" data-title="Phở Bò & Gà">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER I</span>
+                    <h3 class="menu-chapter-title">PHỞ BÒ &amp; GÀ — BEEF &amp; CHICKEN PHỞ</h3>
+                    <p class="menu-chapter-note">Small: $14.99 &bull; Large: $15.99 (unless noted)</p>
+                  </div>
+                  <div class="menu-featured-showcase">
+                    <img src="assets/images/pho-hero.png" alt="Phở Đặc Biệt" class="menu-featured-img" />
+                    <div class="menu-featured-info">
+                      <span class="menu-featured-badge">CHEF'S SIGNATURE #9</span>
+                      <h4>PHỞ ĐẶC BIỆT</h4>
+                      <p>24-hr bone broth w. rare steak, flank, brisket, tendon, tripe &amp; beef meatballs.</p>
+                      <span class="menu-featured-price">S: $16.99 / L: $18.99</span>
+                    </div>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#9</span><span class="menu-item-vn">Phở Đặc Biệt</span><span class="menu-item-dots"></span><span class="menu-item-price">$16.99 / $18.99</span></div>
+                      <p class="menu-item-en">Noodle, Rare Steak, Flank, Tendon, Tripe, Beef Meat Ball, Brisket</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#10</span><span class="menu-item-vn">Phở Tái</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Eye Round Rare Steak</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#11</span><span class="menu-item-vn">Phở Tái, Gân</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Rare Steak &amp; Soft Tendon</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#12</span><span class="menu-item-vn">Phở Tái, Gân, Sách</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Rare Steak, Tendon &amp; Beef Tripe</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#13</span><span class="menu-item-vn">Phở Tái, Nạm</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Rare Steak &amp; Well-Done Flank</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#14</span><span class="menu-item-vn">Phở Tái, Nạm, Gân</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Rare Steak, Flank &amp; Tendon</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 01</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER I (CONT.)</span>
+                    <h3 class="menu-chapter-title">WELL-DONE, CHICKEN &amp; SEAFOOD PHỞ</h3>
+                    <p class="menu-chapter-note">Served with fresh basil, bean sprouts, jalapeño &amp; lime</p>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#15</span><span class="menu-item-vn">Phở Chín</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Tender Well-Done Brisket</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#16</span><span class="menu-item-vn">Phở Chín, Gân</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Well-Done Steak &amp; Tendon</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#17</span><span class="menu-item-vn">Phở Chín, Gân, Sách</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Well-Done Steak, Tendon &amp; Tripe</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#18</span><span class="menu-item-vn">Phở Chín, Nạm</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Well-Done Brisket &amp; Flank</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#19</span><span class="menu-item-vn">Phở Chín, Nạm, Gân</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Well-Done Brisket, Flank &amp; Tendon</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#20</span><span class="menu-item-vn">Phở Bò Viên</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Savory Vietnamese Beef Meatballs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#21</span><span class="menu-item-vn">Phở Tái, Bò Viên</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Rare Steak &amp; Beef Meatballs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#22</span><span class="menu-item-vn">Phở Chín, Bò Viên</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Well-Done Brisket &amp; Beef Meatballs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#23</span><span class="menu-item-vn">Phở Gà</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Traditional Shredded Chicken Noodle Soup</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#23a</span><span class="menu-item-vn">Phở Đồ Biển</span><span class="menu-item-dots"></span><span class="menu-item-price">L: $17.99</span></div>
+                      <p class="menu-item-en">Seafood Rice Noodle Soup w. Shrimp, Squid &amp; Fish Cake</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 02</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 2: BROKEN RICE PLATES (Pages 3-4) -->
+              <div class="menu-book-spread" data-spread-index="1" data-category="rice" data-title="Cơm Đĩa (Broken Rice)">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER II</span>
+                    <h3 class="menu-chapter-title">CƠM ĐĨA — BROKEN RICE PLATES</h3>
+                    <p class="menu-chapter-note">Served with steamed jasmine broken rice, pickled veggies &amp; house fish sauce</p>
+                  </div>
+                  <div class="menu-featured-showcase">
+                    <img src="assets/images/com-tam-hero.png" alt="Cơm Tấm Đặc Biệt" class="menu-featured-img" />
+                    <div class="menu-featured-info">
+                      <span class="menu-featured-badge">HOUSE FAVORITE #42</span>
+                      <h4>CƠM ĐẶC BIỆT SƯỜN BÌ CHẢ TRỨNG</h4>
+                      <p>Char-grilled lemongrass pork chop, shredded pork skin, steamed egg cake &amp; fried egg.</p>
+                      <span class="menu-featured-price">$17.99</span>
+                    </div>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#42</span><span class="menu-item-vn">Cơm Đặc Biệt - Sườn, Bì, Chả, Trứng</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Steamed Rice w. Pork Chop, Shredded Pork, Pork Cake &amp; Fried Egg</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#43</span><span class="menu-item-vn">Cơm Sườn Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Char-Grilled Lemongrass Pork Chop</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#44</span><span class="menu-item-vn">Cơm Sườn, Bì</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Grilled Pork Chop &amp; Shredded Pork</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#45</span><span class="menu-item-vn">Cơm Sườn, Bì, Chả</span><span class="menu-item-dots"></span><span class="menu-item-price">$16.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Pork Chop, Shredded Pork &amp; Egg Meatloaf</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#46</span><span class="menu-item-vn">Cơm Bì, Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Shredded Pork &amp; Crispy Spring Rolls</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#47</span><span class="menu-item-vn">Cơm Thịt Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sliced Char-Grilled Pork</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#48</span><span class="menu-item-vn">Cơm Thịt Nướng, Bì</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sliced Grilled Pork &amp; Shredded Pork</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#49</span><span class="menu-item-vn">Cơm Thịt Nướng, Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sliced Grilled Pork &amp; Spring Rolls</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 03</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER II (CONT.)</span>
+                    <h3 class="menu-chapter-title">WOK-SEARED &amp; FRIED RICE PLATES</h3>
+                    <p class="menu-chapter-note">Wok-tossed to order over high flame with fragrant garlic &amp; lemongrass</p>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#50</span><span class="menu-item-vn">Cơm Gà Xào Xả</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sautéed Chicken in Lemongrass Sauce</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#51</span><span class="menu-item-vn">Cơm Gà Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Marinated Char-Grilled Chicken</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#52</span><span class="menu-item-vn">Cơm Tôm Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Char-Grilled Jumbo Shrimp</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#53</span><span class="menu-item-vn">Cơm Bò Xào Rau Cải</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sautéed Beef &amp; Mixed Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#53a</span><span class="menu-item-vn">Cơm Tôm Xào Rau Cải</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sautéed Shrimp &amp; Mixed Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#54</span><span class="menu-item-vn">Cơm Bò Xào Sa Tế</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sautéed Beef in Spicy Chili Sa-Tế Sauce</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#55</span><span class="menu-item-vn">Cơm Bò Lúc Lắc</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Wok-Seared Cubed Ribeye Beef &amp; Onions</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#56</span><span class="menu-item-vn">Cơm Chiên Dương Châu</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">House Special Fried Rice w. Shrimp, BBQ Pork, Egg &amp; Peas</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#57</span><span class="menu-item-vn">Cơm Chiên Chay</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vegetarian Fried Rice with Golden Tofu &amp; Mixed Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#58</span><span class="menu-item-vn">Cơm Chiên Gà</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Wok-Tossed Fried Rice with Tender White Meat Chicken</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#79</span><span class="menu-item-vn">Cơm Bò Bíp Tết</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Char-Grilled Marinated Rib-Eye Steak Served with Steamed Rice</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 04</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 3: APPETIZERS & NOODLE SOUPS (Pages 5-6) -->
+              <div class="menu-book-spread" data-spread-index="2" data-category="appetizers" data-title="Khai Vị & Hủ Tiếu Mì">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER III</span>
+                    <h3 class="menu-chapter-title">MÓN KHAI VỊ — APPETIZERS</h3>
+                    <p class="menu-chapter-note">Hand-rolled daily &amp; served with house peanut hoisin or fish sauce dip</p>
+                  </div>
+                  <div class="menu-featured-duo">
+                    <div class="menu-featured-mini">
+                      <img src="assets/images/goi-cuon-hero.png" alt="Gỏi Cuốn" />
+                      <div>
+                        <span>#1 GỎI CUỐN (2)</span>
+                        <strong>$5.99</strong>
+                      </div>
+                    </div>
+                    <div class="menu-featured-mini">
+                      <img src="assets/images/cha-gio-hero.jpg" alt="Chả Giò" />
+                      <div>
+                        <span>#5 CHẢ GIÒ (2)</span>
+                        <strong>$5.99</strong>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#1</span><span class="menu-item-vn">Gỏi Cuốn Tôm Thịt (2 Rolls)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.99</span></div>
+                      <p class="menu-item-en">Fresh Rice Paper Rolls with Steamed Shrimp, Pork, Vermicelli &amp; Mint</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#2</span><span class="menu-item-vn">Gỏi Cuốn Chay (2 Rolls)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.99</span></div>
+                      <p class="menu-item-en">Vegetarian Fresh Rice Paper Rolls with Fried Tofu &amp; Rice Noodles</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#4</span><span class="menu-item-vn">Thịt Nướng Cuốn (2 Rolls)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.99</span></div>
+                      <p class="menu-item-en">Fresh Rice Paper Rolls with Char-Grilled Lemongrass Pork &amp; Herbs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#5</span><span class="menu-item-vn">Chả Giò Tôm Thịt (2 Rolls)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.99</span></div>
+                      <p class="menu-item-en">Crispy Fried Imperial Spring Rolls with Ground Pork &amp; Shrimp</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#6</span><span class="menu-item-vn">Chả Giò Chay (2 Rolls)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.99</span></div>
+                      <p class="menu-item-en">Crispy Vegetarian Spring Rolls with Tofu, Taro &amp; Glass Noodles</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#7</span><span class="menu-item-vn">Chén Súp Thái (For 1)</span><span class="menu-item-dots"></span><span class="menu-item-price">$8.99</span></div>
+                      <p class="menu-item-en">Hot &amp; Sour Thai-Style Soup with Shrimp and Fresh Vegetables</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 05</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER III (CONT.)</span>
+                    <h3 class="menu-chapter-title">HỦ TIẾU &amp; MÌ — CLEAR &amp; EGG NOODLE SOUPS</h3>
+                    <p class="menu-chapter-note">Slow-simmered pork &amp; seafood broth or rich aromatic beef stew</p>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#24</span><span class="menu-item-vn">Mì Đồ Biển</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Egg Noodle Soup w. Shrimp, Squid, Fish Ball &amp; Crab Stick</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#25</span><span class="menu-item-vn">Hủ Tiếu Đồ Biển</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Clear Rice Noodle Soup w. Shrimp, Squid, Fish Ball &amp; Crab Stick</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#26</span><span class="menu-item-vn">Mì Khô Đồ Biển</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Tossed Dry Egg Noodles w. Seafood &amp; Chef's Special Savory Sauce</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#27</span><span class="menu-item-vn">Hủ Tiếu Chay</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vegetarian Rice Noodle Soup w. Fried Tofu &amp; Mixed Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#28</span><span class="menu-item-vn">Hủ Tiếu Bò Kho</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Aromatic Lemongrass Braised Beef Stew with Rice Noodles</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#29</span><span class="menu-item-vn">Mì Bò Kho</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Aromatic Lemongrass Braised Beef Stew with Egg Noodles</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#30</span><span class="menu-item-vn">Mì Hoành Thánh &amp; Xá Xíu</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Egg Noodle Soup with Handmade Pork Wontons &amp; Roast BBQ Pork</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#31</span><span class="menu-item-vn">Hủ Tiếu Gà</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Clear Rice Noodle Soup with Tender Shredded Chicken</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 06</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 4: VERMICELLI BOWLS & HUE NOODLES (Pages 7-8) -->
+              <div class="menu-book-spread" data-spread-index="3" data-category="noodles" data-title="Bún Thịt Nướng & Bún Bò Huế">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER IV</span>
+                    <h3 class="menu-chapter-title">BÚN THỊT NƯỚNG — VERMICELLI BOWLS</h3>
+                    <p class="menu-chapter-note">Served over cool rice vermicelli, crisp lettuce, herbs, peanuts &amp; nước chấm</p>
+                  </div>
+                  <div class="menu-featured-duo">
+                    <div class="menu-featured-mini">
+                      <img src="assets/images/bun-thit-nuong-hero.png" alt="Bún Thịt Nướng Chả Giò" />
+                      <div>
+                        <span>#33 BÚN THỊT NƯỚNG CHẢ GIÒ</span>
+                        <strong>$15.99</strong>
+                      </div>
+                    </div>
+                    <div class="menu-featured-mini">
+                      <img src="assets/images/bun-thit-nuong-dish.jpg" alt="Bún Thịt Nướng" />
+                      <div>
+                        <span>#34 BÚN THỊT NƯỚNG</span>
+                        <strong>$15.99</strong>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#32</span><span class="menu-item-vn">Bún Đặc Biệt - Thịt Nướng, Tôm &amp; Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Vermicelli w. Grilled Pork, Grilled Shrimp, Crispy Spring Rolls &amp; Veggies</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#33</span><span class="menu-item-vn">Bún Thịt Nướng, Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Sliced Grilled Pork, Crispy Spring Rolls &amp; Veggies</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#34</span><span class="menu-item-vn">Bún Thịt Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Char-Grilled Lemongrass Pork &amp; Fresh Herbs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#35</span><span class="menu-item-vn">Bún Tôm Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Char-Grilled Marinated Shrimp &amp; Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#36</span><span class="menu-item-vn">Bún Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Golden Crispy Imperial Spring Rolls &amp; Greens</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 07</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER IV (CONT.)</span>
+                    <h3 class="menu-chapter-title">BÚN BÒ HUẾ &amp; LEMONGRASS VERMICELLI</h3>
+                    <p class="menu-chapter-note">Regional central Vietnamese noodle soups &amp; wok-tossed vermicelli bowls</p>
+                  </div>
+                  <div class="menu-featured-showcase">
+                    <img src="assets/images/bun-bo-hue-hero.png" alt="Bún Bò Huế" class="menu-featured-img" />
+                    <div class="menu-featured-info">
+                      <span class="menu-featured-badge">ROYAL SPECIALTY #59</span>
+                      <h4>BÚN BÒ HUẾ</h4>
+                      <p>Spicy lemongrass beef &amp; pork broth w. beef shank, pork hock &amp; Vietnamese ham.</p>
+                      <span class="menu-featured-price">$17.99</span>
+                    </div>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#37</span><span class="menu-item-vn">Bún Bì, Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Shredded Pork, Crispy Spring Rolls &amp; Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#38</span><span class="menu-item-vn">Bún Chả Giò Chay</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vegetarian Vermicelli Bowl with Crispy Tofu Spring Rolls &amp; Herbs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#39</span><span class="menu-item-vn">Bún Thịt Bò Xào Xả</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Wok-Sautéed Lemongrass Beef &amp; Onions</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#40</span><span class="menu-item-vn">Bún Gà Xào Xả</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Wok-Sautéed Lemongrass Chicken</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#41</span><span class="menu-item-vn">Bún Gà Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Char-Grilled Marinated Chicken &amp; Veggies</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#59</span><span class="menu-item-vn">Bún Bò Huế</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Spicy Hue-Style Beef Shank, Pork Hock &amp; Vietnamese Ham Noodle Soup</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#60</span><span class="menu-item-vn">Bún Riêu Cua</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Savory Crab Paste &amp; Tomato Vermicelli Soup with Meatballs &amp; Tofu</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 08</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 5: BANH MI & HOMESTYLE SPECIALTIES (Pages 9-10) -->
+              <div class="menu-book-spread" data-spread-index="4" data-category="specialties" data-title="Bánh Mì & Món Quê Hương">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER V</span>
+                    <h3 class="menu-chapter-title">BÁNH MÌ, BÁNH XÈO &amp; BÁNH HỎI</h3>
+                    <p class="menu-chapter-note">Toasted French baguettes, sizzling turmeric crepes &amp; woven vermicelli</p>
+                  </div>
+                  <div class="menu-featured-duo">
+                    <div class="menu-featured-mini">
+                      <img src="assets/images/banh-mi-hero.png" alt="Bánh Mì Thịt Nướng" />
+                      <div>
+                        <span>#76 BÁNH MÌ THỊT NƯỚNG</span>
+                        <strong>$8.00</strong>
+                      </div>
+                    </div>
+                    <div class="menu-featured-mini">
+                      <img src="assets/images/banh-xeo-hero.jpg" alt="Bánh Xèo" />
+                      <div>
+                        <span>#63 BÁNH XÈO MIỀN TÂY</span>
+                        <strong>$13.99</strong>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#76</span><span class="menu-item-vn">Bánh Mì Thịt Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$8.00</span></div>
+                      <p class="menu-item-en">Crispy Vietnamese Baguette w. Grilled Pork, Pâté, Pickles &amp; Cilantro</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#75</span><span class="menu-item-vn">Bánh Mì Thịt Nguội Đặc Biệt</span><span class="menu-item-dots"></span><span class="menu-item-price">$8.00</span></div>
+                      <p class="menu-item-en">Traditional Cold-Cut Vietnamese Hoagie w. Pâté, Ham &amp; Pickled Daikon</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#74</span><span class="menu-item-vn">Bánh Mì Bò Kho</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Slow-Braised Lemongrass Beef Stew Served with Toasted Baguette</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#63</span><span class="menu-item-vn">Bánh Xèo Tôm Thịt</span><span class="menu-item-dots"></span><span class="menu-item-price">$13.99</span></div>
+                      <p class="menu-item-en">Crispy Golden Coconut Crepe Stuffed w. Shrimp, Pork &amp; Bean Sprouts</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#77</span><span class="menu-item-vn">Bánh Hỏi Thịt Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Fine Woven Rice Vermicelli Bundles w. Char-Grilled Pork &amp; Herbs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#78</span><span class="menu-item-vn">Bánh Hỏi Chạo Tôm</span><span class="menu-item-dots"></span><span class="menu-item-price">$19.99</span></div>
+                      <p class="menu-item-en">Fine Woven Rice Vermicelli w. Sugarcane Grilled Shrimp Paste</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 09</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER V (CONT.)</span>
+                    <h3 class="menu-chapter-title">MÓN QUÊ HƯƠNG — CLAY POT, CANH CHUA &amp; SEAFOOD</h3>
+                    <p class="menu-chapter-note">Traditional Southern Vietnamese family-style dishes</p>
+                  </div>
+                  <div class="menu-featured-showcase">
+                    <img src="assets/images/ca-kho-to-hero.jpg" alt="Cá Kho Tộ" class="menu-featured-img" />
+                    <div class="menu-featured-info">
+                      <span class="menu-featured-badge">CLAY POT CLASSIC #66</span>
+                      <h4>CÁ KHO TỘ</h4>
+                      <p>Catfish steaks slow-braised in caramelized fish sauce, black pepper &amp; scallions.</p>
+                      <span class="menu-featured-price">$18.99</span>
+                    </div>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#64</span><span class="menu-item-vn">Canh Chua Cá (Large)</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Tamarind Sweet &amp; Sour Soup with Catfish, Pineapple, Tomato &amp; Herbs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#65</span><span class="menu-item-vn">Canh Chua Tôm (Large)</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Tamarind Sweet &amp; Sour Soup with Jumbo Shrimp &amp; Fresh Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#66</span><span class="menu-item-vn">Cá Kho Tộ</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Caramelized Catfish Simmered in Savory Brown Sauce in a Clay Pot</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#67</span><span class="menu-item-vn">Canh Chua Thái (Large)</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Spicy Thai-Style Lemongrass Soup with Shrimp &amp; Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#69</span><span class="menu-item-vn">Đồ Xào Chay</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Wok-Sautéed Fried Tofu &amp; Mixed Vegetables in Savory Brown Sauce</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#70</span><span class="menu-item-vn">Mực Rang Muối</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Crispy Salt &amp; Pepper Calamari Tossed with Garlic, Scallions &amp; Chili</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#71</span><span class="menu-item-vn">Tôm Chiên Bột</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Golden Crispy Battered Jumbo Shrimps</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#72</span><span class="menu-item-vn">Tôm Rang Muối</span><span class="menu-item-dots"></span><span class="menu-item-price">$21.99</span></div>
+                      <p class="menu-item-en">Crispy Salt &amp; Pepper Head-On Jumbo Shrimps w. Garlic &amp; Jalapeño</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#73</span><span class="menu-item-vn">Tôm Kho Tàu</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Jumbo Shrimp Simmered in Caramelized Garlic Sauce in a Clay Pot</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 10</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 6: BEVERAGES & SMOOTHIES (Pages 11-12) -->
+              <div class="menu-book-spread" data-spread-index="5" data-category="drinks" data-title="Giải Khát & Sinh Tố">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER VI</span>
+                    <h3 class="menu-chapter-title">CÀ PHÊ PHIN &amp; GIẢI KHÁT — COFFEE &amp; REFRESHERS</h3>
+                    <p class="menu-chapter-note">Traditional slow-dripped Vietnamese Robusta coffee &amp; tropical refreshers</p>
+                  </div>
+                  <div class="menu-featured-showcase">
+                    <img src="assets/images/ca-phe-hero.png" alt="Cà Phê Sữa Đá" class="menu-featured-img" />
+                    <div class="menu-featured-info">
+                      <span class="menu-featured-badge">ROBUSTA PHIN #D3</span>
+                      <h4>CÀ PHÊ SỮA ĐÁ</h4>
+                      <p>Slow-dripped dark roast Vietnamese coffee over creamy sweetened condensed milk.</p>
+                      <span class="menu-featured-price">$6.00</span>
+                    </div>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D3</span><span class="menu-item-vn">Cà Phê Sữa (Nóng hoặc Đá)</span><span class="menu-item-dots"></span><span class="menu-item-price">$6.00</span></div>
+                      <p class="menu-item-en">Traditional Vietnamese Phin Filter Coffee with Condensed Milk (Hot/Iced)</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D2</span><span class="menu-item-vn">Cà Phê Đen (Nóng hoặc Đá)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.00</span></div>
+                      <p class="menu-item-en">Traditional Bold Vietnamese Black Coffee with Sugar (Hot/Iced)</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D5</span><span class="menu-item-vn">Ly Dừa Tươi</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.00</span></div>
+                      <p class="menu-item-en">Chilled Young Coconut Juice with Tender Coconut Meat</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D6</span><span class="menu-item-vn">Ly Rau Má Tươi</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.00</span></div>
+                      <p class="menu-item-en">Refreshing Sweetened Green Pennywort Herbal Drink</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D4</span><span class="menu-item-vn">Sữa Đậu Nành</span><span class="menu-item-dots"></span><span class="menu-item-price">$4.00</span></div>
+                      <p class="menu-item-en">Creamy House-Style Sweetened Soy Milk</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D1</span><span class="menu-item-vn">Nước Ngọt Các Loại</span><span class="menu-item-dots"></span><span class="menu-item-price">$2.00</span></div>
+                      <p class="menu-item-en">Coke, Diet Coke, Sprite, Root Beer, Fanta Orange, Nestea, Ginger Ale</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 11</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER VI (CONT.)</span>
+                    <h3 class="menu-chapter-title">TRÀ SỮA, SODA CHANH &amp; SINH TỐ — TEAS &amp; SMOOTHIES</h3>
+                    <p class="menu-chapter-note">Blended fresh to order with real tropical fruits &amp; condensed milk</p>
+                  </div>
+                  <div class="menu-featured-duo">
+                    <div class="menu-featured-mini">
+                      <img src="assets/images/tra-sua-thai-hero.jpg" alt="Trà Sữa Thái" />
+                      <div>
+                        <span>#D10 TRÀ SỮA THÁI</span>
+                        <strong>$5.00</strong>
+                      </div>
+                    </div>
+                    <div class="menu-featured-mini">
+                      <img src="assets/images/sinh-to-bo-hero.jpg" alt="Sinh Tố Bơ" />
+                      <div>
+                        <span>#D12 SINH TỐ BƠ</span>
+                        <strong>$6.00</strong>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D10</span><span class="menu-item-vn">Ly Trà Sữa Thái</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.00</span></div>
+                      <p class="menu-item-en">Authentic Spiced Thai Iced Tea Topped with Creamy Half &amp; Half</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D12</span><span class="menu-item-vn">Sinh Tố Trái Cây (5 Vị Tự Chọn)</span><span class="menu-item-dots"></span><span class="menu-item-price">$6.00</span></div>
+                      <p class="menu-item-en">Tropical Fruit Smoothies: Avocado (Bơ), Durian (Sầu Riêng), Jackfruit (Mít), Soursop (Mãng Cầu), or Fresh Strawberry (Dâu Tươi)</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D7</span><span class="menu-item-vn">Ly Soda Chanh Đường</span><span class="menu-item-dots"></span><span class="menu-item-price">$6.00</span></div>
+                      <p class="menu-item-en">Freshly Squeezed Limeade Fizzed with Sparkling Club Soda</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D8</span><span class="menu-item-vn">Ly Đá Chanh Đường</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.00</span></div>
+                      <p class="menu-item-en">Classic Vietnamese Fresh Squeezed Sweetened Iced Limeade</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 12</span></div>
+                </div>
               </div>
             </div>
-          </article>
 
-          <!-- Dish 2: Cơm Tấm Sườn Bì Chả Trứng -->
-          <article class="dish-card" data-category="rice">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">RICE #42</span>
-              <img
-                src="assets/images/com-tam-hero.png"
-                alt="Cơm Tấm Sườn Bì Chả Trứng"
-              />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">CƠM TẤM ĐẶC BIỆT</h3>
-              <p class="dish-sub">Broken Rice w. Pork Chop, Skin & Egg Cake</p>
-              <p class="dish-desc">
-                Char-grilled marinated lemongrass pork chop, savory steamed egg
-                meatloaf, shredded pork skin, sunny-side fried egg, scallion
-                oil, and house fish sauce dip.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$17.99</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
+            <!-- Book Page Flip Controls -->
+            <div class="menu-book-controls">
+              <button type="button" class="menu-flip-btn" id="menuPrevSpreadBtn" aria-label="Previous Menu Page">
+                <span>&larr;</span>
+                <span>Trang trước</span>
+              </button>
+              <div class="menu-book-indicator" id="menuSpreadIndicator">
+                Trang 1–2 / 12 &bull; Phở Bò &amp; Gà
               </div>
+              <button type="button" class="menu-flip-btn" id="menuNextSpreadBtn" aria-label="Next Menu Page">
+                <span>Trang sau</span>
+                <span>&rarr;</span>
+              </button>
             </div>
-          </article>
-
-          <!-- Dish 3: Gỏi Cuốn Tôm Thịt -->
-          <article class="dish-card" data-category="appetizers">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">ROLLS #1</span>
-              <img
-                src="assets/images/goi-cuon-hero.png"
-                alt="Gỏi Cuốn Tôm Thịt"
-              />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">GỎI CUỐN (2 ROLLS)</h3>
-              <p class="dish-sub">
-                Fresh Spring Rolls w. Steamed Shrimp & Pork
-              </p>
-              <p class="dish-desc">
-                Thin translucent rice paper hand-rolled with fresh pink shrimp,
-                tender pork, vermicelli, crisp lettuce, and fresh mint. Served
-                with warm peanut hoisin sauce.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$5.99</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Dish 4: Bánh Mì Thịt Nướng -->
-          <article class="dish-card" data-category="specialties">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">BANH MI #76</span>
-              <img
-                src="assets/images/banh-mi-hero.png"
-                alt="Bánh Mì Thịt Nướng"
-              />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">BÁNH MÌ THỊT NƯỚNG</h3>
-              <p class="dish-sub">Grilled Lemongrass Pork Vietnamese Hoagie</p>
-              <p class="dish-desc">
-                Crisp golden French baguette stuffed with savory char-grilled
-                pork, liver pâté, Vietnamese mayo, fresh cucumber, pickled
-                carrots, daikon, and spicy jalapeños.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$8.00</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Dish 5: Bún Bò Huế -->
-          <article class="dish-card" data-category="noodles">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">NOODLES #59</span>
-              <img src="assets/images/bun-bo-hue-hero.png" alt="Bún Bò Huế" />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">BÚN BÒ HUẾ</h3>
-              <p class="dish-sub">Spicy Hue-Style Beef & Pork Noodle Soup</p>
-              <p class="dish-desc">
-                Thick round rice noodles in a vibrant spicy lemongrass and chili
-                sa-te broth, topped with sliced beef shank, Vietnamese pork ham,
-                pork meatballs, and crisp greens.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$17.99</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Dish 6: Bún Thịt Nướng Chả Giò -->
-          <article class="dish-card" data-category="noodles">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">VERMICELLI #33</span>
-              <img
-                src="assets/images/bun-thit-nuong-hero.png"
-                alt="Bún Thịt Nướng Chả Giò"
-              />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">BÚN THỊT NƯỚNG CHẢ GIÒ</h3>
-              <p class="dish-sub">
-                Vermicelli w. Grilled Pork & Crispy Spring Rolls
-              </p>
-              <p class="dish-desc">
-                Warm rice vermicelli noodles topped with sliced grilled
-                lemongrass pork, crispy golden spring rolls, crushed peanuts,
-                scallion oil, and house-blended fish sauce.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$15.99</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Dish 7: Cà Phê Sữa Đá Phin -->
-          <article class="dish-card" data-category="drinks">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">DRINKS #D3</span>
-              <img src="assets/images/ca-phe-hero.png" alt="Cà Phê Sữa Đá" />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">CÀ PHÊ SỮA ĐÁ</h3>
-              <p class="dish-sub">Traditional Vietnamese Iced Coffee w. Milk</p>
-              <p class="dish-desc">
-                Slow-dripped dark roast Robusta coffee brewed through a
-                traditional Phin filter, blended smoothly with sweet condensed
-                milk and served over ice cubes.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$6.00</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Dish 8: Bánh Xèo Miền Tây -->
-          <article class="dish-card" data-category="specialties">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">SPECIALTY #63</span>
-              <img
-                src="assets/images/banh-xeo-hero.jpg"
-                alt="Bánh Xèo Miền Tây"
-                loading="lazy"
-              />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">BÁNH XÈO MIỀN TÂY</h3>
-              <p class="dish-sub">Crispy Vietnamese Crepe w. Shrimp & Pork</p>
-              <p class="dish-desc">
-                Sizzling golden turmeric coconut crepe packed with tender pork,
-                sweet shrimp, onions, and bean sprouts. Served with crisp mustard
-                greens, fresh herbs, and house chili fish sauce dip.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$13.99</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Dish 9: Cá Kho Tộ -->
-          <article class="dish-card" data-category="specialties">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">SPECIALTY #66</span>
-              <img
-                src="assets/images/ca-kho-to-hero.jpg"
-                alt="Cá Kho Tộ"
-                loading="lazy"
-              />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">CÁ KHO TỘ</h3>
-              <p class="dish-sub">Caramelized Catfish Simmered in Clay Pot</p>
-              <p class="dish-desc">
-                Fresh catfish steaks slow-braised in a traditional earthenware
-                pot with rich caramelized fish sauce, cracked black pepper,
-                scallions, and bird's eye chilies. Served sizzling hot.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$18.99</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Dish 10: Chả Giò Giòn Rụm -->
-          <article class="dish-card" data-category="appetizers">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">ROLLS #5</span>
-              <img
-                src="assets/images/cha-gio-hero.jpg"
-                alt="Chả Giò Giòn Rụm"
-                loading="lazy"
-              />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">CHẢ GIÒ (2 ROLLS)</h3>
-              <p class="dish-sub">Crispy Fried Spring Rolls w. Pork & Shrimp</p>
-              <p class="dish-desc">
-                Deep-fried golden pastry hand-rolled with seasoned ground pork,
-                shrimp, wood ear mushrooms, and glass noodles. Accompanied by
-                fresh lettuce leaves, mint, and savory dipping sauce.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$5.99</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Dish 11: Bún Thịt Nướng -->
-          <article class="dish-card" data-category="noodles">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">VERMICELLI #34</span>
-              <img
-                src="assets/images/bun-thit-nuong-dish.jpg"
-                alt="Bún Thịt Nướng"
-                loading="lazy"
-              />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">BÚN THỊT NƯỚNG</h3>
-              <p class="dish-sub">Rice Vermicelli w. Char-Grilled Pork</p>
-              <p class="dish-desc">
-                Steamed rice vermicelli topped with aromatic char-grilled pork
-                slices, roasted crushed peanuts, scallion oil, fresh cucumber,
-                pickled carrots and daikon, served with house fish sauce dressing.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$15.99</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Dish 12: Trà Sữa Thái -->
-          <article class="dish-card" data-category="drinks">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">DRINKS #D10</span>
-              <img
-                src="assets/images/tra-sua-thai-hero.jpg"
-                alt="Trà Sữa Thái"
-                loading="lazy"
-              />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">TRÀ SỮA THÁI</h3>
-              <p class="dish-sub">Authentic Brewed Thai Iced Tea w. Cream</p>
-              <p class="dish-desc">
-                Rich spiced black tea brewed with star anise and aromatic spices,
-                sweetened with condensed milk and layered with creamy milk over
-                crystal-clear ice.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$5.00</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Dish 13: Sinh Tố Bơ -->
-          <article class="dish-card" data-category="drinks">
-            <div class="dish-img-wrap">
-              <span class="dish-cat-tag">DRINKS #D12</span>
-              <img
-                src="assets/images/sinh-to-bo-hero.jpg"
-                alt="Sinh Tố Bơ"
-                loading="lazy"
-              />
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">SINH TỐ BƠ</h3>
-              <p class="dish-sub">Creamy Hass Avocado Smoothie w. Milk</p>
-              <p class="dish-desc">
-                Velvety smooth puree of premium ripe Hass avocados, blended with
-                sweetened condensed milk and fine crushed ice. Rich, buttery, and
-                refreshingly decadent.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price">$6.00</span>
-                <button class="btn-add-order btn-order-trigger">
-                  <span>Add to Order</span>
-                  <span>↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
     <!-- ========================================================================
        7. About Us & Experience Section ("EXCEPTIONAL EXPERIENCE WITH PREMIUM QUALITY")
