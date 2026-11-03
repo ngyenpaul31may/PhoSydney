@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const p1 = currentSpread * 2 + 1;
       const p2 = currentSpread * 2 + 2;
       const title = activeSpread.dataset.title || '';
-      spreadIndicator.textContent = `Trang ${p1}–${p2} / ${total * 2} • ${title}`;
+      spreadIndicator.textContent = `Pages ${p1}–${p2} / ${total * 2} • ${title}`;
     }
   }
 
