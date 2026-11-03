@@ -590,10 +590,20 @@
             </button>
           </div>
 
-          <!-- 3D Flipbook Container -->
-          <div class="menu-book-stage">
-            <div class="menu-book-cover" id="menuBookCover">
-              <div class="menu-book-spine" aria-hidden="true"></div>
+          <!-- 3D Sketchbook Flipbook Container (MengToSketchbook Engine) -->
+          <div class="menu-book-stage sb-wrap" id="sbWrap">
+            <div class="sb-stage" id="sbStage">
+              <button type="button" class="sb-arrow left" id="sbLeft" aria-label="Previous page">
+                <svg viewBox="0 0 14 44" width="16" height="48" fill="none" aria-hidden="true"><polyline points="11,3 3,22 11,41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="sb-3d" id="sb3d">
+                <div class="sb-tilt" id="sbTilt">
+                  <div class="sb-cast ambient" aria-hidden="true"></div>
+                  <div class="sb-cast contact" aria-hidden="true"></div>
+                  <div class="sb-cast hair" aria-hidden="true"></div>
+                  <div class="menu-book-cover" id="menuBookCover">
+                    <div class="sb-book" id="sbBook">
+                      <div class="menu-book-spine" aria-hidden="true"></div>
 
               <!-- SPREAD 1: PHO (Pages 1-2) -->
               <div class="menu-book-spread is-active" data-spread-index="0" data-category="pho" data-title="Beef & Chicken Pho">
@@ -1106,17 +1116,24 @@
                   <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 12</span></div>
                 </div>
               </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="sb-arrow right" id="sbRight" aria-label="Next page">
+                <svg viewBox="0 0 14 44" width="16" height="48" fill="none" aria-hidden="true"><polyline points="3,3 11,22 3,41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
 
-            <!-- Book Page Flip Controls -->
+            <!-- Book Page Flip & Sketchbook View Controls -->
             <div class="menu-book-controls">
               <button type="button" class="menu-flip-btn" id="menuPrevSpreadBtn" aria-label="Previous Menu Page">
                 <span>&larr;</span>
                 <span>Previous Page</span>
               </button>
               <div class="menu-book-indicator" id="menuSpreadIndicator">
-                Pages 1–2 / 12 &bull; Beef &amp; Chicken Pho
-              </div>
+                  Pages 1–2 / 12 &bull; Beef &amp; Chicken Pho
+                </div>
               <button type="button" class="menu-flip-btn" id="menuNextSpreadBtn" aria-label="Next Menu Page">
                 <span>Next Page</span>
                 <span>&rarr;</span>
@@ -1484,7 +1501,7 @@
           <!-- Card 1: Live Phở Station -->
           <article class="catering-card">
             <img
-              src="assets/images/catering-pho-station.jpg"
+              src="assets/images/signature-pho-dish.jpg"
               alt="Authentic Live Phở Banquet Catering Station"
               class="catering-card-img"
               loading="lazy"
@@ -1503,7 +1520,7 @@
           <!-- Card 2: Party Platters -->
           <article class="catering-card">
             <img
-              src="assets/images/catering-party-platters.jpg"
+              src="assets/images/bun-bo-hue-dish.jpg"
               alt="Gourmet Bánh Mì Sliders & Imperial Spring Roll Platters"
               class="catering-card-img"
               loading="lazy"
@@ -1522,7 +1539,7 @@
           <!-- Card 3: Char-Grilled Meat Spread -->
           <article class="catering-card">
             <img
-              src="assets/images/catering-grilled-spread.jpg"
+              src="assets/images/grilled-ribeye-dish.jpg"
               alt="Char-Grilled Lemongrass Meat Banquet Feast"
               class="catering-card-img"
               loading="lazy"

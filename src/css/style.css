@@ -1597,6 +1597,7 @@ button {
 
 .full-menu-collapsible.is-open {
   max-height: 7000px;
+  overflow: visible;
   opacity: 1;
   margin-top: 48px;
 }
@@ -1778,17 +1779,118 @@ button {
   color: var(--color-text-white);
 }
 
-/* Interactive 3D Flipbook Menu */
-.menu-book-stage {
-  perspective: 2200px;
-  max-width: 1140px;
+/* Interactive 3D Flipbook Menu (MengToSketchbook Engine) */
+.menu-book-stage.sb-wrap {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  width: 100%;
+  max-width: 1220px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.sb-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  position: relative;
+  touch-action: pan-y;
+}
+
+.sb-arrow {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 6px;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 246, 236, 0.48);
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 8;
+}
+
+.sb-arrow:hover {
+  color: #fff6ec;
+  transform: scale(1.12);
+}
+
+.sb-3d {
+  position: relative;
+  flex: 1 1;
+  min-width: 0;
+  max-width: 1140px;
+  perspective: 1750px;
+  perspective-origin: 50% 46%;
+}
+
+.sb-tilt {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(var(--zoom, 1));
+  will-change: transform;
+}
+
+/* Soft desk shadow pools underneath the sketchbook */
+.sb-cast {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sb-cast.ambient {
+  left: 4%;
+  right: 4%;
+  top: 22%;
+  bottom: -2%;
+  background: radial-gradient(
+    50% 50% at 50% 58%,
+    rgba(20, 2, 5, 0.42) 0%,
+    rgba(20, 2, 5, 0.22) 44%,
+    rgba(20, 2, 5, 0) 76%
+  );
+  filter: blur(26px);
+  opacity: calc(1 - var(--shade, 0) * 0.42);
+}
+
+.sb-cast.contact {
+  left: 8%;
+  right: 8%;
+  top: 60%;
+  bottom: 4%;
+  background: radial-gradient(
+    50% 44% at 50% 42%,
+    rgba(16, 1, 4, 0.46) 0%,
+    rgba(16, 1, 4, 0.2) 48%,
+    rgba(16, 1, 4, 0) 78%
+  );
+  filter: blur(11px);
+  opacity: calc(1 - var(--shade, 0) * 0.5);
+}
+
+.sb-cast.hair {
+  left: 11%;
+  right: 11%;
+  top: 68%;
+  bottom: 10%;
+  background: radial-gradient(
+    50% 52% at 50% 40%,
+    rgba(14, 1, 3, 0.38) 0%,
+    rgba(14, 1, 3, 0) 76%
+  );
+  filter: blur(4px);
+  opacity: calc(1 - var(--shade, 0) * 0.62);
 }
 
 .menu-book-cover {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
   background: linear-gradient(145deg, #3b0810 0%, #240409 100%);
   padding: 18px;
   border-radius: 22px;
@@ -1797,6 +1899,7 @@ button {
     inset 0 0 0 2px rgba(245, 158, 11, 0.35),
     0 4px 0 #1a0205;
   transform-style: preserve-3d;
+  z-index: 1;
 }
 
 /* Stacked paper edges effect on left & right */
@@ -1827,10 +1930,19 @@ button {
   border-radius: 0 4px 4px 0;
 }
 
+.sb-book {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  transform-style: preserve-3d;
+  z-index: 2;
+}
+
 .menu-book-spine {
   position: absolute;
-  top: 18px;
-  bottom: 18px;
+  top: 0;
+  bottom: 0;
   left: 50%;
   width: 44px;
   transform: translateX(-50%);
@@ -1868,91 +1980,194 @@ button {
   z-index: 3;
 }
 
-.menu-book-spread.flip-next-anim {
-  animation: bookFlipNext 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  transform-origin: center center;
-}
-
-.menu-book-spread.flip-prev-anim {
-  animation: bookFlipPrev 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  transform-origin: center center;
-}
-
-/* 3D Page Turning Overlay Leaf */
-.menu-turning-leaf {
-  position: absolute;
-  top: 18px;
-  bottom: 18px;
-  width: calc(50% - 18px);
-  background: linear-gradient(90deg, #f3e5cf 0%, #fff9f0 50%, #f5ead8 100%);
-  z-index: 25;
+/* ---- Active 3D Curved Page Turn Layer (MengToSketchbook 14-strip chain) ---- */
+.sb-turn-layer {
+  grid-area: 1 / 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: 15;
   pointer-events: none;
-  backface-visibility: visible;
-  box-shadow: -15px 0 35px rgba(0, 0, 0, 0.28);
 }
 
-.menu-turning-leaf.turn-forward {
-  right: 18px;
-  border-radius: 0 14px 14px 0;
-  transform-origin: left center;
-  animation: leafTurnForward 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.sb-half {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  background-color: #fff9f0;
 }
 
-.menu-turning-leaf.turn-backward {
-  left: 18px;
+.sb-half.left {
+  left: 0;
   border-radius: 14px 0 0 14px;
+}
+
+.sb-half.right {
+  left: 50%;
+  border-radius: 0 14px 14px 0;
+}
+
+.sb-half > .menu-book-page {
+  width: 100%;
+  height: 100%;
+}
+
+/* The shadow the lifting leaf throws onto the page beneath it */
+.gutter-shade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 48%;
+  pointer-events: none;
+  opacity: calc(var(--shade, 0) * 0.65);
+  z-index: 8;
+}
+
+.gutter-shade.left {
+  right: 0;
+  background: linear-gradient(270deg, rgba(52, 38, 20, 0.34), rgba(52, 38, 20, 0) 84%);
+}
+
+.gutter-shade.right {
+  left: 0;
+  background: linear-gradient(90deg, rgba(52, 38, 20, 0.28), rgba(52, 38, 20, 0) 84%);
+}
+
+/* The turning leaf: nested strips forming a true 3D curved paper surface */
+.curl {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: calc(var(--bw, 0px) * var(--span, 0.5));
+  transform-style: preserve-3d;
+  z-index: 20;
+}
+
+.curl.next {
+  left: 50%;
+  transform-origin: left center;
+  transform: rotateY(calc(-1 * var(--tt, 0deg)));
+}
+
+.curl.prev {
+  right: 50%;
   transform-origin: right center;
-  animation: leafTurnBackward 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform: rotateY(var(--tt, 0deg));
 }
 
-@keyframes leafTurnForward {
-  0% {
-    transform: rotateY(0deg);
-    opacity: 0.95;
-  }
-  50% {
-    box-shadow: -30px 0 50px rgba(0, 0, 0, 0.45);
-  }
-  100% {
-    transform: rotateY(-180deg);
-    opacity: 0;
-  }
+.strip {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: calc(var(--bw, 0px) * var(--span, 0.5) / var(--n, 14));
+  transform-style: preserve-3d;
 }
 
-@keyframes leafTurnBackward {
-  0% {
-    transform: rotateY(0deg);
-    opacity: 0.95;
-  }
-  50% {
-    box-shadow: 30px 0 50px rgba(0, 0, 0, 0.45);
-  }
-  100% {
-    transform: rotateY(180deg);
-    opacity: 0;
-  }
+.curl.next .strip {
+  transform-origin: left center;
 }
 
-@keyframes bookFlipNext {
-  0% {
-    opacity: 0.75;
-    transform: scale(0.992);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.curl.prev .strip {
+  transform-origin: right center;
 }
 
-@keyframes bookFlipPrev {
-  0% {
-    opacity: 0.75;
-    transform: scale(0.992);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.curl.next > .strip {
+  left: 0;
+}
+
+.curl.prev > .strip {
+  right: 0;
+  left: auto;
+}
+
+.curl.next .strip .strip {
+  left: 100%;
+  transform: rotateY(var(--td, 0deg));
+}
+
+.curl.prev .strip .strip {
+  right: 100%;
+  transform: rotateY(calc(-1 * var(--td, 0deg)));
+}
+
+.face {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -1.2px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  background-color: #fff9f0;
+}
+
+.face.back {
+  transform: rotateY(180deg);
+}
+
+.strip-page-slice {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(var(--bw, 0px) * 0.5);
+  height: 100%;
+  pointer-events: none;
+}
+
+.face .sh {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.curl.next .face.front .sh,
+.curl.prev .face.back .sh {
+  background: linear-gradient(90deg, rgba(58, 43, 20, var(--a1, 0)), rgba(58, 43, 20, var(--a2, 0)));
+}
+
+.curl.next .face.back .sh,
+.curl.prev .face.front .sh {
+  background: linear-gradient(90deg, rgba(58, 43, 20, var(--a2, 0)), rgba(58, 43, 20, var(--a1, 0)));
+}
+
+.face .gl {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: #fffaf0;
+  opacity: calc(var(--shade, 0) * var(--lit, 1) * var(--lit, 1) * 0.2);
+  z-index: 6;
+}
+
+/* Interactive hit zones for dragging/clicking pages */
+.sb-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+  z-index: 25;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sb-zone:active {
+  cursor: grabbing;
+}
+
+.sb-prev {
+  left: 0;
+  width: 50%;
+}
+
+.sb-next {
+  right: 0;
+  width: 50%;
 }
 
 .menu-book-page {
@@ -2112,14 +2327,101 @@ button {
   color: var(--color-text-light);
 }
 
-/* Book Controls Bar */
+/* Book Controls & Sketchbook Zoom/Loupe Bar */
 .menu-book-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  max-width: 1140px;
   gap: 16px;
-  margin-top: 22px;
+  margin-top: 6px;
   padding: 0 8px;
+}
+
+.sb-center-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.sb-tools {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 246, 236, 0.22);
+  border-radius: 999px;
+  padding: 5px 8px;
+  background: rgba(250, 246, 238, 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.tool {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(43, 39, 33, 0.68);
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.tool:hover {
+  background: #ffffff;
+  color: #2b2721;
+}
+
+.tool[aria-pressed="true"] {
+  background: rgba(126, 14, 27, 0.14);
+  color: var(--color-hero-red);
+}
+
+.tool:disabled {
+  opacity: 0.32;
+  cursor: default;
+  background: transparent;
+}
+
+.tool svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+.tool-sep {
+  width: 1px;
+  height: 17px;
+  background: rgba(43, 39, 33, 0.18);
+  margin: 0 2px;
+}
+
+.zoom-read {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(43, 39, 33, 0.65);
+  min-width: 42px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.sb-hint {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 246, 236, 0.65);
+  transition: opacity 0.4s ease;
+}
+
+.sb-hint.gone {
+  opacity: 0;
 }
 
 .menu-flip-btn {
