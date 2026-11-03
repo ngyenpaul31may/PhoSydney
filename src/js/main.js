@@ -445,28 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   paint();
 
-  // 3. Full Menu Collapsible Toggle Logic
-  if (toggleBtn && fullMenu) {
-    toggleBtn.addEventListener('click', () => {
-      const isOpen = fullMenu.classList.toggle('is-open');
-      toggleBtn.setAttribute('aria-expanded', isOpen);
-      const chevron = toggleBtn.querySelector('.toggle-chevron');
-      if (chevron) chevron.textContent = isOpen ? '▴' : '▾';
-      const label = toggleBtn.querySelector(
-        'span:not(.toggle-icon):not(.toggle-chevron)'
-      );
-      if (label) {
-        label.textContent = isOpen
-          ? 'Hide Complete Menu Book'
-          : 'Explore Complete Categorized Menu (75+ Dishes)';
-      }
-      if (isOpen) {
-        setTimeout(layout, 60);
-      }
-    });
-  }
-
-  // 4. Category Cards in Carousel Click -> Open Full Menu & Flip to Chapter
+  // 3. Category Cards in Carousel Click -> Open Full Menu & Flip to Chapter
   const categoryCards = document.querySelectorAll('.category-card');
   categoryCards.forEach((card) => {
     card.addEventListener('click', () => {

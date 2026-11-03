@@ -1459,147 +1459,12 @@ button {
   transform: translate(2px, -2px);
 }
 
-/* 3-Column Dishes Grid */
-.discover-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.discover-card {
-  background-color: #580610;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 26px;
-  overflow: hidden;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
-  transition:
-    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 0.4s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.discover-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.38);
-}
-
-.discover-card-img-wrap {
-  width: 100%;
-  height: 270px;
-  overflow: hidden;
-  position: relative;
-  background-color: #3b030a;
-}
-
-.discover-card-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.discover-card:hover .discover-card-img-wrap img {
-  transform: scale(1.06);
-}
-
-.discover-card-body {
-  padding: 24px 26px 28px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.discover-card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.discover-dish-name {
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.discover-dish-price {
-  font-family: var(--font-ui);
-  font-size: 19px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
-  flex-shrink: 0;
-}
-
-.discover-dish-desc {
-  font-family: var(--font-ui);
-  font-size: 14px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.72);
-  font-weight: 400;
-}
-
-/* Secondary Action: Explore Full Menu */
-.full-menu-toggle-wrap {
-  margin-top: 48px;
-  display: flex;
-  justify-content: center;
-}
-
-.btn-toggle-full-menu {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(30, 4, 8, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-  padding: 13px 32px;
-  border-radius: var(--radius-pill);
-  font-family: var(--font-ui);
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
-}
-
-.btn-toggle-full-menu:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
-
-.toggle-chevron {
-  font-size: 13px;
-  transition: transform 0.3s ease;
-}
-
-.btn-toggle-full-menu[aria-expanded="true"] .toggle-chevron {
-  transform: rotate(180deg);
-}
-
-/* Collapsible Full Menu Drawer */
+/* Full Menu Book Container */
 .full-menu-collapsible {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition:
-    max-height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
-    opacity 0.4s ease,
-    margin-top 0.4s ease;
-  margin-top: 0;
-}
-
-.full-menu-collapsible.is-open {
-  max-height: 7000px;
+  max-height: none;
   overflow: visible;
   opacity: 1;
-  margin-top: 48px;
+  margin-top: 8px;
 }
 
 .full-menu-collapsible .category-filter-bar {
@@ -1892,7 +1757,7 @@ button {
 .menu-book-cover {
   position: relative;
   background: linear-gradient(145deg, #3b0810 0%, #240409 100%);
-  padding: 18px;
+  padding: 18px 24px;
   border-radius: 22px;
   box-shadow:
     0 28px 65px rgba(0, 0, 0, 0.48),
@@ -1902,14 +1767,14 @@ button {
   z-index: 1;
 }
 
-/* Stacked paper edges effect on left & right */
+/* Stacked paper edges effect on left & right — concentric with page corners */
 .menu-book-cover::before,
 .menu-book-cover::after {
   content: "";
   position: absolute;
-  top: 24px;
-  bottom: 24px;
-  width: 10px;
+  top: 18px;
+  bottom: 18px;
+  width: 24px;
   background: repeating-linear-gradient(
     to right,
     #efe3d0 0px,
@@ -1921,13 +1786,13 @@ button {
 }
 
 .menu-book-cover::before {
-  left: 10px;
-  border-radius: 4px 0 0 4px;
+  left: 14px;
+  border-radius: 14px 0 0 14px;
 }
 
 .menu-book-cover::after {
-  right: 10px;
-  border-radius: 0 4px 4px 0;
+  right: 14px;
+  border-radius: 0 14px 14px 0;
 }
 
 .sb-book {
@@ -2109,6 +1974,19 @@ button {
   transform: rotateY(180deg);
 }
 
+/* Match 14px outer page corner radius on the outermost strip of the turning leaf */
+.curl.next .strip.edge > .face.front,
+.curl.prev .strip.edge > .face.back {
+  border-radius: 0 14px 14px 0;
+  right: 0;
+}
+
+.curl.next .strip.edge > .face.back,
+.curl.prev .strip.edge > .face.front {
+  border-radius: 14px 0 0 14px;
+  right: 0;
+}
+
 .strip-page-slice {
   position: absolute;
   top: 0;
@@ -2116,6 +1994,11 @@ button {
   width: calc(var(--bw, 0px) * 0.5);
   height: 100%;
   pointer-events: none;
+}
+
+.face .sh,
+.face .gl {
+  border-radius: inherit;
 }
 
 .face .sh {
@@ -2183,11 +2066,15 @@ button {
   background-color: #fdf6ec;
   border-right: 1px solid rgba(126, 14, 27, 0.14);
   padding-right: 40px;
+  border-radius: 14px 0 0 14px;
+  overflow: hidden;
 }
 
 .menu-page-right {
   background-color: #fffaf2;
   padding-left: 40px;
+  border-radius: 0 14px 14px 0;
+  overflow: hidden;
 }
 
 /* Ornamental inner border on pages */
