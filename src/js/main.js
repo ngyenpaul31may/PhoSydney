@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sbLeft = document.getElementById('sbLeft');
   const sbRight = document.getElementById('sbRight');
   const spreadIndicator = document.getElementById('menuSpreadIndicator');
+  const menuIndexBtn = document.getElementById('menuIndexBtn');
   const hint = document.getElementById('sbHint');
   const toggleBtn = document.getElementById('toggleFullMenuBtn');
   const fullMenu = document.getElementById('fullMenuCollapsible');
@@ -41,12 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function halfEl(pos, spreadIdx) {
-    const d = el('div', 'sb-half ' + pos);
+    const isEmptyLeft = pos === 'left' && spreadIdx === 0;
+    const d = el('div', 'sb-half ' + pos + (isEmptyLeft ? ' is-empty' : ''));
     const srcPage = spreads[spreadIdx]?.querySelector(
       pos === 'left' ? '.menu-page-left' : '.menu-page-right'
     );
     if (srcPage) d.appendChild(srcPage.cloneNode(true));
-    d.appendChild(el('div', 'gutter-shade ' + pos));
+    if (!isEmptyLeft) {
+      d.appendChild(el('div', 'gutter-shade ' + pos));
+    }
     return d;
   }
 
@@ -100,6 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return c;
   }
 
+  function setOpenVars(openVal, boardOpenVal) {
+    if (!sb3d) return;
+    sb3d.style.setProperty('--open', openVal.toFixed(3));
+    sb3d.style.setProperty('--board-open', boardOpenVal.toFixed(3));
+  }
+
   function applyTurn(t) {
     if (!sb3d) return;
     const th = Math.PI * t;
@@ -110,6 +120,17 @@ document.addEventListener('DOMContentLoaded', () => {
     sb3d.style.setProperty('--tt', (tt * D).toFixed(2) + 'deg');
     sb3d.style.setProperty('--td', (td * D).toFixed(3) + 'deg');
     sb3d.style.setProperty('--shade', Math.sin(Math.PI * t).toFixed(3));
+
+    if (turn) {
+      let openVal = 1;
+      if (turn.from === 0) openVal = Math.max(0, Math.min(1, t));
+      else if (turn.to === 0) openVal = Math.max(0, Math.min(1, 1 - t));
+      const boardOpen =
+        turn.from === 0 || turn.to === 0
+          ? Math.max(0, -Math.cos(Math.PI * openVal))
+          : 1;
+      setOpenVars(openVal, boardOpen);
+    }
     for (let i = 0; i < strips.length; i++) {
       const l1 = Math.abs(Math.cos(tt - i * td));
       const l2 = Math.abs(Math.cos(tt - (i + 1) * td));
@@ -129,17 +150,39 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateMeta() {
     const cur = turn ? turn.to : idx;
     const activeSpread = spreads[cur];
-    const activeCat = activeSpread ? activeSpread.dataset.category : 'pho';
+    const activeCat = activeSpread ? activeSpread.dataset.category : 'cover';
 
     pills.forEach((p) => {
       p.classList.toggle('active', p.dataset.category === activeCat);
     });
 
     if (spreadIndicator && activeSpread) {
-      const p1 = cur * 2 + 1;
-      const p2 = cur * 2 + 2;
       const title = activeSpread.dataset.title || '';
-      spreadIndicator.textContent = `Pages ${p1}–${p2} / ${M * 2} • ${title}`;
+      if (cur === 0) {
+        spreadIndicator.textContent = `Sách Đang Đóng • ${title}`;
+      } else if (cur === 1) {
+        spreadIndicator.textContent = `${title}`;
+      } else {
+        const p1 = (cur - 2) * 2 + 1;
+        const p2 = (cur - 2) * 2 + 2;
+        spreadIndicator.textContent = `Pages ${p1}–${p2} / ${(M - 2) * 2} • ${title}`;
+      }
+    }
+
+    if (menuIndexBtn) {
+      const labelSpan = menuIndexBtn.querySelector('span:last-child');
+      if (labelSpan) {
+        labelSpan.textContent = cur === 0 ? 'Mở Mục Lục' : cur === 1 ? 'Đóng Sách' : 'Mục Lục';
+      }
+    }
+
+    if (sbLeft) {
+      sbLeft.style.opacity = cur === 0 ? '0.25' : '';
+      sbLeft.style.pointerEvents = cur === 0 ? 'none' : '';
+    }
+    if (prevSpreadBtn) {
+      prevSpreadBtn.disabled = cur === 0;
+      prevSpreadBtn.style.opacity = cur === 0 ? '0.45' : '';
     }
   }
 
@@ -172,6 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sp.classList.toggle('is-active', i === idx);
       });
       sb3d.style.setProperty('--shade', '0');
+      const openState = idx === 0 ? 0 : 1;
+      setOpenVars(openState, openState);
     } else {
       spreads.forEach((sp) => sp.classList.remove('is-active'));
       turnLayer = el('div', 'sb-turn-layer');
@@ -291,16 +336,33 @@ document.addEventListener('DOMContentLoaded', () => {
     stage.addEventListener('pointerleave', () => setView(0, 0, view.tz));
     stage.addEventListener('dblclick', () => setView(0, 0, 1));
 
+    /* ---- Interactive Chapter Index Click Inside Book ---- */
+    book.addEventListener('click', (e) => {
+      const gotoBtn = e.target.closest('[data-goto-spread]');
+      if (!gotoBtn) return;
+      e.preventDefault();
+      e.stopPropagation();
+      hideHint();
+      const targetSpread = Number(gotoBtn.dataset.gotoSpread);
+      if (!Number.isNaN(targetSpread)) {
+        flipToSpread(targetSpread);
+      }
+    });
+
     /* ---- Pointer Drag-to-Turn ---- */
     stage.addEventListener('pointerdown', (e) => {
       if (e.button !== 0) return;
-      const onBook = e.target.closest('.sb-zone');
+      if (e.target.closest('[data-goto-spread]')) return;
+      const onBook = e.target.closest('#sbBook');
       if (!onBook) return;
+      const r = book.getBoundingClientRect();
+      const relX = (e.clientX - r.left) / (r.width || 1);
+      // When book is closed (idx === 0), only the right half (relX >= 0.45) is the cover, and clicking/dragging it always opens ('next')
+      if (idx === 0 && !turn && relX < 0.45) return;
       e.preventDefault();
       stage.setPointerCapture(e.pointerId);
       hideHint();
-      const r = book.getBoundingClientRect();
-      const dir = (e.clientX - r.left) / r.width > 0.5 ? 'next' : 'prev';
+      const dir = idx === 0 ? 'next' : relX > 0.5 ? 'next' : 'prev';
       startTurn(dir, 0);
       drag = { dir, x0: e.clientX, w: r.width, moved: 0, vel: 0, tPrev: performance.now() };
     });
@@ -392,6 +454,11 @@ document.addEventListener('DOMContentLoaded', () => {
       idx = turn.to;
       turn = null;
     }
+    if (dir === 'prev' && idx === 0) return;
+    if (dir === 'next' && idx === M - 1) {
+      flipToSpread(0);
+      return;
+    }
     startTurn(dir, 0);
     commit();
   }
@@ -403,12 +470,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (turn) {
       idx = turn.to;
       turn = null;
-    }
-    const fwd = (nextIdx - idx + M) % M;
-    const back = (idx - nextIdx + M) % M;
-    if (Math.min(fwd, back) === 1) {
-      step(fwd === 1 ? 'next' : 'prev');
-      return;
     }
     const dir = nextIdx > idx ? 'next' : 'prev';
     turn = { dir, from: idx, to: nextIdx, t: 0 };
@@ -433,6 +494,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (prevSpreadBtn) prevSpreadBtn.addEventListener('click', () => step('prev'));
+  if (menuIndexBtn) {
+    menuIndexBtn.addEventListener('click', () => {
+      const cur = turn ? turn.to : idx;
+      flipToSpread(cur === 1 ? 0 : 1);
+    });
+  }
   if (nextSpreadBtn) nextSpreadBtn.addEventListener('click', () => step('next'));
   if (sbLeft) sbLeft.addEventListener('click', () => step('prev'));
   if (sbRight) sbRight.addEventListener('click', () => step('next'));

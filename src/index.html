@@ -486,34 +486,6 @@
 
         <!-- Interactive 3D Flipbook Menu -->
         <div class="full-menu-collapsible is-open" id="fullMenuCollapsible">
-          <!-- Category Bookmarks / Chapter Pills -->
-          <div class="category-filter-bar" role="tablist" aria-label="Menu Book Chapters">
-            <button class="cat-pill active" data-category="pho" data-spread="0">
-              <span>I. Beef &amp; Chicken Phở</span>
-              <span class="cat-count">16</span>
-            </button>
-            <button class="cat-pill" data-category="rice" data-spread="1">
-              <span>II. Broken Rice Plates</span>
-              <span class="cat-count">19</span>
-            </button>
-            <button class="cat-pill" data-category="appetizers" data-spread="2">
-              <span>III. Appetizers &amp; Noodle Soup</span>
-              <span class="cat-count">14</span>
-            </button>
-            <button class="cat-pill" data-category="noodles" data-spread="3">
-              <span>IV. Vermicelli Bowls</span>
-              <span class="cat-count">12</span>
-            </button>
-            <button class="cat-pill" data-category="specialties" data-spread="4">
-              <span>V. Bánh Mì &amp; Specialties</span>
-              <span class="cat-count">16</span>
-            </button>
-            <button class="cat-pill" data-category="drinks" data-spread="5">
-              <span>VI. Beverages</span>
-              <span class="cat-count">10</span>
-            </button>
-          </div>
-
           <!-- 3D Sketchbook Flipbook Container (MengToSketchbook Engine) -->
           <div class="menu-book-stage sb-wrap" id="sbWrap">
             <div class="sb-stage" id="sbStage">
@@ -526,11 +498,155 @@
                   <div class="sb-cast contact" aria-hidden="true"></div>
                   <div class="sb-cast hair" aria-hidden="true"></div>
                   <div class="menu-book-cover" id="menuBookCover">
+                    <div class="menu-book-backing" aria-hidden="true"></div>
                     <div class="sb-book" id="sbBook">
                       <div class="menu-book-spine" aria-hidden="true"></div>
 
-              <!-- SPREAD 1: PHO (Pages 1-2) -->
-              <div class="menu-book-spread is-active" data-spread-index="0" data-category="pho" data-title="Beef & Chicken Pho">
+              <!-- SPREAD 0: CLOSED MENU BOOK (Front Cover Only on Right Half, Centered) -->
+              <div class="menu-book-spread is-active" data-spread-index="0" data-category="cover" data-title="Bìa Thực Đơn (Click to Open)">
+                <!-- Left Half: Empty when book is closed -->
+                <div class="menu-book-page menu-page-left menu-page-blank" aria-hidden="true"></div>
+
+                <!-- Right Half: Minimalist Closed Front Cover (Bìa Menu Phở Sydney) -->
+                <div class="menu-book-page menu-page-right menu-cover-page menu-cover-front">
+                  <div class="menu-cover-plaque">
+                    <div class="menu-cover-center">
+                      <div class="menu-cover-ornament" aria-hidden="true"><span></span>✦<span></span></div>
+                      <h3 class="menu-cover-brand">PHỞ SYDNEY</h3>
+                      <div class="menu-cover-ornament" aria-hidden="true"><span></span>✦<span></span></div>
+                    </div>
+                    <div class="menu-cover-address">2323 Atlantic Ave, Atlantic City, NJ 08401</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SPREAD 1: OPENED BOOK — INSIDE FRONTISPIECE (LEFT) & INTERACTIVE TABLE OF CHAPTERS (RIGHT) -->
+              <div class="menu-book-spread" data-spread-index="1" data-category="toc" data-title="Mục Lục Thực Đơn • 6 Chapters">
+                <!-- Left Page: Inside Front Cover (Bìa Trong & Món Đặc Trưng) -->
+                <div class="menu-book-page menu-page-left menu-inside-cover">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">DI SẢN ẨM THỰC &bull; CULINARY HERITAGE</span>
+                    <h3 class="menu-chapter-title">TINH HOA BẾP VIỆT — HOUSE SIGNATURES</h3>
+                    <p class="menu-chapter-note">Simmered slowly, grilled over open flame &amp; served fresh daily</p>
+                  </div>
+
+                  <p class="menu-inside-intro">
+                    Welcome to <strong>Phở Sydney</strong>. Every bowl of Phở begins with beef marrow bones simmered for 24 hours with charred ginger, star anise, and cinnamon from Vietnam.
+                  </p>
+
+                  <div class="menu-inside-highlights">
+                    <button type="button" class="menu-inside-card" data-goto-spread="2">
+                      <img src="assets/images/pho-hero.png" alt="Phở Đặc Biệt" class="menu-inside-thumb" />
+                      <div class="menu-inside-card-info">
+                        <span class="menu-inside-badge">Chef's #1 Pick &bull; Chapter I</span>
+                        <strong>#9 Phở Đặc Biệt</strong>
+                        <span>Rare Steak, Brisket, Flank, Tendon, Tripe &amp; Meatballs &bull; $16.99</span>
+                      </div>
+                    </button>
+
+                    <button type="button" class="menu-inside-card" data-goto-spread="3">
+                      <img src="assets/images/com-tam-hero.png" alt="Cơm Đặc Biệt" class="menu-inside-thumb" />
+                      <div class="menu-inside-card-info">
+                        <span class="menu-inside-badge">House Favorite &bull; Chapter II</span>
+                        <strong>#42 Cơm Đặc Biệt Sườn Bì Chả Trứng</strong>
+                        <span>Lemongrass Pork Chop, Shredded Pork, Egg Meatloaf &amp; Fried Egg &bull; $17.99</span>
+                      </div>
+                    </button>
+
+                    <button type="button" class="menu-inside-card" data-goto-spread="5">
+                      <img src="assets/images/bun-bo-hue-hero.png" alt="Bún Bò Huế" class="menu-inside-thumb" />
+                      <div class="menu-inside-card-info">
+                        <span class="menu-inside-badge">Royal Specialty &bull; Chapter IV</span>
+                        <strong>#38 Bún Bò Huế Đặc Biệt</strong>
+                        <span>Spicy Lemongrass Beef &amp; Pork Broth with Thick Vermicelli &bull; $16.99</span>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="menu-inside-hours">
+                    <strong>📍 2323 Atlantic Ave, Atlantic City, NJ 08401</strong>
+                    <span>Open Daily &bull; Dine-In, Takeout &amp; Party Catering &bull; (609) 348-5946</span>
+                  </div>
+
+                  <div class="menu-page-footer"><span>PHỞ SYDNEY HERITAGE</span><span>INSIDE COVER</span></div>
+                </div>
+
+                <!-- Right Page: Interactive Table of Chapters (Trang Mục Lục Menu) -->
+                <div class="menu-book-page menu-page-right menu-toc-page">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">MỤC LỤC THỰC ĐƠN &bull; MENU DIRECTORY</span>
+                    <h3 class="menu-chapter-title">CHỌN CHƯƠNG MÓN ĂN — CHAPTER INDEX</h3>
+                    <p class="menu-chapter-note">Click any chapter below to flip directly to its menu pages</p>
+                  </div>
+
+                  <div class="menu-toc-list" role="navigation" aria-label="Menu Chapters">
+                    <button type="button" class="menu-toc-item" data-goto-spread="2" data-category="pho">
+                      <span class="menu-toc-roman">I</span>
+                      <span class="menu-toc-body">
+                        <span class="menu-toc-title">BEEF &amp; CHICKEN PHỞ</span>
+                        <span class="menu-toc-sub">Phở Bò &amp; Gà Đặc Biệt &bull; Pages 1–2</span>
+                      </span>
+                      <span class="menu-toc-count">16</span>
+                      <span class="menu-toc-arrow" aria-hidden="true">&rarr;</span>
+                    </button>
+
+                    <button type="button" class="menu-toc-item" data-goto-spread="3" data-category="rice">
+                      <span class="menu-toc-roman">II</span>
+                      <span class="menu-toc-body">
+                        <span class="menu-toc-title">BROKEN RICE PLATES</span>
+                        <span class="menu-toc-sub">Cơm Đĩa Sườn Nướng &amp; Cơm Chiên &bull; Pages 3–4</span>
+                      </span>
+                      <span class="menu-toc-count">19</span>
+                      <span class="menu-toc-arrow" aria-hidden="true">&rarr;</span>
+                    </button>
+
+                    <button type="button" class="menu-toc-item" data-goto-spread="4" data-category="appetizers">
+                      <span class="menu-toc-roman">III</span>
+                      <span class="menu-toc-body">
+                        <span class="menu-toc-title">APPETIZERS &amp; NOODLE SOUP</span>
+                        <span class="menu-toc-sub">Khai Vị, Gỏi &amp; Hủ Tiếu Mì &bull; Pages 5–6</span>
+                      </span>
+                      <span class="menu-toc-count">14</span>
+                      <span class="menu-toc-arrow" aria-hidden="true">&rarr;</span>
+                    </button>
+
+                    <button type="button" class="menu-toc-item" data-goto-spread="5" data-category="noodles">
+                      <span class="menu-toc-roman">IV</span>
+                      <span class="menu-toc-body">
+                        <span class="menu-toc-title">VERMICELLI BOWLS</span>
+                        <span class="menu-toc-sub">Bún Thịt Nướng &amp; Bún Bò Huế &bull; Pages 7–8</span>
+                      </span>
+                      <span class="menu-toc-count">12</span>
+                      <span class="menu-toc-arrow" aria-hidden="true">&rarr;</span>
+                    </button>
+
+                    <button type="button" class="menu-toc-item" data-goto-spread="6" data-category="specialties">
+                      <span class="menu-toc-roman">V</span>
+                      <span class="menu-toc-body">
+                        <span class="menu-toc-title">BÁNH MÌ &amp; SPECIALTIES</span>
+                        <span class="menu-toc-sub">Bánh Mì, Canh Chua &amp; Món Quê Hương &bull; Pages 9–10</span>
+                      </span>
+                      <span class="menu-toc-count">16</span>
+                      <span class="menu-toc-arrow" aria-hidden="true">&rarr;</span>
+                    </button>
+
+                    <button type="button" class="menu-toc-item" data-goto-spread="7" data-category="drinks">
+                      <span class="menu-toc-roman">VI</span>
+                      <span class="menu-toc-body">
+                        <span class="menu-toc-title">BEVERAGES</span>
+                        <span class="menu-toc-sub">Cà Phê Phin, Trà Sữa &amp; Sinh Tố &bull; Pages 11–12</span>
+                      </span>
+                      <span class="menu-toc-count">10</span>
+                      <span class="menu-toc-arrow" aria-hidden="true">&rarr;</span>
+                    </button>
+                  </div>
+
+                  <div class="menu-page-footer"><span>CLICK A CHAPTER TO OPEN</span><span>TABLE OF CONTENTS</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 2: PHO (Pages 1-2) -->
+              <div class="menu-book-spread" data-spread-index="2" data-category="pho" data-title="Beef & Chicken Pho">
                 <div class="menu-book-page menu-page-left">
                   <div class="menu-page-header has-thumb">
                     <div class="menu-page-header-text">
@@ -566,7 +682,7 @@
                       <p class="menu-item-en">Rice Noodle Soup with Rare Steak, Flank &amp; Tendon</p>
                     </li>
                   </ul>
-                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 01</span></div>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 01</span></div>
                 </div>
 
                 <div class="menu-book-page menu-page-right">
@@ -622,7 +738,7 @@
               </div>
 
               <!-- SPREAD 2: BROKEN RICE PLATES (Pages 3-4) -->
-              <div class="menu-book-spread" data-spread-index="1" data-category="rice" data-title="Broken Rice Plates">
+              <div class="menu-book-spread" data-spread-index="3" data-category="rice" data-title="Broken Rice Plates">
                 <div class="menu-book-page menu-page-left">
                   <div class="menu-page-header has-thumb">
                     <div class="menu-page-header-text">
@@ -666,7 +782,7 @@
                       <p class="menu-item-en">Steamed Rice with Sliced Grilled Pork &amp; Spring Rolls</p>
                     </li>
                   </ul>
-                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 03</span></div>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 03</span></div>
                 </div>
 
                 <div class="menu-book-page menu-page-right">
@@ -726,7 +842,7 @@
               </div>
 
               <!-- SPREAD 3: APPETIZERS & NOODLE SOUPS (Pages 5-6) -->
-              <div class="menu-book-spread" data-spread-index="2" data-category="appetizers" data-title="Appetizers & Noodle Soups">
+              <div class="menu-book-spread" data-spread-index="4" data-category="appetizers" data-title="Appetizers & Noodle Soups">
                 <div class="menu-book-page menu-page-left">
                   <div class="menu-page-header has-thumb">
                     <div class="menu-page-header-text">
@@ -762,7 +878,7 @@
                       <p class="menu-item-en">Hot &amp; Sour Thai-Style Soup with Shrimp and Fresh Vegetables</p>
                     </li>
                   </ul>
-                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 05</span></div>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 05</span></div>
                 </div>
 
                 <div class="menu-book-page menu-page-right">
@@ -810,7 +926,7 @@
               </div>
 
               <!-- SPREAD 4: VERMICELLI BOWLS & HUE NOODLES (Pages 7-8) -->
-              <div class="menu-book-spread" data-spread-index="3" data-category="noodles" data-title="Vermicelli Bowls">
+              <div class="menu-book-spread" data-spread-index="5" data-category="noodles" data-title="Vermicelli Bowls">
                 <div class="menu-book-page menu-page-left">
                   <div class="menu-page-header has-thumb">
                     <div class="menu-page-header-text">
@@ -842,7 +958,7 @@
                       <p class="menu-item-en">Vermicelli with Golden Crispy Imperial Spring Rolls &amp; Greens</p>
                     </li>
                   </ul>
-                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 07</span></div>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 07</span></div>
                 </div>
 
                 <div class="menu-book-page menu-page-right">
@@ -886,7 +1002,7 @@
               </div>
 
               <!-- SPREAD 5: BANH MI & HOMESTYLE SPECIALTIES (Pages 9-10) -->
-              <div class="menu-book-spread" data-spread-index="4" data-category="specialties" data-title="Banh Mi & Specialties">
+              <div class="menu-book-spread" data-spread-index="6" data-category="specialties" data-title="Banh Mi & Specialties">
                 <div class="menu-book-page menu-page-left">
                   <div class="menu-page-header has-thumb">
                     <div class="menu-page-header-text">
@@ -922,7 +1038,7 @@
                       <p class="menu-item-en">Fine Woven Rice Vermicelli w. Sugarcane Grilled Shrimp Paste</p>
                     </li>
                   </ul>
-                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 09</span></div>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 09</span></div>
                 </div>
 
                 <div class="menu-book-page menu-page-right">
@@ -974,7 +1090,7 @@
               </div>
 
               <!-- SPREAD 6: BEVERAGES & SMOOTHIES (Pages 11-12) -->
-              <div class="menu-book-spread" data-spread-index="5" data-category="drinks" data-title="Beverages & Smoothies">
+              <div class="menu-book-spread" data-spread-index="7" data-category="drinks" data-title="Beverages & Smoothies">
                 <div class="menu-book-page menu-page-left">
                   <div class="menu-page-header has-thumb">
                     <div class="menu-page-header-text">
@@ -1010,7 +1126,7 @@
                       <p class="menu-item-en">Coke, Diet Coke, Sprite, Root Beer, Fanta Orange, Nestea, Ginger Ale</p>
                     </li>
                   </ul>
-                  <div class="menu-page-footer"><span>PHỞ SYDNEY MENU</span><span>PAGE 11</span></div>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 11</span></div>
                 </div>
 
                 <div class="menu-book-page menu-page-right">
@@ -1049,20 +1165,7 @@
               </button>
             </div>
 
-            <!-- Book Page Flip & Sketchbook View Controls -->
-            <div class="menu-book-controls">
-              <button type="button" class="menu-flip-btn" id="menuPrevSpreadBtn" aria-label="Previous Menu Page">
-                <span>&larr;</span>
-                <span>Previous Page</span>
-              </button>
-              <div class="menu-book-indicator" id="menuSpreadIndicator">
-                  Pages 1–2 / 12 &bull; Beef &amp; Chicken Pho
-                </div>
-              <button type="button" class="menu-flip-btn" id="menuNextSpreadBtn" aria-label="Next Menu Page">
-                <span>Next Page</span>
-                <span>&rarr;</span>
-              </button>
-            </div>
+
           </div>
         </div>
       </div>

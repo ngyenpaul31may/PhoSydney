@@ -1350,7 +1350,7 @@ button {
    6. Our Menu Section (Deep Crimson Canvas - "DISCOVER FLAVORS YOU’LL LOVE")
    ========================================================================== */
 .discover-menu-section {
-  padding: 90px 0 100px;
+  padding: 52px 0 64px;
   background-color: var(--color-hero-red);
   position: relative;
   overflow: hidden;
@@ -1373,8 +1373,8 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 32px;
-  margin-bottom: 48px;
+  gap: 28px;
+  margin-bottom: 24px;
 }
 
 .discover-header-left {
@@ -1403,13 +1403,13 @@ button {
 
 .discover-title {
   font-family: var(--font-display);
-  font-size: clamp(38px, 4.4vw, 56px);
+  font-size: clamp(34px, 4vw, 50px);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: 1px;
   color: #ffffff;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .discover-subtitle {
@@ -1468,7 +1468,8 @@ button {
 }
 
 .full-menu-collapsible .category-filter-bar {
-  margin-bottom: 36px;
+  margin-bottom: 22px;
+  gap: 8px;
 }
 
 .full-menu-collapsible .cat-pill {
@@ -1602,9 +1603,9 @@ button {
 }
 
 .cat-pill {
-  padding: 10px 20px;
+  padding: 8px 14px;
   border-radius: var(--radius-pill);
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-text-dark);
@@ -1614,7 +1615,8 @@ button {
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 .cat-pill:hover {
@@ -1699,11 +1701,11 @@ button {
 .sb-tilt {
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(var(--zoom, 1));
+  transform: translateX(calc((1 - var(--open, 0)) * -25%)) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(var(--zoom, 1));
   will-change: transform;
 }
 
-/* Soft desk shadow pools underneath the sketchbook */
+/* Soft desk shadow pools underneath the sketchbook (tracks closed -> open width) */
 .sb-cast {
   position: absolute;
   pointer-events: none;
@@ -1711,7 +1713,7 @@ button {
 }
 
 .sb-cast.ambient {
-  left: 4%;
+  left: calc((1 - var(--board-open, 0)) * 46% + 4%);
   right: 4%;
   top: 22%;
   bottom: -2%;
@@ -1726,7 +1728,7 @@ button {
 }
 
 .sb-cast.contact {
-  left: 8%;
+  left: calc((1 - var(--board-open, 0)) * 44% + 8%);
   right: 8%;
   top: 60%;
   bottom: 4%;
@@ -1741,7 +1743,7 @@ button {
 }
 
 .sb-cast.hair {
-  left: 11%;
+  left: calc((1 - var(--board-open, 0)) * 42% + 11%);
   right: 11%;
   top: 68%;
   bottom: 10%;
@@ -1756,15 +1758,27 @@ button {
 
 .menu-book-cover {
   position: relative;
-  background: linear-gradient(145deg, #3b0810 0%, #240409 100%);
   padding: 18px 24px;
+  border-radius: 22px;
+  transform-style: preserve-3d;
+  z-index: 1;
+}
+
+/* Hardcover leather board backing that wraps only the right half when closed and expands as the cover opens */
+.menu-book-backing {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: calc((1 - var(--board-open, 0)) * (50% - 18px));
+  background: linear-gradient(145deg, #3b0810 0%, #240409 100%);
   border-radius: 22px;
   box-shadow:
     0 28px 65px rgba(0, 0, 0, 0.48),
     inset 0 0 0 2px rgba(245, 158, 11, 0.35),
     0 4px 0 #1a0205;
-  transform-style: preserve-3d;
-  z-index: 1;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Stacked paper edges effect on left & right — concentric with page corners */
@@ -1783,10 +1797,12 @@ button {
     #cbb89d 3px
   );
   z-index: 1;
+  pointer-events: none;
 }
 
 .menu-book-cover::before {
-  left: 14px;
+  left: calc((1 - var(--board-open, 0)) * 50% + 14px);
+  opacity: var(--board-open, 0);
   border-radius: 14px 0 0 14px;
 }
 
@@ -1805,22 +1821,7 @@ button {
 }
 
 .menu-book-spine {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 44px;
-  transform: translateX(-50%);
-  background: linear-gradient(
-    90deg,
-    rgba(34, 8, 11, 0) 0%,
-    rgba(34, 8, 11, 0.14) 35%,
-    rgba(34, 8, 11, 0.36) 50%,
-    rgba(34, 8, 11, 0.14) 65%,
-    rgba(34, 8, 11, 0) 100%
-  );
-  z-index: 10;
-  pointer-events: none;
+  display: none;
 }
 
 .menu-book-spread {
@@ -1838,11 +1839,24 @@ button {
   pointer-events: none;
 }
 
+.menu-book-spread[data-spread-index="0"] {
+  background-color: transparent;
+}
+
 .menu-book-spread.is-active {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
   z-index: 3;
+}
+
+.menu-page-blank,
+.sb-half.left.is-empty {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  border: none !important;
 }
 
 /* ---- Active 3D Curved Page Turn Layer (MengToSketchbook 14-strip chain) ---- */
@@ -1987,6 +2001,11 @@ button {
   right: 0;
 }
 
+.curl.next > .strip > .face.back,
+.curl.prev > .strip > .face.front {
+  right: 0;
+}
+
 .strip-page-slice {
   position: absolute;
   top: 0;
@@ -2028,19 +2047,313 @@ button {
 }
 
 /* Interactive hit zones for dragging/clicking pages */
+.sb-book {
+  cursor: grab;
+}
+
+.sb-book:active {
+  cursor: grabbing;
+}
+
 .sb-zone {
   position: absolute;
   top: 0;
   bottom: 0;
   border: 0;
   background: transparent;
-  cursor: grab;
+  pointer-events: none;
   z-index: 25;
   -webkit-tap-highlight-color: transparent;
 }
 
-.sb-zone:active {
-  cursor: grabbing;
+/* ---- Spread 0: Minimalist Hardcover Menu Cover ---- */
+.menu-cover-front {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.menu-cover-front::before {
+  display: none !important;
+}
+
+.menu-cover-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-cover-plaque {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 48px 36px 40px;
+  border-radius: 0 14px 14px 0;
+  background: radial-gradient(circle at 50% 42%, #5c0a16 0%, #38050d 62%, #220307 100%);
+  box-shadow:
+    inset 0 0 0 14px #280308,
+    inset 0 0 0 15.5px rgba(251, 191, 36, 0.55),
+    inset 0 0 0 21px #280308,
+    inset 0 0 0 22px rgba(251, 191, 36, 0.25);
+  color: #fff8ee;
+  position: relative;
+}
+
+.menu-cover-center {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.menu-cover-brand {
+  font-family: var(--font-display);
+  font-size: clamp(46px, 4.6vw, 64px);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: #fbbf24;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  margin: 0;
+}
+
+.menu-cover-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(251, 191, 36, 0.85);
+  font-size: 13px;
+  width: 56%;
+}
+
+.menu-cover-ornament span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.65), transparent);
+}
+
+.menu-cover-address {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(251, 191, 36, 0.82);
+}
+
+/* ---- Spread 1 Left Page: Inside Front Cover & Signature Dish Cards ---- */
+.menu-inside-intro {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #4b2e33;
+  margin-bottom: 14px;
+}
+
+.menu-inside-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.menu-inside-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fff9f0;
+  border: 1px solid rgba(126, 14, 27, 0.15);
+  box-shadow: 0 3px 10px rgba(34, 8, 11, 0.05);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.menu-inside-card:hover {
+  transform: translateX(4px);
+  border-color: var(--color-hero-red);
+  box-shadow: 0 6px 16px rgba(126, 14, 27, 0.14);
+}
+
+.menu-inside-thumb {
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1.5px solid rgba(126, 14, 27, 0.18);
+  flex-shrink: 0;
+}
+
+.menu-inside-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.menu-inside-badge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c2410c;
+}
+
+.menu-inside-card-info strong {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #241215;
+}
+
+.menu-inside-card-info span:last-child {
+  font-size: 11.5px;
+  color: #6e5256;
+}
+
+.menu-inside-hours {
+  margin-top: auto;
+  padding: 11px 14px;
+  border-radius: 10px;
+  background: rgba(126, 14, 27, 0.06);
+  border: 1px dashed rgba(126, 14, 27, 0.24);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 12px;
+  color: #4b2e33;
+}
+
+.menu-inside-hours strong {
+  color: var(--color-hero-red);
+  font-size: 12.5px;
+}
+
+/* Right Page: Interactive Table of Chapters */
+.menu-toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: auto 0;
+  padding: 4px 0;
+}
+
+.menu-toc-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #fdf5e8;
+  border: 1px solid rgba(126, 14, 27, 0.16);
+  box-shadow: 0 3px 10px rgba(34, 8, 11, 0.05);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.menu-toc-item:hover {
+  background: #7e0e1b;
+  border-color: #7e0e1b;
+  transform: translateX(4px);
+  box-shadow: 0 8px 20px rgba(126, 14, 27, 0.24);
+}
+
+.menu-toc-roman {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(126, 14, 27, 0.1);
+  border: 1px solid rgba(126, 14, 27, 0.22);
+  color: var(--color-hero-red);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-toc-item:hover .menu-toc-roman {
+  background: #fbbf24;
+  border-color: #fbbf24;
+  color: #2b050a;
+}
+
+.menu-toc-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.menu-toc-title {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #241215;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.menu-toc-sub {
+  font-size: 12px;
+  color: #6e5256;
+  transition: color 0.2s ease;
+}
+
+.menu-toc-item:hover .menu-toc-title {
+  color: #ffffff;
+}
+
+.menu-toc-item:hover .menu-toc-sub {
+  color: rgba(255, 248, 238, 0.82);
+}
+
+.menu-toc-count {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(126, 14, 27, 0.1);
+  color: var(--color-hero-red);
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-toc-item:hover .menu-toc-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.menu-toc-arrow {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-hero-red);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.menu-toc-item:hover .menu-toc-arrow {
+  color: #fbbf24;
+  transform: translateX(3px);
+}
+
+.menu-index-btn.is-home {
+  opacity: 0.65;
 }
 
 .sb-prev {
@@ -2085,6 +2398,38 @@ button {
   border: 1px solid rgba(126, 14, 27, 0.14);
   border-radius: 8px;
   pointer-events: none;
+}
+
+/* Inner spine crease shadow baked into each page so 3D turns never flash white */
+.menu-page-left::after,
+.menu-page-right::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 22px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.menu-page-left::after {
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(34, 8, 11, 0) 0%,
+    rgba(34, 8, 11, 0.14) 70%,
+    rgba(34, 8, 11, 0.36) 100%
+  );
+}
+
+.menu-page-right::after {
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(34, 8, 11, 0.36) 0%,
+    rgba(34, 8, 11, 0.14) 30%,
+    rgba(34, 8, 11, 0) 100%
+  );
 }
 
 .menu-page-header {
@@ -2347,10 +2692,21 @@ button {
 }
 
 @media (max-width: 992px) {
+  .sb-tilt {
+    transform: none !important;
+  }
+  .menu-book-backing {
+    left: 0 !important;
+  }
+  .menu-page-blank {
+    display: none !important;
+  }
   .menu-book-spread {
     grid-template-columns: 1fr;
   }
-  .menu-book-spine {
+  .menu-book-spine,
+  .menu-page-left::after,
+  .menu-page-right::after {
     display: none;
   }
   .menu-page-left {
@@ -4287,3 +4643,22 @@ button {
   }
 }
 
+
+.menu-footer-toc-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--color-hero-red);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  position: relative;
+  z-index: 6;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.menu-footer-toc-link:hover {
+  opacity: 0.75;
+  transform: translateX(-2px);
+}
