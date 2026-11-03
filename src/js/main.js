@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hideHint();
       const targetSpread = Number(gotoBtn.dataset.gotoSpread);
       if (!Number.isNaN(targetSpread)) {
-        flipToSpread(targetSpread);
+        flipSequenceToSpread(targetSpread, gotoBtn.dataset.targetCode || null, false);
       }
     });
 
@@ -402,6 +402,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function startTurn(dir, t) {
+    if (seqTimer) {
+      clearTimeout(seqTimer);
+      seqTimer = null;
+    }
+    highlightDishByCode(null);
     spring = null;
     if (turn) {
       idx = turn.to;
@@ -467,32 +472,115 @@ document.addEventListener('DOMContentLoaded', () => {
     commit();
   }
 
-  function flipToSpread(targetIndex) {
+  let seqTimer = null;
+
+  function highlightDishByCode(code) {
+    document
+      .querySelectorAll('.menu-book-item.is-dish-highlight')
+      .forEach((elItem) => elItem.classList.remove('is-dish-highlight'));
+    if (!code) return;
+    const activeSpread = spreads[idx];
+    if (!activeSpread) return;
+    const targetNorm = code.trim().toLowerCase();
+    activeSpread.querySelectorAll('.menu-book-item').forEach((item) => {
+      const codeEl = item.querySelector('.menu-item-code');
+      if (codeEl && codeEl.textContent.trim().toLowerCase() === targetNorm) {
+        item.classList.add('is-dish-highlight');
+      }
+    });
+  }
+
+  function flipSequenceToSpread(targetIndex, targetCode, startFromCover = false) {
     if (!M) return;
-    const nextIdx = ((targetIndex % M) + M) % M;
-    if (nextIdx === idx && !turn) return;
+    if (seqTimer) {
+      clearTimeout(seqTimer);
+      seqTimer = null;
+    }
+    spring = null;
     if (turn) {
       idx = turn.to;
       turn = null;
     }
-    const dir = nextIdx > idx ? 'next' : 'prev';
-    turn = { dir, from: idx, to: nextIdx, t: 0 };
-    paint();
-    commit();
+    highlightDishByCode(null);
+
+    if (startFromCover && idx !== 0) {
+      idx = 0;
+      paint();
+    }
+
+    const goal = ((targetIndex % M) + M) % M;
+    if (goal === idx) {
+      highlightDishByCode(targetCode);
+      return;
+    }
+
+    function nextHop() {
+      if (idx === goal) {
+        highlightDishByCode(targetCode);
+        return;
+      }
+      const dir = goal > idx ? 'next' : 'prev';
+      const nextStepIdx = dir === 'next' ? idx + 1 : idx - 1;
+      const remaining = Math.abs(goal - idx);
+      const stiff = remaining > 1 ? 310 : 185;
+      const damp = remaining > 1 ? 32 : 25;
+
+      const actualDir = nextStepIdx === 0 ? 'prev' : idx === 0 ? 'next' : dir;
+      turn = { dir: actualDir, from: idx, to: nextStepIdx, t: 0 };
+      paint();
+
+      if (REDUCED || window.innerWidth <= 992) {
+        idx = nextStepIdx;
+        turn = null;
+        paint();
+        if (idx !== goal) {
+          seqTimer = setTimeout(nextHop, 90);
+        } else {
+          highlightDishByCode(targetCode);
+        }
+        return;
+      }
+
+      animateTo(
+        1,
+        () => {
+          idx = nextStepIdx;
+          turn = null;
+          paint();
+          if (idx !== goal) {
+            seqTimer = setTimeout(nextHop, 30);
+          } else {
+            highlightDishByCode(targetCode);
+          }
+        },
+        stiff,
+        damp
+      );
+    }
+
+    if (startFromCover) {
+      seqTimer = setTimeout(nextHop, 260);
+    } else {
+      nextHop();
+    }
   }
 
-  function filterMenu(category) {
+  function flipToSpread(targetIndex) {
+    flipSequenceToSpread(targetIndex, null, false);
+  }
+
+  function filterMenu(category, startFromCover = false) {
     const found = spreads.findIndex((sp) => sp.dataset.category === category);
-    flipToSpread(found >= 0 ? found : 0);
+    flipSequenceToSpread(found >= 0 ? found : 0, null, startFromCover);
   }
 
   pills.forEach((pill) => {
     pill.addEventListener('click', () => {
       const spreadIdx = Number(pill.dataset.spread);
       if (!Number.isNaN(spreadIdx)) {
-        flipToSpread(spreadIdx);
+        flipSequenceToSpread(spreadIdx, null, false);
       } else {
-        filterMenu(pill.dataset.category || 'pho');
+        filterMenu(pill.dataset.category || 'pho', false);
       }
     });
   });
@@ -501,7 +589,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (menuIndexBtn) {
     menuIndexBtn.addEventListener('click', () => {
       const cur = turn ? turn.to : idx;
-      flipToSpread(cur === 1 ? 0 : 1);
+      flipSequenceToSpread(cur === 1 ? 0 : 1, null, false);
     });
   }
   if (nextSpreadBtn) nextSpreadBtn.addEventListener('click', () => step('next'));
@@ -511,21 +599,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const viewMenuBtn = document.getElementById('viewMenuBtn');
   const closeMenuPopupBtn = document.getElementById('closeMenuPopupBtn');
 
-  function openMenuPopup(targetCategory) {
+  function openMenuPopup(options = {}) {
     if (!fullMenu) return;
+    const { targetSpread, targetCode, targetCategory, startFromCover } = options;
+    if (startFromCover && idx !== 0) {
+      if (seqTimer) {
+        clearTimeout(seqTimer);
+        seqTimer = null;
+      }
+      spring = null;
+      turn = null;
+      idx = 0;
+    }
     fullMenu.classList.add('is-open');
     document.body.classList.add('menu-popup-open');
     requestAnimationFrame(() => {
       layout();
       paint();
-      if (targetCategory) {
-        filterMenu(targetCategory);
+      if (typeof targetSpread === 'number' && !Number.isNaN(targetSpread)) {
+        flipSequenceToSpread(targetSpread, targetCode || null, Boolean(startFromCover));
+      } else if (targetCategory) {
+        filterMenu(targetCategory, Boolean(startFromCover));
       }
     });
   }
 
   function closeMenuPopup() {
     if (!fullMenu) return;
+    if (seqTimer) {
+      clearTimeout(seqTimer);
+      seqTimer = null;
+    }
     fullMenu.classList.remove('is-open');
     document.body.classList.remove('menu-popup-open');
   }
@@ -553,11 +657,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  document.querySelectorAll('.discover-card, .catering-btn').forEach((elItem) => {
-    elItem.style.cursor = 'pointer';
-    elItem.addEventListener('click', (e) => {
+  document.querySelectorAll('.discover-card').forEach((card) => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
       e.preventDefault();
-      openMenuPopup();
+      const targetSpread = Number(card.dataset.targetSpread);
+      const targetCode = card.dataset.targetCode || null;
+      openMenuPopup({
+        targetSpread: Number.isNaN(targetSpread) ? 1 : targetSpread,
+        targetCode,
+        startFromCover: true,
+      });
+    });
+  });
+
+  document.querySelectorAll('.catering-btn').forEach((btn) => {
+    btn.style.cursor = 'pointer';
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openMenuPopup({ targetSpread: 1, startFromCover: true });
     });
   });
 
@@ -570,13 +688,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   paint();
 
-  // 3. Category Cards in Carousel Click -> Open Full Menu Popup & Flip to Chapter
+  // 3. Category Cards in Carousel Click -> Open Full Menu Popup & Flip Page-by-Page to Chapter
   const categoryCards = document.querySelectorAll('.category-card');
   categoryCards.forEach((card) => {
     card.addEventListener('click', () => {
       const cat = card.dataset.category;
       if (cat) {
-        openMenuPopup(cat);
+        openMenuPopup({ targetCategory: cat, startFromCover: true });
       }
     });
   });
