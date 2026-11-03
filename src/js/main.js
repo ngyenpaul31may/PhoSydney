@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const M = spreads.length;
-  const N = 14;         /* nested strips for smooth curved paper arc */
+  const N = 8;          /* 8 GPU-composited strips for ultra-smooth 60/120fps arc */
   const SPAN = 0.5;     /* gutter -> outer page edge of #sbBook      */
   const BETA = 0.60;    /* peak curl of the arc in radians           */
   let idx = 0;
@@ -132,12 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
       setOpenVars(openVal, boardOpen);
     }
     for (let i = 0; i < strips.length; i++) {
-      const l1 = Math.abs(Math.cos(tt - i * td));
-      const l2 = Math.abs(Math.cos(tt - (i + 1) * td));
+      const l1 = Math.abs(Math.cos(tt - (i + 0.5) * td));
       const st = strips[i].style;
       st.setProperty('--lit', l1.toFixed(3));
-      st.setProperty('--a1', ((1 - l1) * 0.62).toFixed(3));
-      st.setProperty('--a2', ((1 - l2) * 0.62).toFixed(3));
+      st.setProperty('--a1', ((1 - l1) * 0.52).toFixed(3));
     }
   }
 
@@ -231,26 +229,44 @@ document.addEventListener('DOMContentLoaded', () => {
     updateMeta();
   }
 
-  /* ---- Spring Physics Loop ---- */
+  /* ---- High-FPS Deterministic Tween Loop (Zero Asymptotic Tail Lag) ---- */
   let spring = null;
   let raf = null;
   let last = 0;
 
-  function animateTo(target, onDone, stiff, damp) {
-    spring = { v: 0, target, done: onDone, k: stiff || 160, c: damp || 24 };
+  function animateTo(target, onDone, durationMs, easeMode) {
+    const startT = turn ? turn.t : 0;
+    const dist = Math.abs(target - startT);
+    const dur = Math.max(80, (durationMs || 280) * Math.max(0.35, dist));
+    spring = {
+      startT,
+      target,
+      startTime: performance.now(),
+      duration: dur,
+      easeMode: easeMode || 'out',
+      done: onDone,
+    };
     kick();
   }
 
   function tick(now) {
     raf = null;
-    const dt = Math.min(0.032, (now - last) / 1000 || 0.016);
     last = now;
     if (spring && turn) {
       const s = spring;
-      const x = turn.t - s.target;
-      s.v += (-s.k * x - s.c * s.v) * dt;
-      turn.t += s.v * dt;
-      if (Math.abs(turn.t - s.target) < 0.002 && Math.abs(s.v) < 0.02) {
+      const p = Math.min(1, Math.max(0, (now - s.startTime) / s.duration));
+      let eased = p;
+      if (s.easeMode === 'linear') {
+        eased = p;
+      } else if (s.easeMode === 'in') {
+        eased = p * p * (2 - p);
+      } else if (s.easeMode === 'inout') {
+        eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+      } else {
+        eased = 1 - Math.pow(1 - p, 3);
+      }
+      turn.t = s.startT + (s.target - s.startT) * eased;
+      if (p >= 1) {
         turn.t = s.target;
         spring = null;
         applyTurn(turn.t);
@@ -426,8 +442,8 @@ document.addEventListener('DOMContentLoaded', () => {
         turn = null;
         paint();
       },
-      170,
-      26
+      280,
+      'out'
     );
   }
 
@@ -439,8 +455,8 @@ document.addEventListener('DOMContentLoaded', () => {
         turn = null;
         paint();
       },
-      150,
-      24
+      200,
+      'out'
     );
   }
 
@@ -486,16 +502,22 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const totalHops = Math.abs(goal - idx);
+    let hopCount = 0;
+
     function nextHop() {
       if (idx === goal) {
         highlightDishByCode(targetCode);
         return;
       }
+      hopCount++;
       const dir = goal > idx ? 'next' : 'prev';
       const nextStepIdx = dir === 'next' ? idx + 1 : idx - 1;
       const remaining = Math.abs(goal - idx);
-      const stiff = remaining > 1 ? 310 : 185;
-      const damp = remaining > 1 ? 32 : 25;
+      const isLastHop = remaining === 1;
+      const isFirstHop = hopCount === 1;
+      const dur = isLastHop ? (totalHops > 1 ? 230 : 280) : 145;
+      const easeMode = isLastHop ? 'out' : isFirstHop && totalHops > 1 ? 'in' : 'linear';
 
       const actualDir = nextStepIdx === 0 ? 'prev' : idx === 0 ? 'next' : dir;
       turn = { dir: actualDir, from: idx, to: nextStepIdx, t: 0 };
@@ -506,7 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
         turn = null;
         paint();
         if (idx !== goal) {
-          seqTimer = setTimeout(nextHop, 90);
+          seqTimer = setTimeout(nextHop, 60);
         } else {
           highlightDishByCode(targetCode);
         }
@@ -518,20 +540,20 @@ document.addEventListener('DOMContentLoaded', () => {
         () => {
           idx = nextStepIdx;
           turn = null;
-          paint();
           if (idx !== goal) {
-            seqTimer = setTimeout(nextHop, 30);
+            nextHop();
           } else {
+            paint();
             highlightDishByCode(targetCode);
           }
         },
-        stiff,
-        damp
+        dur,
+        easeMode
       );
     }
 
     if (startFromCover) {
-      seqTimer = setTimeout(nextHop, 260);
+      seqTimer = setTimeout(nextHop, 110);
     } else {
       nextHop();
     }

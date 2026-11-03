@@ -1565,24 +1565,14 @@ body.menu-popup-open {
     rgba(46, 7, 13, 0.72) 0%,
     rgba(16, 2, 5, 0.84) 100%
   );
-  backdrop-filter: blur(22px) saturate(140%);
-  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
   transition:
-    opacity 0.32s cubic-bezier(0.2, 0.8, 0.2, 1),
-    visibility 0.32s ease;
-}
-
-/* Tactile frosted matte grain noise texture */
-.full-menu-collapsible::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
+    opacity 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0.22s ease;
 }
 
 .full-menu-collapsible.is-open {
@@ -1881,7 +1871,7 @@ body.menu-popup-open {
 }
 
 .sb-cast.ambient {
-  left: calc((1 - var(--board-open, 0)) * 46% + 4%);
+  left: 4%;
   right: 4%;
   top: 22%;
   bottom: -2%;
@@ -1891,37 +1881,25 @@ body.menu-popup-open {
     rgba(20, 2, 5, 0.22) 44%,
     rgba(20, 2, 5, 0) 76%
   );
-  filter: blur(26px);
-  opacity: calc(1 - var(--shade, 0) * 0.42);
+  opacity: var(--board-open, 0);
 }
 
 .sb-cast.contact {
-  left: calc((1 - var(--board-open, 0)) * 44% + 8%);
+  left: 8%;
   right: 8%;
   top: 60%;
   bottom: 4%;
   background: radial-gradient(
     50% 44% at 50% 42%,
-    rgba(16, 1, 4, 0.46) 0%,
-    rgba(16, 1, 4, 0.2) 48%,
+    rgba(16, 1, 4, 0.44) 0%,
+    rgba(16, 1, 4, 0.18) 48%,
     rgba(16, 1, 4, 0) 78%
   );
-  filter: blur(11px);
-  opacity: calc(1 - var(--shade, 0) * 0.5);
+  opacity: var(--board-open, 0);
 }
 
 .sb-cast.hair {
-  left: calc((1 - var(--board-open, 0)) * 42% + 11%);
-  right: 11%;
-  top: 68%;
-  bottom: 10%;
-  background: radial-gradient(
-    50% 52% at 50% 40%,
-    rgba(14, 1, 3, 0.38) 0%,
-    rgba(14, 1, 3, 0) 76%
-  );
-  filter: blur(4px);
-  opacity: calc(1 - var(--shade, 0) * 0.62);
+  display: none;
 }
 
 .menu-book-cover {
@@ -1932,13 +1910,12 @@ body.menu-popup-open {
   z-index: 1;
 }
 
-/* Hardcover leather board backing that wraps only the right half when closed and expands as the cover opens */
+/* Hardcover leather board backing (GPU-composited scaleX & opacity, zero layout reflow) */
 .menu-book-backing {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: calc((1 - var(--board-open, 0)) * (50% - 18px));
+  inset: 0;
+  transform-origin: right center;
+  transform: scaleX(calc(0.52 + var(--board-open, 0) * 0.48));
   opacity: var(--board-open, 0);
   background: linear-gradient(145deg, #3b0810 0%, #240409 100%);
   border-radius: 22px;
@@ -1947,6 +1924,7 @@ body.menu-popup-open {
     inset 0 0 0 2px rgba(245, 158, 11, 0.35),
     0 4px 0 #1a0205;
   pointer-events: none;
+  will-change: transform, opacity;
   z-index: 0;
 }
 
@@ -1970,7 +1948,7 @@ body.menu-popup-open {
 }
 
 .menu-book-cover::before {
-  left: calc((1 - var(--board-open, 0)) * 50% + 14px);
+  left: 14px;
   opacity: var(--board-open, 0);
   border-radius: 14px 0 0 14px;
 }
@@ -2195,17 +2173,10 @@ body.menu-popup-open {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  background-color: #3a2b14;
+  opacity: var(--a1, 0);
+  will-change: opacity;
   z-index: 5;
-}
-
-.curl.next .face.front .sh,
-.curl.prev .face.back .sh {
-  background: linear-gradient(90deg, rgba(58, 43, 20, var(--a1, 0)), rgba(58, 43, 20, var(--a2, 0)));
-}
-
-.curl.next .face.back .sh,
-.curl.prev .face.front .sh {
-  background: linear-gradient(90deg, rgba(58, 43, 20, var(--a2, 0)), rgba(58, 43, 20, var(--a1, 0)));
 }
 
 .face .gl {
