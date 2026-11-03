@@ -371,7 +371,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!drag) return;
       const dx = e.clientX - drag.x0;
       drag.moved = Math.max(drag.moved, Math.abs(dx));
-      const raw = (drag.dir === 'next' ? -dx : dx) / (drag.w * 0.62);
+      const activeDir = turn ? turn.dir : drag.dir;
+      const raw = (activeDir === 'next' ? -dx : dx) / (drag.w * 0.62);
       const t = Math.max(0, Math.min(1, raw));
       const now = performance.now();
       drag.vel = (t - (turn ? turn.t : 0)) / Math.max(0.001, (now - drag.tPrev) / 1000);
@@ -407,10 +408,13 @@ document.addEventListener('DOMContentLoaded', () => {
       turn = null;
     }
     const from = idx;
+    if (from === 0 && dir === 'prev') return;
+    const to = dir === 'next' ? (from + 1) % M : (from - 1 + M) % M;
+    const actualDir = to === 0 ? 'prev' : from === 0 ? 'next' : dir;
     turn = {
-      dir,
+      dir: actualDir,
       from,
-      to: dir === 'next' ? (from + 1) % M : (from - 1 + M) % M,
+      to,
       t: t || 0,
     };
     paint();
