@@ -3106,15 +3106,10 @@ button {
   grid-template-columns: 380px 1fr;
   gap: 75px;
   align-items: start;
-  min-height: 850px;
-  padding-bottom: 50px;
 }
 
 .faq-left {
-  position: sticky;
-  top: 100px;
-  align-self: start;
-  height: fit-content;
+  position: static;
 }
 
 .faq-eyebrow {
