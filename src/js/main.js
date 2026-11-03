@@ -321,20 +321,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (stage && book) {
-    stage.addEventListener(
-      'pointermove',
-      (e) => {
-        if (e.pointerType === 'touch' || drag) return;
-        const r = book.getBoundingClientRect();
-        if (!r.width) return;
-        const nx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (r.width * 0.62)));
-        const ny = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (r.height * 0.9)));
-        setView(-ny * TILT_X, nx * TILT_Y, view.tz);
-      },
-      { passive: true }
-    );
-    stage.addEventListener('pointerleave', () => setView(0, 0, view.tz));
-    stage.addEventListener('dblclick', () => setView(0, 0, 1));
 
     /* ---- Interactive Chapter Index Click Inside Book ---- */
     book.addEventListener('click', (e) => {
@@ -474,21 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let seqTimer = null;
 
-  function highlightDishByCode(code) {
-    document
-      .querySelectorAll('.menu-book-item.is-dish-highlight')
-      .forEach((elItem) => elItem.classList.remove('is-dish-highlight'));
-    if (!code) return;
-    const activeSpread = spreads[idx];
-    if (!activeSpread) return;
-    const targetNorm = code.trim().toLowerCase();
-    activeSpread.querySelectorAll('.menu-book-item').forEach((item) => {
-      const codeEl = item.querySelector('.menu-item-code');
-      if (codeEl && codeEl.textContent.trim().toLowerCase() === targetNorm) {
-        item.classList.add('is-dish-highlight');
-      }
-    });
-  }
+  function highlightDishByCode() {}
 
   function flipSequenceToSpread(targetIndex, targetCode, startFromCover = false) {
     if (!M) return;
@@ -646,12 +618,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (fullMenu) {
+    let backdropDown = false;
+    let downX = 0;
+    let downY = 0;
+
+    fullMenu.addEventListener('pointerdown', (e) => {
+      backdropDown = !e.target.closest('#menuBookCover, #sbLeft, #sbRight, #closeMenuPopupBtn');
+      downX = e.clientX;
+      downY = e.clientY;
+    });
+
     fullMenu.addEventListener('click', (e) => {
-      if (
-        e.target === fullMenu ||
-        e.target.classList.contains('menu-book-stage') ||
-        e.target === stage
-      ) {
+      if (!backdropDown) return;
+      backdropDown = false;
+      if (Math.hypot(e.clientX - downX, e.clientY - downY) > 10) return;
+      if (!e.target.closest('#menuBookCover, #sbLeft, #sbRight, #closeMenuPopupBtn')) {
         closeMenuPopup();
       }
     });
