@@ -508,6 +508,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sbLeft) sbLeft.addEventListener('click', () => step('prev'));
   if (sbRight) sbRight.addEventListener('click', () => step('next'));
 
+  const viewMenuBtn = document.getElementById('viewMenuBtn');
+  if (viewMenuBtn) {
+    viewMenuBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (fullMenu) fullMenu.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (idx === 0) setTimeout(() => flipToSpread(1), 280);
+    });
+  }
+
   document.addEventListener('keydown', (e) => {
     if (!fullMenu || !fullMenu.classList.contains('is-open')) return;
     if (e.key === 'ArrowRight') step('next');
