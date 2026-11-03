@@ -1787,6 +1787,8 @@ button {
 
 .menu-book-cover {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
   background: linear-gradient(145deg, #3b0810 0%, #240409 100%);
   padding: 18px;
   border-radius: 22px;
@@ -1845,7 +1847,8 @@ button {
 }
 
 .menu-book-spread {
-  display: none;
+  grid-area: 1 / 1;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
   z-index: 2;
@@ -1853,10 +1856,16 @@ button {
   border-radius: 14px;
   overflow: hidden;
   min-height: 670px;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .menu-book-spread.is-active {
-  display: grid;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 3;
 }
 
 .menu-book-spread.flip-next-anim {
