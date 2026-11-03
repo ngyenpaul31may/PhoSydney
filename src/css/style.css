@@ -1814,10 +1814,12 @@ body.menu-popup-open {
 /* Interactive 3D Flipbook Menu (MengToSketchbook Engine) */
 .menu-book-stage.sb-wrap {
   display: grid;
-  justify-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: stretch;
   gap: 18px;
+  flex: 1 1 100%;
   width: 100%;
-  max-width: 1220px;
+  max-width: 1240px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -1856,7 +1858,8 @@ body.menu-popup-open {
 
 .sb-3d {
   position: relative;
-  flex: 1 1;
+  flex: 1 1 100%;
+  width: 100%;
   min-width: 0;
   max-width: 1040px;
   perspective: 1750px;
@@ -2000,7 +2003,7 @@ body.menu-popup-open {
   background-color: #fff9f0;
   border-radius: 14px;
   overflow: hidden;
-  min-height: 520px;
+  min-height: 690px;
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
