@@ -1,215 +1,2330 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phở Sydney | Authentic Vietnamese Cuisine in Atlantic City, NJ</title>
-  <meta name="description" content="Nhà hàng Phở Sydney - Tinh hoa ẩm thực Việt Nam tại 2323 Atlantic Ave, Atlantic City, NJ. Chuyên Phở truyền thống, Cơm tấm, Hủ tiếu, Bún thịt nướng.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Hero Banner Component */
-    .hero-banner-section {
-      width: 100%;
-      background-color: var(--color-burgundy);
-      overflow: hidden;
-      position: relative;
-    }
-    .hero-banner-img {
-      width: 100%;
-      max-height: 520px;
-      object-fit: cover;
-      object-position: center;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    /* Quick Info Bar */
-    .info-bar {
-      background-color: var(--color-surface);
-      border-bottom: 1px solid var(--color-border);
-      padding: 16px 0;
-      box-shadow: var(--shadow-sm);
-    }
-    .info-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 20px;
-      font-size: 0.95rem;
-    }
-    .info-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .info-icon {
-      font-size: 1.25rem;
-    }
-    .btn-cta {
-      background-color: var(--color-accent);
-      color: white;
-      padding: 10px 22px;
-      border-radius: var(--radius-full);
-      font-weight: 600;
-      transition: var(--transition);
-      display: inline-block;
-    }
-    .btn-cta:hover {
-      background-color: var(--color-accent-hover);
-      box-shadow: var(--shadow-glow);
-    }
-    /* Section Showcase */
-    .showcase {
-      padding: 60px 0;
-    }
-    .section-title {
-      font-family: var(--font-heading);
-      font-size: 2.2rem;
-      text-align: center;
-      color: var(--color-primary);
-      margin-bottom: 12px;
-    }
-    .section-subtitle {
-      text-align: center;
-      color: var(--color-text-muted);
-      margin-bottom: 40px;
-    }
-    .dish-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
-    .dish-card {
-      background: var(--color-surface);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--color-border-light);
-      transition: var(--transition);
-    }
-    .dish-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-    }
-    .dish-card img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-    }
-    .dish-card-body {
-      padding: 20px;
-    }
-    .dish-card-title {
-      font-family: var(--font-heading);
-      font-size: 1.4rem;
-      color: var(--color-text-main);
-      margin-bottom: 6px;
-    }
-    .dish-card-desc {
-      color: var(--color-text-muted);
-      font-size: 0.95rem;
-    }
-  </style>
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phở Sydney | Vietnamese Cuisine</title>
+    <meta
+      name="description"
+      content="Phở Sydney - Crafted for Cravings, Served with Perfection. Authentic Vietnamese Beef Pho, Broken Rice, Banh Mi, and Homestyle Specialties in Atlantic City, NJ."
+    />
 
-  <!-- Top Info Bar -->
-  <header class="info-bar">
-    <div class="container info-grid">
-      <div class="info-item">
-        <span class="info-icon">📍</span>
-        <span>2323 Atlantic Ave, Atlantic City, NJ 08401</span>
+    <!-- Google Fonts: Bebas Neue, Barlow Condensed, Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ========================================================================
+       1. Floating Cream Header Bar
+       ======================================================================== -->
+    <header class="header-wrapper">
+      <div class="header-inner">
+        <div class="brand-logo">
+          <a href="#" class="brand-title">PHO SYDNEY</a>
+        </div>
+
+        <nav aria-label="Main navigation">
+          <ul class="main-nav">
+            <li class="nav-item active"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#menu-showcase">Menu</a></li>
+            <li class="nav-item"><a href="#offers">Offers</a></li>
+            <li class="nav-item"><a href="#catering">Catering</a></li>
+            <li class="nav-item"><a href="#testimonials">Reviews</a></li>
+            <li class="nav-item"><a href="#experience">About</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="tel:+16093485946" class="header-cta-btn">
+            <span>Contact Us</span>
+            <span class="arrow-icon">↗</span>
+          </a>
+        </div>
       </div>
-      <div class="info-item">
-        <span class="info-icon">📞</span>
-        <a href="tel:+16093485946"><strong>(609) 348-5946</strong></a>
+    </header>
+
+    <!-- ========================================================================
+       2. Hero Section (Deep Crimson Canvas with Organic Wave)
+       ======================================================================== -->
+    <section class="hero-stage">
+      <!-- Left Side Independent Phở Garnishes (Each Individually AI-Crafted: Whole Bird's Eye Chilies, Sliced Chili Rings, Fresh Spearmint Leaves) -->
+      <div class="hero-garnish-scatter-zone hero-garnish-scatter-left" aria-hidden="true">
+        <img
+          src="assets/images/garnish-single-chili-whole-1.png"
+          alt="Fresh Red Bird's Eye Chili"
+          class="floating-garnish garnish-chili-whole-1"
+        />
+        <img
+          src="assets/images/garnish-single-mint-1.png"
+          alt="Fresh Spearmint Leaf"
+          class="floating-garnish garnish-mint-1"
+        />
+        <img
+          src="assets/images/garnish-single-chili-ring-1.png"
+          alt="Sliced Red Chili Ring"
+          class="floating-garnish garnish-chili-ring-1"
+        />
+        <img
+          src="assets/images/garnish-single-chili-whole-2.png"
+          alt="Curved Whole Red Chili"
+          class="floating-garnish garnish-chili-whole-2"
+        />
+        <img
+          src="assets/images/garnish-single-chili-ring-2.png"
+          alt="3D Tilted Sliced Chili Ring"
+          class="floating-garnish garnish-chili-ring-2"
+        />
+        <img
+          src="assets/images/garnish-single-mint-2.png"
+          alt="Curved Mint Herb Leaf"
+          class="floating-garnish garnish-mint-2"
+        />
+        <img
+          src="assets/images/garnish-single-chili-ring-3.png"
+          alt="Thin Red Chili Ring"
+          class="floating-garnish garnish-chili-ring-3"
+        />
+        <img
+          src="assets/images/garnish-single-mint-3.png"
+          alt="Dewy Mint Leaf"
+          class="floating-garnish garnish-mint-3"
+        />
       </div>
-      <div class="info-item">
-        <span class="info-icon">⭐</span>
-        <span>4.1 / 5 (800+ đánh giá)</span>
+
+      <!-- Right Side Independent Phở Ingredients (Each Individually AI-Crafted: Lime Wedges, Lime Wheel, Star Anise Pods, Thai Basil) -->
+      <div class="hero-garnish-scatter-zone" aria-hidden="true">
+        <img
+          src="assets/images/garnish-single-star-anise-1.png"
+          alt="Whole Star Anise Pod"
+          class="floating-garnish garnish-star-anise-1"
+        />
+        <img
+          src="assets/images/garnish-single-basil-1.png"
+          alt="Fresh Thai Basil Leaf"
+          class="floating-garnish garnish-basil-1"
+        />
+        <img
+          src="assets/images/garnish-single-lime-wedge-1.png"
+          alt="Fresh Juicy Lime Wedge"
+          class="floating-garnish garnish-lime-wedge-1"
+        />
+        <img
+          src="assets/images/garnish-single-lime-wheel.png"
+          alt="Sliced Translucent Lime Wheel"
+          class="floating-garnish garnish-lime-wheel"
+        />
+        <img
+          src="assets/images/garnish-single-basil-2.png"
+          alt="Vibrant Thai Basil Leaf"
+          class="floating-garnish garnish-basil-2"
+        />
+        <img
+          src="assets/images/garnish-single-star-anise-2.png"
+          alt="Whole Star Anise Pod Perspective"
+          class="floating-garnish garnish-star-anise-2"
+        />
+        <img
+          src="assets/images/garnish-single-lime-wedge-2.png"
+          alt="Lime Wedge with Dewdrop"
+          class="floating-garnish garnish-lime-wedge-2"
+        />
+        <img
+          src="assets/images/garnish-single-basil-3.png"
+          alt="Crisp Thai Basil Leaf"
+          class="floating-garnish garnish-basil-3"
+        />
       </div>
-      <div class="info-item">
-        <a href="https://maps.app.goo.gl/9xizRKacCeMM31Ly5" target="_blank" class="btn-cta">Chỉ Đường Google Maps</a>
+
+      <div class="container hero-content-container">
+        <!-- Eyebrow Subtitle matching Dribbble design -->
+        <div class="hero-eyebrow-pills">
+          <span class="eyebrow-dot">•</span>
+          <span>Fresh</span>
+          <span class="eyebrow-dot">•</span>
+          <span>Fast</span>
+          <span class="eyebrow-dot">•</span>
+          <span>Flavorful</span>
+        </div>
+
+        <!-- Giant 2-Line Condensed White Headline matching Dribbble design -->
+        <h1 class="hero-headline">
+          <span>CRAFTED FOR CRAVINGS</span>
+          <span>SERVED WITH PERFECTION</span>
+        </h1>
+
+        <!-- Centerpiece Food Composition with Floating Satellite Dishes -->
+        <div class="hero-food-composition">
+          <!-- Left Flanking Dish: Gỏi Cuốn Tươi Ngon (Transparent Cutout) -->
+          <div class="food-satellite-left">
+            <img
+              src="assets/images/goi-cuon-hero-cutout.png"
+              alt="Fresh Vietnamese Spring Rolls with Peanut Dip"
+            />
+          </div>
+
+          <!-- Centerpiece: Steaming Bowl of Phở Bò Đặc Biệt -->
+          <div class="food-centerpiece">
+            <img
+              src="assets/images/pho-hero-cutout.png"
+              alt="Signature Steaming Bowl of Beef Pho with Fresh Herbs"
+            />
+          </div>
+
+          <!-- Right Flanking Dish: Cơm Tấm Sườn Bì Chả Trứng (Transparent Cutout) -->
+          <div class="food-satellite-right">
+            <img
+              src="assets/images/com-tam-hero-cutout.png"
+              alt="Broken Rice with Lemongrass Pork Chop and Fried Egg"
+            />
+          </div>
+        </div>
       </div>
-    </div>
-  </header>
 
-  <!-- Hero Banner -->
-  <section class="hero-banner-section">
-    <img src="assets/images/hero-banner.png" alt="Phở Sydney - Served With Perfection" class="hero-banner-img">
-  </section>
-
-  <!-- Featured Signature Dishes -->
-  <section class="showcase">
-    <div class="container">
-      <h2 class="section-title">Hương Vị Đặc Trưng</h2>
-      <p class="section-subtitle">Món ăn truyền thống chuẩn vị Việt Nam nấu từ nguyên liệu tươi ngon mỗi ngày</p>
-      
-      <div class="dish-grid">
-        <article class="dish-card">
-          <img src="assets/images/pho-hero.png" alt="Phở Bò Đặc Biệt">
-          <div class="dish-card-body">
-            <h3 class="dish-card-title">Phở Bò Đặc Biệt</h3>
-            <p class="dish-card-desc">Bánh phở mềm dai, nước dùng hầm xương đậm đà, thịt bò tái, nạm, gầu, gân, bò viên và hành hoa thơm nức mũi.</p>
-          </div>
-        </article>
-
-        <article class="dish-card">
-          <img src="assets/images/com-tam-hero.png" alt="Cơm Tấm Sườn Bì Chả Trứng">
-          <div class="dish-card-body">
-            <h3 class="dish-card-title">Cơm Tấm Sườn Bì Chả</h3>
-            <p class="dish-card-desc">Sườn nướng sả ướp đậm vị nướng than hoa, chả trứng béo bùi, bì heo dai giòn, trứng ốp la lòng đào và mỡ hành.</p>
-          </div>
-        </article>
-
-        <article class="dish-card">
-          <img src="assets/images/goi-cuon-hero.png" alt="Gỏi Cuốn Tôm Thịt">
-          <div class="dish-card-body">
-            <h3 class="dish-card-title">Gỏi Cuốn Tôm Thịt</h3>
-            <p class="dish-card-desc">Bánh tráng cuốn tôm tươi mọng nước, thịt luộc, bún tươi và rau thơm thanh mát, chấm cùng sốt tương đậu phộng béo ngậy.</p>
-          </div>
-        </article>
-
-        <article class="dish-card">
-          <img src="assets/images/banh-mi-hero.png" alt="Bánh Mì Thịt Nướng">
-          <div class="dish-card-body">
-            <h3 class="dish-card-title">Bánh Mì Thịt Nướng</h3>
-            <p class="dish-card-desc">Bánh mì vỏ giòn ruột xốp, thịt heo nướng sả đậm đà, pate béo ngậy, đồ chua giòn ngọt và ngò rí thơm lừng.</p>
-          </div>
-        </article>
-
-        <article class="dish-card">
-          <img src="assets/images/bun-bo-hue-hero.png" alt="Bún Bò Huế">
-          <div class="dish-card-body">
-            <h3 class="dish-card-title">Bún Bò Huế</h3>
-            <p class="dish-card-desc">Nước dùng thơm nồng vị sả và ớt sa tế cay ấm, bắp bò thái dày, chả cua, chả lụa và rau muống chẻ giòn tươi.</p>
-          </div>
-        </article>
-
-        <article class="dish-card">
-          <img src="assets/images/bun-thit-nuong-hero.png" alt="Bún Thịt Nướng Chả Giò">
-          <div class="dish-card-body">
-            <h3 class="dish-card-title">Bún Thịt Nướng Chả Giò</h3>
-            <p class="dish-card-desc">Tô bún tươi hòa quyện thịt nướng vàng xém cạnh, chả giò chiên giòn tan, đậu phộng rang và nước mắm pha tỏi ớt.</p>
-          </div>
-        </article>
-
-        <article class="dish-card">
-          <img src="assets/images/ca-phe-hero.png" alt="Cà Phê Sữa Đá Phin">
-          <div class="dish-card-body">
-            <h3 class="dish-card-title">Cà Phê Sữa Đá Phin</h3>
-            <p class="dish-card-desc">Cà phê Robusta truyền thống nhỏ giọt từ phin kim loại, hòa quyện sữa đặc béo ngọt và đá lạnh mát rượi.</p>
-          </div>
-        </article>
+      <!-- Organic Bottom Wave Transition into Cream Background (Exact Dribbble S-Curve) -->
+      <div class="hero-wave-divider">
+        <svg
+          data-name="OrganicWave"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,75 C 260,75 440,175 680,175 C 880,175 980,60 1120,60 C 1240,60 1340,95 1440,115 L 1440,320 L 0,320 Z"
+            class="shape-fill"
+          ></path>
+        </svg>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <script src="js/main.js"></script>
-</body>
+
+    <!-- ========================================================================
+       4. Explore Our Popular Categories (Dribbble Concept 2)
+       ======================================================================== -->
+    <section class="categories-section" id="popular-categories">
+      <div class="container">
+        <div class="categories-header">
+          <div class="cat-eyebrow">Categories</div>
+          <h2 class="cat-section-title">EXPLORE OUR POPULAR DISHES</h2>
+          <p class="cat-section-subtext">
+            Discover a variety of freshly prepared meals, crafted to satisfy every craving with rich flavors,
+            premium ingredients, and delightful taste experience for everyone.
+          </p>
+        </div>
+
+        <div class="categories-grid" id="categoriesGrid">
+          <!-- 1. Pho -->
+          <a href="#menu-showcase" class="category-card" data-category="pho">
+            <div class="category-card-surface">
+              <img
+                src="assets/images/pho-hero-cutout.png"
+                alt="Beef & Chicken Pho"
+                class="category-card-img"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="category-card-name">Pho Noodle Soup</h3>
+          </a>
+
+          <!-- 2. Banh Mi -->
+          <a href="#menu-showcase" class="category-card" data-category="specialties">
+            <div class="category-card-surface">
+              <img
+                src="assets/images/banh-mi-cutout.png"
+                alt="Crispy Bánh Mì Baguettes"
+                class="category-card-img"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="category-card-name">Banh Mi</h3>
+          </a>
+
+          <!-- 3. Broken Rice -->
+          <a href="#menu-showcase" class="category-card" data-category="rice">
+            <div class="category-card-surface">
+              <img
+                src="assets/images/com-tam-hero-cutout.png"
+                alt="Broken Rice Plates"
+                class="category-card-img"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="category-card-name">Broken Rice</h3>
+          </a>
+
+          <!-- 4. Appetizers -->
+          <a href="#menu-showcase" class="category-card" data-category="appetizers">
+            <div class="category-card-surface">
+              <img
+                src="assets/images/goi-cuon-hero-cutout.png"
+                alt="Appetizers & Spring Rolls"
+                class="category-card-img"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="category-card-name">Appetizers</h3>
+          </a>
+
+          <!-- 5. Vermicelli Bowls -->
+          <a href="#menu-showcase" class="category-card" data-category="noodles">
+            <div class="category-card-surface">
+              <img
+                src="assets/images/bun-bo-hue-cutout.png"
+                alt="Vietnamese Vermicelli Bowls"
+                class="category-card-img"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="category-card-name">Vermicelli</h3>
+          </a>
+
+          <!-- 6. Beverages -->
+          <a href="#menu-showcase" class="category-card" data-category="drinks">
+            <div class="category-card-surface">
+              <img
+                src="assets/images/ca-phe-cutout.png"
+                alt="Vietnamese Iced Coffee & Drinks"
+                class="category-card-img"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="category-card-name">Beverages</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ========================================================================
+       5. Delicious Deals You Can't Miss (Special Offers Bento Grid)
+       ======================================================================== -->
+    <section class="deals-section" id="offers">
+      <div class="container">
+        <div class="deals-header">
+          <div class="deals-eyebrow">Special Offers</div>
+          <h2 class="deals-section-title">DELICIOUS DEALS YOU CAN’T MISS</h2>
+          <p class="deals-section-subtext">
+            Enjoy your favorite meals at unbeatable prices — freshly made and
+            full of flavor with delicious ingredients, great quality, amazing
+            taste, and satisfying portions for everyone.
+          </p>
+        </div>
+
+        <div class="deals-bento-grid">
+          <!-- Left Column: Two Stacked Cards -->
+          <div class="deals-col-left">
+            <!-- Card 1: Chef's Selection Sizzling Skillet (Gold-Orange Gradient) -->
+            <article class="deal-card deal-card-skillet">
+              <div class="deal-card-content">
+                <span class="deal-tag">Chef's Selection</span>
+                <h3 class="deal-title">
+                  <span>FRESHLY PREPARED</span>
+                  <span>SERVED AT ITS BEST</span>
+                </h3>
+                <a href="#menu-showcase" class="deal-btn">
+                  <span>Order Now</span>
+                  <span class="deal-btn-fire">🔥</span>
+                </a>
+              </div>
+
+              <!-- Promo Starburst Badge -->
+              <div class="deal-starburst starburst-cream">
+                <svg viewBox="0 0 100 100" class="starburst-svg">
+                  <polygon
+                    points="50.0,0.0 56.7,7.5 65.5,2.4 69.5,11.7 79.4,9.5 80.4,19.6 90.5,20.6 88.3,30.5 97.6,34.5 92.5,43.3 100.0,50.0 92.5,56.7 97.6,65.5 88.3,69.5 90.5,79.4 80.4,80.4 79.4,90.5 69.5,88.3 65.5,97.6 56.7,92.5 50.0,100.0 43.3,92.5 34.5,97.6 30.5,88.3 20.6,90.5 19.6,80.4 9.5,79.4 11.7,69.5 2.4,65.5 7.5,56.7 0.0,50.0 7.5,43.3 2.4,34.5 11.7,30.5 9.5,20.6 19.6,19.6 20.6,9.5 30.5,11.7 34.5,2.4 43.3,7.5"
+                  ></polygon>
+                </svg>
+                <div class="starburst-text">
+                  <span class="starburst-label">Save up to</span>
+                  <span class="starburst-val">40%</span>
+                </div>
+              </div>
+
+              <!-- Dish Visual -->
+              <div class="deal-img-wrap deal-img-skillet">
+                <img
+                  src="assets/images/bo-luc-lac-cutout.png"
+                  alt="Vietnamese Shaking Beef Skillet"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+
+            <!-- Card 2: House Specialty Broken Rice (Deep Crimson Red) -->
+            <article class="deal-card deal-card-oven">
+              <div class="deal-card-content">
+                <span class="deal-tag">House Specialty</span>
+                <h3 class="deal-title">
+                  <span>SLOW-SIMMERED</span>
+                  <span>&amp; FLAVORFUL</span>
+                </h3>
+                <a href="#menu-showcase" class="deal-btn">
+                  <span>Order Now</span>
+                  <span class="deal-btn-fire">🔥</span>
+                </a>
+              </div>
+
+              <!-- Promo Starburst Badge -->
+              <div class="deal-starburst starburst-gold">
+                <svg viewBox="0 0 100 100" class="starburst-svg">
+                  <polygon
+                    points="50.0,0.0 56.7,7.5 65.5,2.4 69.5,11.7 79.4,9.5 80.4,19.6 90.5,20.6 88.3,30.5 97.6,34.5 92.5,43.3 100.0,50.0 92.5,56.7 97.6,65.5 88.3,69.5 90.5,79.4 80.4,80.4 79.4,90.5 69.5,88.3 65.5,97.6 56.7,92.5 50.0,100.0 43.3,92.5 34.5,97.6 30.5,88.3 20.6,90.5 19.6,80.4 9.5,79.4 11.7,69.5 2.4,65.5 7.5,56.7 0.0,50.0 7.5,43.3 2.4,34.5 11.7,30.5 9.5,20.6 19.6,19.6 20.6,9.5 30.5,11.7 34.5,2.4 43.3,7.5"
+                  ></polygon>
+                </svg>
+                <div class="starburst-text">
+                  <span class="starburst-label">Save Up to</span>
+                  <span class="starburst-val">50%</span>
+                </div>
+              </div>
+
+              <!-- Dish Visual -->
+              <div class="deal-img-wrap deal-img-round">
+                <img
+                  src="assets/images/com-tam-hero-cutout.png"
+                  alt="Authentic Vietnamese Broken Rice Platter"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+          </div>
+
+          <!-- Right Column: Tall Emerald Card -->
+          <div class="deals-col-right">
+            <article class="deal-card deal-card-tall">
+              <div class="deal-card-content deal-tall-content">
+                <h3 class="deal-tall-title">
+                  <span>SIGNATURE 24-HR BEEF PHO</span>
+                  <span class="deal-tall-subtitle">RICH. AROMATIC. SATISFYING.</span>
+                </h3>
+              </div>
+
+              <!-- Floating Starburst Badge -->
+              <div class="deal-starburst starburst-white">
+                <svg viewBox="0 0 100 100" class="starburst-svg">
+                  <polygon
+                    points="50.0,0.0 56.7,7.5 65.5,2.4 69.5,11.7 79.4,9.5 80.4,19.6 90.5,20.6 88.3,30.5 97.6,34.5 92.5,43.3 100.0,50.0 92.5,56.7 97.6,65.5 88.3,69.5 90.5,79.4 80.4,80.4 79.4,90.5 69.5,88.3 65.5,97.6 56.7,92.5 50.0,100.0 43.3,92.5 34.5,97.6 30.5,88.3 20.6,90.5 19.6,80.4 9.5,79.4 11.7,69.5 2.4,65.5 7.5,56.7 0.0,50.0 7.5,43.3 2.4,34.5 11.7,30.5 9.5,20.6 19.6,19.6 20.6,9.5 30.5,11.7 34.5,2.4 43.3,7.5"
+                  ></polygon>
+                </svg>
+                <div class="starburst-text">
+                  <span class="starburst-label">Save up to</span>
+                  <span class="starburst-val">30%</span>
+                </div>
+              </div>
+
+              <!-- Satellite Floating Dishes -->
+              <div class="deal-satellite-top">
+                <img
+                  src="assets/images/banh-mi-cutout.png"
+                  alt="Crispy Bánh Mì"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Main Centerpiece Dish -->
+              <div class="deal-centerpiece-pho">
+                <img
+                  src="assets/images/pho-hero-cutout.png"
+                  alt="Signature Steaming Beef Pho Bowl"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="deal-satellite-bottom">
+                <img
+                  src="assets/images/goi-cuon-hero-cutout.png"
+                  alt="Fresh Vietnamese Spring Rolls"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Floating Discount Badges -->
+              <div class="deal-floating-pills">
+                <span class="deal-pill pill-white">Special Discount</span>
+                <span class="deal-pill pill-orange">Weekend Special</span>
+              </div>
+
+              <a href="#menu-showcase" class="deal-btn deal-btn-tall">
+                <span>Order Now</span>
+                <span class="deal-btn-fire">🔥</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       6. Our Menu Section (Deep Crimson Canvas - "DISCOVER FLAVORS YOU’LL LOVE")
+       ======================================================================== -->
+    <section class="discover-menu-section" id="menu-showcase">
+      <div class="container">
+        <!-- Header with Left Text & Right Action (Matches Dribbble Concept) -->
+        <div class="discover-header">
+          <div class="discover-header-left">
+            <div class="discover-eyebrow">Our Menu</div>
+            <h2 class="discover-title">DISCOVER FLAVORS YOU’LL LOVE</h2>
+            <p class="discover-subtitle">
+              Explore our carefully crafted dishes — made with fresh
+              ingredients and bold flavors, rich taste, premium quality, and
+              delightful aroma.
+            </p>
+          </div>
+          <div class="discover-header-right">
+            <a href="#fullMenuCollapsible" class="discover-book-btn" id="viewMenuBtn">
+              <span>View Menu</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 Featured Dish Cards Grid (Matches Dribbble Concept) -->
+        <div class="discover-grid">
+          <!-- Card 1: Signature Beef Phở -->
+          <article class="discover-card" data-target-spread="2" data-target-code="#9">
+            <div class="discover-card-img-wrap">
+              <img
+                src="assets/images/signature-pho-dish.jpg"
+                alt="Signature Beef Phở Noodle Soup"
+                loading="lazy"
+              />
+            </div>
+            <div class="discover-card-body">
+              <div class="discover-card-top">
+                <h3 class="discover-dish-name">SIGNATURE BEEF PHỞ</h3>
+                <span class="discover-dish-price">$18</span>
+              </div>
+              <p class="discover-dish-desc">
+                24-hour slow-simmered beef marrow broth, tender brisket, rare flank, meatballs, and fresh rice noodles.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2: Bún Bò Huế Royale -->
+          <article class="discover-card" data-target-spread="5" data-target-code="#59">
+            <div class="discover-card-img-wrap">
+              <img
+                src="assets/images/bun-bo-hue-dish.jpg"
+                alt="Bún Bò Huế Spicy Lemongrass Noodle Soup"
+                loading="lazy"
+              />
+            </div>
+            <div class="discover-card-body">
+              <div class="discover-card-top">
+                <h3 class="discover-dish-name">BÚN BÒ HUẾ ROYALE</h3>
+                <span class="discover-dish-price">$20</span>
+              </div>
+              <p class="discover-dish-desc">
+                Spicy lemongrass beef broth with tender shank, Vietnamese pork ham, herbs, and thick round noodles.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Cơm Sườn Nướng -->
+          <article class="discover-card" data-target-spread="3" data-target-code="#43">
+            <div class="discover-card-img-wrap">
+              <img
+                src="assets/images/gallery-com-tam-platter.jpg"
+                alt="Cơm Sườn Nướng Char-Grilled Lemongrass Pork Chop Rice"
+                loading="lazy"
+              />
+            </div>
+            <div class="discover-card-body">
+              <div class="discover-card-top">
+                <h3 class="discover-dish-name">CƠM SƯỜN NƯỚNG</h3>
+                <span class="discover-dish-price">$18</span>
+              </div>
+              <p class="discover-dish-desc">
+                Char-grilled lemongrass pork chop over steamed jasmine broken rice, served with pickled veggies, sunny-side egg, and house fish sauce.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Interactive 3D Flipbook Menu Popup Modal -->
+        <div class="full-menu-collapsible menu-popup-modal" id="fullMenuCollapsible" role="dialog" aria-modal="true" aria-label="Phở Sydney 3D Menu Book">
+          <button type="button" class="menu-popup-close" id="closeMenuPopupBtn" aria-label="Close menu">
+            <span aria-hidden="true">✕</span>
+          </button>
+          <!-- 3D Sketchbook Flipbook Container (MengToSketchbook Engine) -->
+          <div class="menu-book-stage sb-wrap" id="sbWrap">
+            <div class="sb-stage" id="sbStage">
+              <button type="button" class="sb-arrow left" id="sbLeft" aria-label="Previous page">
+                <svg viewBox="0 0 14 44" width="16" height="48" fill="none" aria-hidden="true"><polyline points="11,3 3,22 11,41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="sb-3d" id="sb3d">
+                <div class="sb-tilt" id="sbTilt">
+                  <div class="sb-cast ambient" aria-hidden="true"></div>
+                  <div class="sb-cast contact" aria-hidden="true"></div>
+                  <div class="sb-cast hair" aria-hidden="true"></div>
+                  <div class="menu-book-cover" id="menuBookCover">
+                    <div class="menu-book-backing" aria-hidden="true"></div>
+                    <div class="sb-book" id="sbBook">
+                      <div class="menu-book-spine" aria-hidden="true"></div>
+
+              <!-- SPREAD 0: CLOSED MENU BOOK (Front Cover Only on Right Half, Centered) -->
+              <div class="menu-book-spread is-active" data-spread-index="0" data-category="cover" data-title="Bìa Thực Đơn (Click to Open)">
+                <!-- Left Half: Empty when book is closed -->
+                <div class="menu-book-page menu-page-left menu-page-blank" aria-hidden="true"></div>
+
+                <!-- Right Half: Bespoke Linen & Stitched Leather Menu Book Cover -->
+                <div class="menu-book-page menu-page-right menu-cover-page menu-cover-front">
+                  <img
+                    src="assets/images/menu-cover-art.jpg"
+                    alt="Phở Sydney — Authentic Vietnamese Cuisine Menu Book (2323 Atlantic Ave, Atlantic City, NJ)"
+                    class="menu-cover-img"
+                    draggable="false"
+                  />
+                </div>
+              </div>
+
+              <!-- SPREAD 1: OPENED BOOK — INSIDE FRONTISPIECE (LEFT) & INTERACTIVE TABLE OF CHAPTERS (RIGHT) -->
+              <div class="menu-book-spread" data-spread-index="1" data-category="toc" data-title="Mục Lục Thực Đơn • 6 Chapters">
+                <!-- Left Page: Inside Front Cover (Bìa Trong & Món Đặc Trưng) -->
+                <div class="menu-book-page menu-page-left menu-inside-cover">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CULINARY HERITAGE</span>
+                    <h3 class="menu-chapter-title">TINH HOA BẾP VIỆT — HOUSE SIGNATURES</h3>
+                    <p class="menu-chapter-note">24-hour marrow broth &amp; open-flame grill, served fresh daily</p>
+                  </div>
+
+                  <div class="menu-inside-highlights">
+                    <button type="button" class="menu-inside-card" data-goto-spread="2" data-target-code="#9">
+                      <img src="assets/images/pho-hero.png" alt="Phở Đặc Biệt" class="menu-inside-thumb" />
+                      <div class="menu-inside-card-info">
+                        <span class="menu-inside-badge">Chef's #1 Pick &bull; Chapter I</span>
+                        <div class="menu-inside-card-head"><strong>#9 Phở Đặc Biệt</strong><em>$16.99</em></div>
+                        <span>Rare Steak, Brisket, Flank, Tendon &amp; Meatballs</span>
+                      </div>
+                    </button>
+
+                    <button type="button" class="menu-inside-card" data-goto-spread="3" data-target-code="#42">
+                      <img src="assets/images/com-tam-hero.png" alt="Cơm Đặc Biệt" class="menu-inside-thumb" />
+                      <div class="menu-inside-card-info">
+                        <span class="menu-inside-badge">House Favorite &bull; Chapter II</span>
+                        <div class="menu-inside-card-head"><strong>#42 Cơm Đặc Biệt</strong><em>$17.99</em></div>
+                        <span>Lemongrass Pork Chop, Shredded Pork, Egg Cake &amp; Egg</span>
+                      </div>
+                    </button>
+
+                    <button type="button" class="menu-inside-card" data-goto-spread="5" data-target-code="#59">
+                      <img src="assets/images/bun-bo-hue-hero.png" alt="Bún Bò Huế" class="menu-inside-thumb" />
+                      <div class="menu-inside-card-info">
+                        <span class="menu-inside-badge">Royal Specialty &bull; Chapter IV</span>
+                        <div class="menu-inside-card-head"><strong>#59 Bún Bò Huế</strong><em>$17.99</em></div>
+                        <span>Spicy Lemongrass Beef &amp; Pork Broth with Vermicelli</span>
+                      </div>
+                    </button>
+
+                    <button type="button" class="menu-inside-card" data-goto-spread="7" data-target-code="#D3">
+                      <img src="assets/images/ca-phe-cutout.png" alt="Cà Phê Sữa Đá" class="menu-inside-thumb" />
+                      <div class="menu-inside-card-info">
+                        <span class="menu-inside-badge">Signature Drink &bull; Chapter VI</span>
+                        <div class="menu-inside-card-head"><strong>#D3 Cà Phê Sữa Đá</strong><em>$6.00</em></div>
+                        <span>Slow-Dripped Phin Coffee with Condensed Milk (Hot/Iced)</span>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="menu-inside-hours">
+                    <strong>📍 2323 Atlantic Ave, Atlantic City, NJ 08401</strong>
+                    <span>Open Daily &bull; Dine-In, Takeout &amp; Catering &bull; (609) 348-5946</span>
+                  </div>
+
+                  <div class="menu-page-footer"><span>PHỞ SYDNEY HERITAGE</span><span>INSIDE COVER</span></div>
+                </div>
+
+                <!-- Right Page: Interactive Table of Chapters (Trang Mục Lục Menu) -->
+                <div class="menu-book-page menu-page-right menu-toc-page">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">MENU DIRECTORY</span>
+                    <h3 class="menu-chapter-title">MỤC LỤC — CHAPTER INDEX</h3>
+                    <p class="menu-chapter-note">Click any chapter to flip directly to its pages</p>
+                  </div>
+
+                  <div class="menu-book-list menu-toc-list" role="navigation" aria-label="Menu Chapters">
+                    <button type="button" class="menu-book-item menu-toc-item" data-goto-spread="2" data-category="pho">
+                      <div class="menu-item-line">
+                        <span class="menu-item-code">I.</span>
+                        <span class="menu-item-vn">Phở Bò &amp; Gà — Beef &amp; Chicken Phở</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">P. 01–02</span>
+                      </div>
+                      <p class="menu-item-en">24-Hour Marrow Broth, Rare Steak, Brisket &amp; Chicken &bull; 14 Dishes</p>
+                    </button>
+
+                    <button type="button" class="menu-book-item menu-toc-item" data-goto-spread="3" data-category="rice">
+                      <div class="menu-item-line">
+                        <span class="menu-item-code">II.</span>
+                        <span class="menu-item-vn">Cơm Đĩa — Broken Rice &amp; Wok Plates</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">P. 03–04</span>
+                      </div>
+                      <p class="menu-item-en">Lemongrass Pork Chop, Cubed Ribeye &amp; Fried Rice &bull; 16 Dishes</p>
+                    </button>
+
+                    <button type="button" class="menu-book-item menu-toc-item" data-goto-spread="4" data-category="appetizers">
+                      <div class="menu-item-line">
+                        <span class="menu-item-code">III.</span>
+                        <span class="menu-item-vn">Khai Vị &amp; Hủ Tiếu — Appetizers &amp; Soups</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">P. 05–06</span>
+                      </div>
+                      <p class="menu-item-en">Fresh Spring Rolls, Crispy Rolls, Salads &amp; Noodle Soups &bull; 14 Dishes</p>
+                    </button>
+
+                    <button type="button" class="menu-book-item menu-toc-item" data-goto-spread="5" data-category="noodles">
+                      <div class="menu-item-line">
+                        <span class="menu-item-code">IV.</span>
+                        <span class="menu-item-vn">Bún — Vermicelli &amp; Royal Huế Bowls</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">P. 07–08</span>
+                      </div>
+                      <p class="menu-item-en">Grilled Pork Vermicelli, Spicy Bún Bò Huế &amp; Bún Riêu &bull; 12 Dishes</p>
+                    </button>
+
+                    <button type="button" class="menu-book-item menu-toc-item" data-goto-spread="6" data-category="specialties">
+                      <div class="menu-item-line">
+                        <span class="menu-item-code">V.</span>
+                        <span class="menu-item-vn">Bánh Mì &amp; Món Quê — House Specialties</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">P. 09–10</span>
+                      </div>
+                      <p class="menu-item-en">Vietnamese Baguettes, Sizzling Crepes &amp; Clay Pot &bull; 14 Dishes</p>
+                    </button>
+
+                    <button type="button" class="menu-book-item menu-toc-item" data-goto-spread="7" data-category="drinks">
+                      <div class="menu-item-line">
+                        <span class="menu-item-code">VI.</span>
+                        <span class="menu-item-vn">Giải Khát — Artisanal Beverages</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">P. 11–12</span>
+                      </div>
+                      <p class="menu-item-en">Vietnamese Phin Iced Coffee, Smoothies &amp; Fruit Teas &bull; 10 Drinks</p>
+                    </button>
+                  </div>
+
+                  <div class="menu-page-footer"><span>CLICK A CHAPTER TO OPEN</span><span>TABLE OF CONTENTS</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 2: PHO (Pages 1-2) -->
+              <div class="menu-book-spread" data-spread-index="2" data-category="pho" data-title="Beef & Chicken Pho">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header has-thumb">
+                    <div class="menu-page-header-text">
+                      <span class="menu-chapter-no">CHAPTER I</span>
+                    <h3 class="menu-chapter-title">PHỞ BÒ &amp; GÀ — BEEF &amp; CHICKEN PHỞ</h3>
+                    <p class="menu-chapter-note">Small: $14.99 &bull; Large: $15.99 (unless noted)</p>
+                    </div>
+                    <img src="assets/images/pho-hero.png" alt="Phở Đặc Biệt" class="menu-featured-img" />
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#9</span><span class="menu-item-vn">Phở Đặc Biệt</span><span class="menu-item-dots"></span><span class="menu-item-price">$16.99 / $18.99</span></div>
+                      <p class="menu-item-en">Noodle, Rare Steak, Flank, Tendon, Tripe, Beef Meat Ball, Brisket</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#10</span><span class="menu-item-vn">Phở Tái</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Eye Round Rare Steak</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#11</span><span class="menu-item-vn">Phở Tái, Gân</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Rare Steak &amp; Soft Tendon</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#12</span><span class="menu-item-vn">Phở Tái, Gân, Sách</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Rare Steak, Tendon &amp; Beef Tripe</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#13</span><span class="menu-item-vn">Phở Tái, Nạm</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Rare Steak &amp; Well-Done Flank</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#14</span><span class="menu-item-vn">Phở Tái, Nạm, Gân</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Rare Steak, Flank &amp; Tendon</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 01</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER I (CONT.)</span>
+                    <h3 class="menu-chapter-title">WELL-DONE, CHICKEN &amp; SEAFOOD PHỞ</h3>
+                    <p class="menu-chapter-note">Served with fresh basil, bean sprouts, jalapeño &amp; lime</p>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#15</span><span class="menu-item-vn">Phở Chín</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Tender Well-Done Brisket</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#16</span><span class="menu-item-vn">Phở Chín, Gân</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Well-Done Steak &amp; Tendon</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#18</span><span class="menu-item-vn">Phở Chín, Nạm</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Well-Done Brisket &amp; Flank</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#20</span><span class="menu-item-vn">Phở Bò Viên</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Savory Vietnamese Beef Meatballs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#21</span><span class="menu-item-vn">Phở Tái, Bò Viên</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Rare Steak &amp; Beef Meatballs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#22</span><span class="menu-item-vn">Phở Chín, Bò Viên</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Rice Noodle Soup with Well-Done Brisket &amp; Beef Meatballs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#23</span><span class="menu-item-vn">Phở Gà</span><span class="menu-item-dots"></span><span class="menu-item-price">$14.99 / $15.99</span></div>
+                      <p class="menu-item-en">Traditional Shredded Chicken Noodle Soup</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#23a</span><span class="menu-item-vn">Phở Đồ Biển</span><span class="menu-item-dots"></span><span class="menu-item-price">L: $17.99</span></div>
+                      <p class="menu-item-en">Seafood Rice Noodle Soup w. Shrimp, Squid &amp; Fish Cake</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 02</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 2: BROKEN RICE PLATES (Pages 3-4) -->
+              <div class="menu-book-spread" data-spread-index="3" data-category="rice" data-title="Broken Rice Plates">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header has-thumb">
+                    <div class="menu-page-header-text">
+                      <span class="menu-chapter-no">CHAPTER II</span>
+                    <h3 class="menu-chapter-title">CƠM ĐĨA — BROKEN RICE PLATES</h3>
+                    <p class="menu-chapter-note">Steamed jasmine broken rice, pickled veggies &amp; house fish sauce</p>
+                    </div>
+                    <img src="assets/images/com-tam-hero.png" alt="Cơm Tấm Đặc Biệt" class="menu-featured-img" />
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#42</span><span class="menu-item-vn">Cơm Đặc Biệt - Sườn, Bì, Chả, Trứng</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Steamed Rice w. Pork Chop, Shredded Pork, Pork Cake &amp; Fried Egg</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#43</span><span class="menu-item-vn">Cơm Sườn Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Char-Grilled Lemongrass Pork Chop</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#44</span><span class="menu-item-vn">Cơm Sườn, Bì</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Grilled Pork Chop &amp; Shredded Pork</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#45</span><span class="menu-item-vn">Cơm Sườn, Bì, Chả</span><span class="menu-item-dots"></span><span class="menu-item-price">$16.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Pork Chop, Shredded Pork &amp; Egg Meatloaf</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#46</span><span class="menu-item-vn">Cơm Bì, Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Shredded Pork &amp; Crispy Spring Rolls</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#47</span><span class="menu-item-vn">Cơm Thịt Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sliced Char-Grilled Pork</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#48</span><span class="menu-item-vn">Cơm Thịt Nướng, Bì</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sliced Grilled Pork &amp; Shredded Pork</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#49</span><span class="menu-item-vn">Cơm Thịt Nướng, Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sliced Grilled Pork &amp; Spring Rolls</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 03</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER II (CONT.)</span>
+                    <h3 class="menu-chapter-title">WOK-SEARED &amp; FRIED RICE PLATES</h3>
+                    <p class="menu-chapter-note">Wok-tossed to order over high flame with fragrant garlic &amp; lemongrass</p>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#50</span><span class="menu-item-vn">Cơm Gà Xào Xả</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sautéed Chicken in Lemongrass Sauce</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#51</span><span class="menu-item-vn">Cơm Gà Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Marinated Char-Grilled Chicken</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#52</span><span class="menu-item-vn">Cơm Tôm Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Char-Grilled Jumbo Shrimp</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#53</span><span class="menu-item-vn">Cơm Bò Xào Rau Cải</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sautéed Beef &amp; Mixed Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#54</span><span class="menu-item-vn">Cơm Bò Xào Sa Tế</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Sautéed Beef in Spicy Chili Sa-Tế Sauce</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#55</span><span class="menu-item-vn">Cơm Bò Lúc Lắc</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Steamed Rice with Wok-Seared Cubed Ribeye Beef &amp; Onions</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#56</span><span class="menu-item-vn">Cơm Chiên Dương Châu</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">House Special Fried Rice w. Shrimp, BBQ Pork, Egg &amp; Peas</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#79</span><span class="menu-item-vn">Cơm Bò Bíp Tết</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Char-Grilled Marinated Rib-Eye Steak Served with Steamed Rice</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 04</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 3: APPETIZERS & NOODLE SOUPS (Pages 5-6) -->
+              <div class="menu-book-spread" data-spread-index="4" data-category="appetizers" data-title="Appetizers & Noodle Soups">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header has-thumb">
+                    <div class="menu-page-header-text">
+                      <span class="menu-chapter-no">CHAPTER III</span>
+                    <h3 class="menu-chapter-title">MÓN KHAI VỊ — APPETIZERS</h3>
+                    <p class="menu-chapter-note">Hand-rolled daily with house peanut hoisin &amp; fish sauce dips</p>
+                    </div>
+                    <img src="assets/images/goi-cuon-hero.png" alt="Gỏi Cuốn" class="menu-featured-img" />
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#1</span><span class="menu-item-vn">Gỏi Cuốn Tôm Thịt (2 Rolls)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.99</span></div>
+                      <p class="menu-item-en">Fresh Rice Paper Rolls with Steamed Shrimp, Pork, Vermicelli &amp; Mint</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#2</span><span class="menu-item-vn">Gỏi Cuốn Chay (2 Rolls)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.99</span></div>
+                      <p class="menu-item-en">Vegetarian Fresh Rice Paper Rolls with Fried Tofu &amp; Rice Noodles</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#4</span><span class="menu-item-vn">Thịt Nướng Cuốn (2 Rolls)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.99</span></div>
+                      <p class="menu-item-en">Fresh Rice Paper Rolls with Char-Grilled Lemongrass Pork &amp; Herbs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#5</span><span class="menu-item-vn">Chả Giò Tôm Thịt (2 Rolls)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.99</span></div>
+                      <p class="menu-item-en">Crispy Fried Imperial Spring Rolls with Ground Pork &amp; Shrimp</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#6</span><span class="menu-item-vn">Chả Giò Chay (2 Rolls)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.99</span></div>
+                      <p class="menu-item-en">Crispy Vegetarian Spring Rolls with Tofu, Taro &amp; Glass Noodles</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#7</span><span class="menu-item-vn">Chén Súp Thái (For 1)</span><span class="menu-item-dots"></span><span class="menu-item-price">$8.99</span></div>
+                      <p class="menu-item-en">Hot &amp; Sour Thai-Style Soup with Shrimp and Fresh Vegetables</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 05</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER III (CONT.)</span>
+                    <h3 class="menu-chapter-title">HỦ TIẾU &amp; MÌ — CLEAR &amp; EGG NOODLE SOUPS</h3>
+                    <p class="menu-chapter-note">Slow-simmered pork &amp; seafood broth or rich aromatic beef stew</p>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#24</span><span class="menu-item-vn">Mì Đồ Biển</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Egg Noodle Soup w. Shrimp, Squid, Fish Ball &amp; Crab Stick</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#25</span><span class="menu-item-vn">Hủ Tiếu Đồ Biển</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Clear Rice Noodle Soup w. Shrimp, Squid, Fish Ball &amp; Crab Stick</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#26</span><span class="menu-item-vn">Mì Khô Đồ Biển</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Tossed Dry Egg Noodles w. Seafood &amp; Chef's Special Savory Sauce</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#27</span><span class="menu-item-vn">Hủ Tiếu Chay</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vegetarian Rice Noodle Soup w. Fried Tofu &amp; Mixed Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#28</span><span class="menu-item-vn">Hủ Tiếu Bò Kho</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Aromatic Lemongrass Braised Beef Stew with Rice Noodles</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#29</span><span class="menu-item-vn">Mì Bò Kho</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Aromatic Lemongrass Braised Beef Stew with Egg Noodles</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#30</span><span class="menu-item-vn">Mì Hoành Thánh &amp; Xá Xíu</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Egg Noodle Soup with Handmade Pork Wontons &amp; Roast BBQ Pork</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#31</span><span class="menu-item-vn">Hủ Tiếu Gà</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Clear Rice Noodle Soup with Tender Shredded Chicken</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 06</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 4: VERMICELLI BOWLS & HUE NOODLES (Pages 7-8) -->
+              <div class="menu-book-spread" data-spread-index="5" data-category="noodles" data-title="Vermicelli Bowls">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header has-thumb">
+                    <div class="menu-page-header-text">
+                      <span class="menu-chapter-no">CHAPTER IV</span>
+                    <h3 class="menu-chapter-title">BÚN THỊT NƯỚNG — VERMICELLI BOWLS</h3>
+                    <p class="menu-chapter-note">Cool rice vermicelli, crisp herbs, roasted peanuts &amp; nước chấm</p>
+                    </div>
+                    <img src="assets/images/bun-thit-nuong-hero.png" alt="Bún Thịt Nướng Chả Giò" class="menu-featured-img" />
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#32</span><span class="menu-item-vn">Bún Đặc Biệt - Thịt Nướng, Tôm &amp; Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Vermicelli w. Grilled Pork, Grilled Shrimp, Crispy Spring Rolls &amp; Veggies</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#33</span><span class="menu-item-vn">Bún Thịt Nướng, Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Sliced Grilled Pork, Crispy Spring Rolls &amp; Veggies</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#34</span><span class="menu-item-vn">Bún Thịt Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Char-Grilled Lemongrass Pork &amp; Fresh Herbs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#35</span><span class="menu-item-vn">Bún Tôm Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Char-Grilled Marinated Shrimp &amp; Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#36</span><span class="menu-item-vn">Bún Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Golden Crispy Imperial Spring Rolls &amp; Greens</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 07</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER IV (CONT.)</span>
+                    <h3 class="menu-chapter-title">BÚN BÒ HUẾ &amp; LEMONGRASS VERMICELLI</h3>
+                    <p class="menu-chapter-note">Regional central Vietnamese noodle soups &amp; wok-tossed vermicelli bowls</p>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#37</span><span class="menu-item-vn">Bún Bì, Chả Giò</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Shredded Pork, Crispy Spring Rolls &amp; Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#38</span><span class="menu-item-vn">Bún Chả Giò Chay</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vegetarian Vermicelli Bowl with Crispy Tofu Spring Rolls &amp; Herbs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#39</span><span class="menu-item-vn">Bún Thịt Bò Xào Xả</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Wok-Sautéed Lemongrass Beef &amp; Onions</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#40</span><span class="menu-item-vn">Bún Gà Xào Xả</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Wok-Sautéed Lemongrass Chicken</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#41</span><span class="menu-item-vn">Bún Gà Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$15.99</span></div>
+                      <p class="menu-item-en">Vermicelli with Char-Grilled Marinated Chicken &amp; Veggies</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#59</span><span class="menu-item-vn">Bún Bò Huế</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Spicy Hue-Style Beef Shank, Pork Hock &amp; Vietnamese Ham Noodle Soup</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#60</span><span class="menu-item-vn">Bún Riêu Cua</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Savory Crab Paste &amp; Tomato Vermicelli Soup with Meatballs &amp; Tofu</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 08</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 5: BANH MI & HOMESTYLE SPECIALTIES (Pages 9-10) -->
+              <div class="menu-book-spread" data-spread-index="6" data-category="specialties" data-title="Banh Mi & Specialties">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header has-thumb">
+                    <div class="menu-page-header-text">
+                      <span class="menu-chapter-no">CHAPTER V</span>
+                    <h3 class="menu-chapter-title">BÁNH MÌ, BÁNH XÈO &amp; BÁNH HỎI</h3>
+                    <p class="menu-chapter-note">Crispy French baguettes, sizzling crepes &amp; woven vermicelli</p>
+                    </div>
+                    <img src="assets/images/banh-mi-hero.png" alt="Bánh Mì Thịt Nướng" class="menu-featured-img" />
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#76</span><span class="menu-item-vn">Bánh Mì Thịt Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$8.00</span></div>
+                      <p class="menu-item-en">Crispy Vietnamese Baguette w. Grilled Pork, Pâté, Pickles &amp; Cilantro</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#75</span><span class="menu-item-vn">Bánh Mì Thịt Nguội Đặc Biệt</span><span class="menu-item-dots"></span><span class="menu-item-price">$8.00</span></div>
+                      <p class="menu-item-en">Traditional Cold-Cut Vietnamese Hoagie w. Pâté, Ham &amp; Pickled Daikon</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#74</span><span class="menu-item-vn">Bánh Mì Bò Kho</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Slow-Braised Lemongrass Beef Stew Served with Toasted Baguette</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#63</span><span class="menu-item-vn">Bánh Xèo Tôm Thịt</span><span class="menu-item-dots"></span><span class="menu-item-price">$13.99</span></div>
+                      <p class="menu-item-en">Crispy Golden Coconut Crepe Stuffed w. Shrimp, Pork &amp; Bean Sprouts</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#77</span><span class="menu-item-vn">Bánh Hỏi Thịt Nướng</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Fine Woven Rice Vermicelli Bundles w. Char-Grilled Pork &amp; Herbs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#78</span><span class="menu-item-vn">Bánh Hỏi Chạo Tôm</span><span class="menu-item-dots"></span><span class="menu-item-price">$19.99</span></div>
+                      <p class="menu-item-en">Fine Woven Rice Vermicelli w. Sugarcane Grilled Shrimp Paste</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 09</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header has-thumb">
+                    <div class="menu-page-header-text">
+                      <span class="menu-chapter-no">CHAPTER V (CONT.)</span>
+                      <h3 class="menu-chapter-title">MÓN QUÊ HƯƠNG — CLAY POT &amp; CANH CHUA</h3>
+                      <p class="menu-chapter-note">Traditional Southern Vietnamese family-style dishes</p>
+                    </div>
+                    <img src="assets/images/ca-kho-to-hero.jpg" alt="Cá Kho Tộ" class="menu-featured-img" />
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#64</span><span class="menu-item-vn">Canh Chua Cá (Large)</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Tamarind Sweet &amp; Sour Soup with Catfish, Pineapple, Tomato &amp; Herbs</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#65</span><span class="menu-item-vn">Canh Chua Tôm (Large)</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Tamarind Sweet &amp; Sour Soup with Jumbo Shrimp &amp; Fresh Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#66</span><span class="menu-item-vn">Cá Kho Tộ</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Caramelized Catfish Simmered in Savory Brown Sauce in a Clay Pot</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#67</span><span class="menu-item-vn">Canh Chua Thái (Large)</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Spicy Thai-Style Lemongrass Soup with Shrimp &amp; Vegetables</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#70</span><span class="menu-item-vn">Mực Rang Muối</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Crispy Salt &amp; Pepper Calamari Tossed with Garlic, Scallions &amp; Chili</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#71</span><span class="menu-item-vn">Tôm Chiên Bột</span><span class="menu-item-dots"></span><span class="menu-item-price">$17.99</span></div>
+                      <p class="menu-item-en">Golden Crispy Battered Jumbo Shrimps</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#72</span><span class="menu-item-vn">Tôm Rang Muối</span><span class="menu-item-dots"></span><span class="menu-item-price">$21.99</span></div>
+                      <p class="menu-item-en">Crispy Salt &amp; Pepper Head-On Jumbo Shrimps w. Garlic &amp; Jalapeño</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#73</span><span class="menu-item-vn">Tôm Kho Tàu</span><span class="menu-item-dots"></span><span class="menu-item-price">$18.99</span></div>
+                      <p class="menu-item-en">Jumbo Shrimp Simmered in Caramelized Garlic Sauce in a Clay Pot</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 10</span></div>
+                </div>
+              </div>
+
+              <!-- SPREAD 6: BEVERAGES & SMOOTHIES (Pages 11-12) -->
+              <div class="menu-book-spread" data-spread-index="7" data-category="drinks" data-title="Beverages & Smoothies">
+                <div class="menu-book-page menu-page-left">
+                  <div class="menu-page-header has-thumb">
+                    <div class="menu-page-header-text">
+                      <span class="menu-chapter-no">CHAPTER VI</span>
+                    <h3 class="menu-chapter-title">CÀ PHÊ &amp; GIẢI KHÁT — COFFEE &amp; REFRESHERS</h3>
+                    <p class="menu-chapter-note">Slow-dripped Vietnamese phin coffee &amp; tropical refreshers</p>
+                    </div>
+                    <img src="assets/images/ca-phe-hero.png" alt="Cà Phê Sữa Đá" class="menu-featured-img" />
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D3</span><span class="menu-item-vn">Cà Phê Sữa (Nóng hoặc Đá)</span><span class="menu-item-dots"></span><span class="menu-item-price">$6.00</span></div>
+                      <p class="menu-item-en">Traditional Vietnamese Phin Filter Coffee with Condensed Milk (Hot/Iced)</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D2</span><span class="menu-item-vn">Cà Phê Đen (Nóng hoặc Đá)</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.00</span></div>
+                      <p class="menu-item-en">Traditional Bold Vietnamese Black Coffee with Sugar (Hot/Iced)</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D5</span><span class="menu-item-vn">Ly Dừa Tươi</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.00</span></div>
+                      <p class="menu-item-en">Chilled Young Coconut Juice with Tender Coconut Meat</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D6</span><span class="menu-item-vn">Ly Rau Má Tươi</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.00</span></div>
+                      <p class="menu-item-en">Refreshing Sweetened Green Pennywort Herbal Drink</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D4</span><span class="menu-item-vn">Sữa Đậu Nành</span><span class="menu-item-dots"></span><span class="menu-item-price">$4.00</span></div>
+                      <p class="menu-item-en">Creamy House-Style Sweetened Soy Milk</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D1</span><span class="menu-item-vn">Nước Ngọt Các Loại</span><span class="menu-item-dots"></span><span class="menu-item-price">$2.00</span></div>
+                      <p class="menu-item-en">Coke, Diet Coke, Sprite, Root Beer, Fanta Orange, Nestea, Ginger Ale</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><button type="button" class="menu-footer-toc-link" data-goto-spread="1">&larr; MỤC LỤC MENU</button><span>PAGE 11</span></div>
+                </div>
+
+                <div class="menu-book-page menu-page-right">
+                  <div class="menu-page-header">
+                    <span class="menu-chapter-no">CHAPTER VI (CONT.)</span>
+                    <h3 class="menu-chapter-title">TRÀ SỮA, SODA CHANH &amp; SINH TỐ — TEAS &amp; SMOOTHIES</h3>
+                    <p class="menu-chapter-note">Blended fresh to order with real tropical fruits &amp; condensed milk</p>
+                  </div>
+                  <ul class="menu-book-list">
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D10</span><span class="menu-item-vn">Ly Trà Sữa Thái</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.00</span></div>
+                      <p class="menu-item-en">Authentic Spiced Thai Iced Tea Topped with Creamy Half &amp; Half</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D12</span><span class="menu-item-vn">Sinh Tố Trái Cây (5 Vị Tự Chọn)</span><span class="menu-item-dots"></span><span class="menu-item-price">$6.00</span></div>
+                      <p class="menu-item-en">Tropical Fruit Smoothies: Avocado (Bơ), Durian (Sầu Riêng), Jackfruit (Mít), Soursop (Mãng Cầu), or Fresh Strawberry (Dâu Tươi)</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D7</span><span class="menu-item-vn">Ly Soda Chanh Đường</span><span class="menu-item-dots"></span><span class="menu-item-price">$6.00</span></div>
+                      <p class="menu-item-en">Freshly Squeezed Limeade Fizzed with Sparkling Club Soda</p>
+                    </li>
+                    <li class="menu-book-item">
+                      <div class="menu-item-line"><span class="menu-item-code">#D8</span><span class="menu-item-vn">Ly Đá Chanh Đường</span><span class="menu-item-dots"></span><span class="menu-item-price">$5.00</span></div>
+                      <p class="menu-item-en">Classic Vietnamese Fresh Squeezed Sweetened Iced Limeade</p>
+                    </li>
+                  </ul>
+                  <div class="menu-page-footer"><span>ATLANTIC CITY, NJ</span><span>PAGE 12</span></div>
+                </div>
+              </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="sb-arrow right" id="sbRight" aria-label="Next page">
+                <svg viewBox="0 0 14 44" width="16" height="48" fill="none" aria-hidden="true"><polyline points="3,3 11,22 3,41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       7. About Us & Experience Section ("EXCEPTIONAL EXPERIENCE WITH PREMIUM QUALITY")
+       ======================================================================== -->
+    <section class="about-section" id="experience">
+      <div class="container">
+        <div class="about-main-layout">
+          <!-- Left Column: Iconic Arch Portrait with Radiating Rays -->
+          <div class="about-visual-col">
+            <div class="about-arch-wrapper">
+              <!-- Decorative Radiating Arch Rays SVG -->
+              <svg
+                class="about-arch-rays"
+                viewBox="-15 -15 490 590"
+                fill="none"
+                aria-hidden="true"
+              >
+                <line x1="14.0" y1="230.0" x2="-6.0" y2="230.0" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="16.2" y1="199.3" x2="-3.6" y2="196.4" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="22.7" y1="169.1" x2="3.6" y2="163.5" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="33.5" y1="140.3" x2="15.3" y2="132.0" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="48.3" y1="113.2" x2="31.5" y2="102.4" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="66.8" y1="88.6" x2="51.6" y2="75.5" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="88.6" y1="66.8" x2="75.5" y2="51.6" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="113.2" y1="48.3" x2="102.4" y2="31.5" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="140.3" y1="33.5" x2="132.0" y2="15.3" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="169.1" y1="22.7" x2="163.5" y2="3.6" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="199.3" y1="16.2" x2="196.4" y2="-3.6" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="230.0" y1="14.0" x2="230.0" y2="-6.0" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="260.7" y1="16.2" x2="263.6" y2="-3.6" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="290.9" y1="22.7" x2="296.5" y2="3.6" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="319.7" y1="33.5" x2="328.0" y2="15.3" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="346.8" y1="48.3" x2="357.6" y2="31.5" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="371.4" y1="66.8" x2="384.5" y2="51.6" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="393.2" y1="88.6" x2="408.4" y2="75.5" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="411.7" y1="113.2" x2="428.5" y2="102.4" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="426.5" y1="140.3" x2="444.7" y2="132.0" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="437.3" y1="169.1" x2="456.4" y2="163.5" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="443.8" y1="199.3" x2="463.6" y2="196.4" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="446.0" y1="230.0" x2="466.0" y2="230.0" stroke="#85121c" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              </svg>
+
+              <!-- Arch Frame with Photo -->
+              <div class="about-arch-frame">
+                <img
+                  src="assets/images/about-joyful-diner.jpg"
+                  alt="Joyful guest savoring authentic Vietnamese food at Phở Sydney"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Content & Opening Hours & Booking CTA -->
+          <div class="about-content-col">
+            <div class="about-eyebrow">About Us</div>
+            <h2 class="about-heading">
+              EXCEPTIONAL EXPERIENCE WITH PREMIUM QUALITY, RICH FLAVORS
+            </h2>
+            <p class="about-description">
+              We bring together premium ingredients, expert craftsmanship, and a
+              passion for flavor — creating unforgettable dining experiences in
+              every bite with rich taste and quality.
+            </p>
+
+            <!-- Opening Hours Sub-block -->
+            <div class="about-hours-block">
+              <h3 class="about-hours-title">OPENING HOURS</h3>
+              <div class="about-hours-schedule">
+                <div class="hours-row">
+                  <span class="hours-days">Mon – Thu:</span>
+                  <span class="hours-time">10:00 AM – 01:00 AM</span>
+                </div>
+                <div class="hours-row">
+                  <span class="hours-days">Fri – Sun:</span>
+                  <span class="hours-time">11:00 AM – 10:00 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Book Your Table Button -->
+            <div class="about-cta-wrap">
+              <a href="tel:+16093485946" class="about-book-btn">
+                <span>Book Your Table</span>
+                <span class="about-arrow">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row: 4 Metric/Stats Columns -->
+        <div class="about-stats-grid">
+          <div class="stat-col">
+            <div class="stat-number">8K</div>
+            <div class="stat-label">Dishes Served Monthly</div>
+          </div>
+          <div class="stat-col">
+            <div class="stat-number">60+</div>
+            <div class="stat-label">Unique Recipes</div>
+          </div>
+          <div class="stat-col">
+            <div class="stat-number">80%</div>
+            <div class="stat-label">Returning Customers</div>
+          </div>
+          <div class="stat-col">
+            <div class="stat-number">600+</div>
+            <div class="stat-label">Events Catered</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       8. Why Choose Us Section (Deep Crimson Canvas - "LOVED BY FOOD LOVERS")
+       ======================================================================== -->
+    <section class="why-choose-section" id="why-choose-us">
+      <div class="container">
+        <!-- Header: Centered Eyebrow, Title, Subtitle -->
+        <div class="why-header">
+          <div class="why-eyebrow">Why Choose Us</div>
+          <h2 class="why-title">LOVED BY FOOD LOVERS</h2>
+          <p class="why-subtitle">
+            We combine quality ingredients, expert cooking, and exceptional
+            service to deliver an unforgettable dining experience.
+          </p>
+        </div>
+
+        <!-- 4 Feature Cards Grid -->
+        <div class="why-grid">
+          <!-- Card 1: Delicious Food -->
+          <article class="why-card">
+            <div class="why-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 64 64" class="why-icon-svg">
+                <!-- Fork & Plate Outline -->
+                <path
+                  d="M19 14v16M13 14v8c0 3.3 2.7 6 6 6s6-2.7 6-6v-8M19 28v22"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <path
+                  d="M33 16c8 3.5 13 11.5 13 20s-5 16.5-13 20"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <path
+                  d="M40 22c4.2 3.2 6.5 8.5 6.5 14s-2.3 10.8-6.5 14"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+              </svg>
+            </div>
+            <h3 class="why-card-title">DELICIOUS FOOD</h3>
+            <p class="why-card-desc">
+              Crafted with fresh ingredients and bold flavors you’ll love.
+            </p>
+          </article>
+
+          <!-- Card 2: Relaxing Ambience -->
+          <article class="why-card">
+            <div class="why-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 64 64" class="why-icon-svg">
+                <!-- Cozy Armchair Outline -->
+                <path
+                  d="M23 24v-6a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v6"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <rect
+                  x="14"
+                  y="24"
+                  width="9"
+                  height="19"
+                  rx="4.5"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <rect
+                  x="41"
+                  y="24"
+                  width="9"
+                  height="19"
+                  rx="4.5"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <path
+                  d="M23 35h18v6a4 4 0 0 1-4 4H27a4 4 0 0 1-4-4v-6Z"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <path
+                  d="M18.5 45v5M45.5 45v5"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3 class="why-card-title">RELAXING AMBIENCE</h3>
+            <p class="why-card-desc">
+              Enjoy your meal in a cozy and welcoming atmosphere.
+            </p>
+          </article>
+
+          <!-- Card 3: Friendly Service -->
+          <article class="why-card">
+            <div class="why-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 64 64" class="why-icon-svg">
+                <!-- Person Avatar with Plus Badge -->
+                <circle
+                  cx="27"
+                  cy="20"
+                  r="7.5"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <path
+                  d="M13 47c0-7.2 6.3-13 14-13h4c3.5 0 6.6 1.2 9 3.4"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <circle
+                  cx="46"
+                  cy="41"
+                  r="8"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  fill="none"
+                />
+                <path
+                  d="M46 37v8M42 41h8"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3 class="why-card-title">FRIENDLY SERVICE</h3>
+            <p class="why-card-desc">
+              Our team is dedicated to fast seamless service.
+            </p>
+          </article>
+
+          <!-- Card 4: Fresh Ingredients -->
+          <article class="why-card">
+            <div class="why-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 64 64" class="why-icon-svg">
+                <!-- Botanical Fresh Leaves: 3 Leaves Cluster Outline -->
+                <path
+                  d="M32 10c-6 9-6 20 0 26 6-6 6-17 0-26Z"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <path
+                  d="M32 17v19"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M16 26c-2 9 2 18 9 21 4-8 2-17-9-21Z"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <path
+                  d="M22 33l-5 10"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M48 26c2 9-2 18-9 21-4-8-2-17 9-21Z"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <path
+                  d="M42 33l5 10"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M32 36v18"
+                  stroke="currentColor"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3 class="why-card-title">FRESH INGREDIENTS</h3>
+            <p class="why-card-desc">
+              We use freshest ingredients to ensure quality in every dish.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       9. Catering Section ("CATERING FOR EVERY CELEBRATION")
+       ======================================================================== -->
+    <section class="catering-section" id="catering">
+      <div class="container">
+        <!-- Header: Two Columns (Left Title, Right Description + CTA) -->
+        <div class="catering-header">
+          <div class="catering-header-left">
+            <div class="catering-eyebrow">Catering</div>
+            <h2 class="catering-title">CATERING FOR EVERY CELEBRATION</h2>
+          </div>
+          <div class="catering-header-right">
+            <p class="catering-subtitle">
+              From intimate gatherings to grand events, we deliver exceptional
+              food experiences that leave a lasting impression.
+            </p>
+            <a href="#menu-showcase" class="catering-btn">
+              <span>Explore Menu</span>
+              <span class="catering-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 Full-Bleed Catering Cards Grid -->
+        <div class="catering-grid">
+          <!-- Card 1: Signature Phở Catering -->
+          <article class="catering-card">
+            <img
+              src="assets/images/signature-pho-dish.jpg"
+              alt="Authentic Signature Phở Catering Package"
+              class="catering-card-img"
+              loading="lazy"
+            />
+            <div class="catering-card-overlay"></div>
+            <span class="catering-badge">House Specialty</span>
+            <div class="catering-card-content">
+              <h3 class="catering-card-title">SIGNATURE PHỞ PACKAGES</h3>
+              <p class="catering-card-desc">
+                Rich 24-hr slow-simmered bone broth served with fresh rice noodles,
+                tender beef cuts, and crisp herb garnish trays.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2: Party Platters -->
+          <article class="catering-card">
+            <img
+              src="assets/images/bun-bo-hue-dish.jpg"
+              alt="Gourmet Bánh Mì Sliders & Imperial Spring Roll Platters"
+              class="catering-card-img"
+              loading="lazy"
+            />
+            <div class="catering-card-overlay"></div>
+            <span class="catering-badge">Party Platters</span>
+            <div class="catering-card-content">
+              <h3 class="catering-card-title">GOURMET CELEBRATION DUO</h3>
+              <p class="catering-card-desc">
+                Artisanal mini banh mi sliders, golden imperial spring rolls, and
+                savory dipping sauce flights for every guest.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Char-Grilled Meat Spread -->
+          <article class="catering-card">
+            <img
+              src="assets/images/grilled-ribeye-dish.jpg"
+              alt="Char-Grilled Lemongrass Meat Banquet Feast"
+              class="catering-card-img"
+              loading="lazy"
+            />
+            <div class="catering-card-overlay"></div>
+            <span class="catering-badge">Event Feast</span>
+            <div class="catering-card-content">
+              <h3 class="catering-card-title">CHAR-GRILLED MEAT SPREAD</h3>
+              <p class="catering-card-desc">
+                Lemongrass char-grilled pork chops, tender beef skewers, crusty
+                baguette toasts, and fragrant scallion oil.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       10. Testimonials Section ("WHAT OUR CUSTOMERS SAY")
+       ======================================================================== -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="testimonials-card-wrapper">
+          <!-- Left: Main Featured Portrait Card -->
+          <div class="testimonial-portrait-frame">
+            <img
+              src="assets/images/testimonial-james-carter.jpg"
+              alt="James Carter - Food Blogger"
+              class="testimonial-portrait-img"
+              id="testimonialMainImg"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Middle: Testimonial Narrative Content -->
+          <div class="testimonial-content-col">
+            <div class="testimonial-eyebrow">Testimonials</div>
+            <h2 class="testimonial-title">WHAT OUR CUSTOMERS SAY</h2>
+
+            <div class="testimonial-quote-icon" aria-hidden="true">“</div>
+
+            <blockquote class="testimonial-quote" id="testimonialQuote">
+              “The food was absolutely amazing! Every bite was fresh, flavorful, and perfectly cooked. I'll definitely be coming back with great satisfaction, happiness, and memorable experience.”
+            </blockquote>
+
+            <div class="testimonial-author-meta">
+              <span class="testimonial-author-name" id="testimonialAuthor">James Carter</span>
+              <span class="testimonial-author-divider">|</span>
+              <span class="testimonial-author-role" id="testimonialRole">Food Blogger</span>
+            </div>
+          </div>
+
+          <!-- Right: Controls & Next Thumbnail Preview -->
+          <div class="testimonial-action-col">
+            <!-- Navigation Arrow Buttons (Leaf shaped) -->
+            <div class="testimonial-nav-arrows">
+              <button
+                class="testi-arrow-btn testi-prev-btn"
+                id="testiPrevBtn"
+                aria-label="Previous Testimonial"
+              >
+                <span>&larr;</span>
+              </button>
+              <button
+                class="testi-arrow-btn testi-next-btn"
+                id="testiNextBtn"
+                aria-label="Next Testimonial"
+              >
+                <span>&rarr;</span>
+              </button>
+            </div>
+
+            <!-- Next Reviewer Thumbnail Card -->
+            <div
+              class="testimonial-next-preview"
+              id="testiNextPreview"
+              role="button"
+              tabindex="0"
+              aria-label="View next review from Minh Vu"
+            >
+              <img
+                src="assets/images/testimonial-minh-vu.jpg"
+                alt="Upcoming Reviewer: Minh Vu"
+                class="testimonial-thumb-img"
+                id="testimonialThumbImg"
+                loading="lazy"
+              />
+              <span class="thumb-hint-badge">Next ↗</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       11. Gallery Section ("A FEAST FOR YOUR EYES")
+       ======================================================================== -->
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+        <!-- Centered Header -->
+        <div class="gallery-header">
+          <div class="gallery-eyebrow">Gallery</div>
+          <h2 class="gallery-title">A FEAST FOR YOUR EYES</h2>
+          <p class="gallery-subtitle">
+            Explore our delicious creations — beautifully crafted and served
+            with passion, love, care, quality, freshness, and unforgettable dining
+            experience always.
+          </p>
+        </div>
+
+        <!-- 3-Column Masonry/Bento Grid -->
+        <div class="gallery-grid">
+          <!-- Column 1 (Left): Tall top, Short bottom -->
+          <div class="gallery-col">
+            <article class="gallery-item gallery-item-tall" data-title="Traditional Vietnamese Banquet Spread">
+              <img
+                src="assets/images/gallery-viet-spread.jpg"
+                alt="Traditional Vietnamese Phở Banquet Feast"
+                class="gallery-img"
+                loading="lazy"
+              />
+              <div class="gallery-overlay"></div>
+            </article>
+
+            <article class="gallery-item gallery-item-short" data-title="Crispy Bánh Mì Đặc Biệt & Fries">
+              <img
+                src="assets/images/gallery-banh-mi-crisp.jpg"
+                alt="Crispy Roasted Pork Bánh Mì with Golden Fries"
+                class="gallery-img"
+                loading="lazy"
+              />
+              <div class="gallery-overlay"></div>
+            </article>
+          </div>
+
+          <!-- Column 2 (Center): Short top, Tall bottom -->
+          <div class="gallery-col">
+            <article class="gallery-item gallery-item-short" data-title="Sizzling Bò Né Cast Iron Skillet">
+              <img
+                src="assets/images/gallery-bo-ne-skillet.jpg"
+                alt="Sizzling Vietnamese Steak & Eggs Bò Né"
+                class="gallery-img"
+                loading="lazy"
+              />
+              <div class="gallery-overlay"></div>
+            </article>
+
+            <article class="gallery-item gallery-item-tall" data-title="Broken Rice Cơm Tấm Sườn Bì Chả">
+              <img
+                src="assets/images/gallery-com-tam-platter.jpg"
+                alt="Authentic Saigon Broken Rice Cơm Tấm Platter"
+                class="gallery-img"
+                loading="lazy"
+              />
+              <div class="gallery-overlay"></div>
+            </article>
+          </div>
+
+          <!-- Column 3 (Right): Tall top, Short bottom -->
+          <div class="gallery-col">
+            <article class="gallery-item gallery-item-tall" data-title="Gourmet Summer Rolls & Spicy Bún Bò Huế">
+              <img
+                src="assets/images/gallery-viet-banquet.jpg"
+                alt="Fresh Summer Rolls & Bún Bò Huế Feast"
+                class="gallery-img"
+                loading="lazy"
+              />
+              <div class="gallery-overlay"></div>
+            </article>
+
+            <article class="gallery-item gallery-item-short" data-title="Crispy Golden Bánh Xèo Crepe">
+              <img
+                src="assets/images/gallery-banh-xeo-crepe.jpg"
+                alt="Crispy Vietnamese Sizzling Pancake Bánh Xèo"
+                class="gallery-img"
+                loading="lazy"
+              />
+              <div class="gallery-overlay"></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       12. FAQ Section ("FREQUENTLY ASKED QUESTIONS")
+       ======================================================================== -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="faq-layout">
+          <!-- Left Column: Title & Intro Narrative -->
+          <div class="faq-left">
+            <div class="faq-eyebrow">FAQ</div>
+            <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+            <p class="faq-subtitle">
+              Got questions? We've got answers to help you enjoy your experience
+              with us quickly, easily, and comfortably.
+            </p>
+          </div>
+
+          <!-- Right Column: Interactive Accordion List -->
+          <div class="faq-accordion" id="faqAccordion">
+            <!-- FAQ 1 (Active by default) -->
+            <div class="faq-item active">
+              <button
+                class="faq-question-btn"
+                aria-expanded="true"
+                aria-controls="faq-ans-1"
+                id="faq-q-1"
+              >
+                <span class="faq-question-text"
+                  >DO YOU OFFER HOME DELIVERY FAST AND RELIABLE?</span
+                >
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div
+                class="faq-answer"
+                id="faq-ans-1"
+                role="region"
+                aria-labelledby="faq-q-1"
+              >
+                <p class="faq-answer-text">
+                  Yes, we deliver fresh and hot meals directly to your doorstep
+                  quickly, safely, with care, and guaranteed satisfaction every
+                  time. We partner with DoorDash and UberEats, packaging steaming
+                  24-hr bone broth, fresh rice noodles, and crisp herbs separately
+                  to ensure restaurant-quality taste at home.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+              <button
+                class="faq-question-btn"
+                aria-expanded="false"
+                aria-controls="faq-ans-2"
+                id="faq-q-2"
+              >
+                <span class="faq-question-text"
+                  >HOW LONG DOES DELIVERY TAKE USUALLY?</span
+                >
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div
+                class="faq-answer"
+                id="faq-ans-2"
+                role="region"
+                aria-labelledby="faq-q-2"
+              >
+                <p class="faq-answer-text">
+                  Takeout orders placed by phone or online are usually ready in
+                  15–20 minutes. Home delivery through our platform partners
+                  typically takes 30–45 minutes depending on traffic and your
+                  exact location in Atlantic City and nearby areas.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+              <button
+                class="faq-question-btn"
+                aria-expanded="false"
+                aria-controls="faq-ans-3"
+                id="faq-q-3"
+              >
+                <span class="faq-question-text"
+                  >DO YOU OFFER CATERING SERVICES?</span
+                >
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div
+                class="faq-answer"
+                id="faq-ans-3"
+                role="region"
+                aria-labelledby="faq-q-3"
+              >
+                <p class="faq-answer-text">
+                  Absolutely! We offer comprehensive catering packages for
+                  celebrations, business luncheons, family reunions, and large
+                  events. From signature Phở catering packages to artisanal
+                  bánh mì party trays and lemongrass char-grilled skewers, we tailor
+                  our menu to your guests.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+              <button
+                class="faq-question-btn"
+                aria-expanded="false"
+                aria-controls="faq-ans-4"
+                id="faq-q-4"
+              >
+                <span class="faq-question-text"
+                  >CAN I RESERVE A TABLE ONLINE?</span
+                >
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div
+                class="faq-answer"
+                id="faq-ans-4"
+                role="region"
+                aria-labelledby="faq-q-4"
+              >
+                <p class="faq-answer-text">
+                  We welcome walk-in diners anytime with spacious indoor seating
+                  and quick service. For groups of 6 or more, you can call us
+                  directly at (609) 348-5946 to reserve a dedicated table and ensure
+                  your gathering is perfectly accommodated.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+              <button
+                class="faq-question-btn"
+                aria-expanded="false"
+                aria-controls="faq-ans-5"
+                id="faq-q-5"
+              >
+                <span class="faq-question-text"
+                  >ARE YOUR INGREDIENTS FRESH?</span
+                >
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div
+                class="faq-answer"
+                id="faq-ans-5"
+                role="region"
+                aria-labelledby="faq-q-5"
+              >
+                <p class="faq-answer-text">
+                  Yes, 100%! We take immense pride in our authentic heritage recipes:
+                  our beef marrow broth is slow-simmered for 24 continuous hours,
+                  our baguettes are baked crusty and golden, and our Thai basil,
+                  sawtooth culantro, bean sprouts, and lime wedges are sourced fresh
+                  daily.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+              <button
+                class="faq-question-btn"
+                aria-expanded="false"
+                aria-controls="faq-ans-6"
+                id="faq-q-6"
+              >
+                <span class="faq-question-text"
+                  >DO YOU OFFER VEGETARIAN OR GLUTEN-FREE OPTIONS?</span
+                >
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div
+                class="faq-answer"
+                id="faq-ans-6"
+                role="region"
+                aria-labelledby="faq-q-6"
+              >
+                <p class="faq-answer-text">
+                  Yes, absolutely! We offer vegetarian phở crafted with a 100% plant-based,
+                  slow-simmered aromatic vegetable broth, organic tofu, and fresh mushrooms.
+                  Our rice noodles and fresh summer rolls are naturally gluten-free.
+                  Please let our team know about any dietary requirements when ordering.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item">
+              <button
+                class="faq-question-btn"
+                aria-expanded="false"
+                aria-controls="faq-ans-7"
+                id="faq-q-7"
+              >
+                <span class="faq-question-text"
+                  >WHAT ARE YOUR OPENING HOURS AND LOCATION?</span
+                >
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div
+                class="faq-answer"
+                id="faq-ans-7"
+                role="region"
+                aria-labelledby="faq-q-7"
+              >
+                <p class="faq-answer-text">
+                  We are conveniently located in Atlantic City at 2323 Atlantic Ave, NJ 08401.
+                  We welcome guests daily from 10:00 AM to 10:00 PM, Monday through Sunday.
+                  Walk-ins are always warmly welcomed!
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 8 -->
+            <div class="faq-item">
+              <button
+                class="faq-question-btn"
+                aria-expanded="false"
+                aria-controls="faq-ans-8"
+                id="faq-q-8"
+              >
+                <span class="faq-question-text"
+                  >HOW IS PHỞ PACKAGED FOR TAKEOUT TO ENSURE FRESHNESS?</span
+                >
+                <span class="faq-chevron" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div
+                class="faq-answer"
+                id="faq-ans-8"
+                role="region"
+                aria-labelledby="faq-q-8"
+              >
+                <p class="faq-answer-text">
+                  We separate our piping-hot 24-hr bone broth from the fresh rice noodles,
+                  tender meats, and crisp herb garnishes in dedicated heat-sealed containers.
+                  When you are ready to dine, simply reheat the broth to a rolling simmer and
+                  pour over the noodles for authentic restaurant-quality phở at home.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       13. Blog Section ("INSIGHTS, TRENDS & FOOD STORIES")
+       ======================================================================== -->
+    <section class="blog-section" id="blog">
+      <div class="container">
+        <!-- Header: Two Columns (Left Title, Right Subtitle + CTA) -->
+        <div class="blog-header">
+          <div class="blog-header-left">
+            <div class="blog-eyebrow">Blog</div>
+            <h2 class="blog-title">INSIGHTS, TRENDS &amp; FOOD STORIES</h2>
+          </div>
+          <div class="blog-header-right">
+            <p class="blog-subtitle">
+              Discover the latest food trends, recipes, and stories from our
+              kitchen, chefs, and culinary journey updates.
+            </p>
+            <a href="#blog" class="blog-cta-btn">
+              <span>Explore Blog</span>
+              <span class="blog-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2-Column Blog Articles Grid -->
+        <div class="blog-grid">
+          <!-- Article 1: 24-hr Bone Broth -->
+          <article class="blog-card">
+            <div class="blog-card-media">
+              <img
+                src="assets/images/blog-pho-broth.jpg"
+                alt="Slow Simmering 24-Hour Authentic Vietnamese Beef Bone Broth"
+                class="blog-card-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="blog-card-meta">
+              <span class="blog-read-time">Read time: 4 min</span>
+              <span class="blog-date">April 15, 2026</span>
+            </div>
+            <h3 class="blog-card-title">
+              THE SECRET TO A PERFECT 24-HOUR BONE BROTH PHỞ
+            </h3>
+            <a href="#menu-showcase" class="blog-card-btn">
+              <span>Read Article</span>
+              <span class="blog-arrow">↗</span>
+            </a>
+          </article>
+
+          <!-- Article 2: Fresh Ingredients -->
+          <article class="blog-card">
+            <div class="blog-card-media">
+              <img
+                src="assets/images/blog-fresh-ingredients.jpg"
+                alt="Fresh Vietnamese Herbs, Spices, and Golden Crusty Baguettes"
+                class="blog-card-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="blog-card-meta">
+              <span class="blog-read-time">Read time: 4 min</span>
+              <span class="blog-date">June 15, 2026</span>
+            </div>
+            <h3 class="blog-card-title">
+              WHY FRESH INGREDIENTS MAKE ALL THE DIFFERENCE
+            </h3>
+            <a href="#menu-showcase" class="blog-card-btn">
+              <span>Read Article</span>
+              <span class="blog-arrow">↗</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+    <!-- ========================================================================
+       14. CTA Banner Section ("HUNGRY? WE'RE READY COME AND ENJOY")
+       ======================================================================== -->
+    <section class="cta-banner-section" id="cta-order">
+      <!-- Sunburst Geometric Rays Background -->
+      <svg class="cta-sunburst-svg" viewBox="0 0 1440 480" fill="none" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="720" y1="240" x2="-200" y2="-200" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="160" y2="-250" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="480" y2="-250" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="720" y2="-250" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="960" y2="-250" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="1280" y2="-250" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="1640" y2="-200" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="-250" y2="240" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="1690" y2="240" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="-200" y2="680" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="200" y2="730" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="520" y2="730" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="920" y2="730" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="1240" y2="730" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+        <line x1="720" y1="240" x2="1640" y2="680" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" />
+      </svg>
+
+      <!-- Left Food Platter Cutout -->
+      <div class="cta-plate cta-plate-left" aria-hidden="true">
+        <img
+          src="assets/images/cta-left-platter-cutout.png"
+          alt="Golden Crispy Imperial Rolls & Fish Sauce Glazed Wings"
+          class="cta-plate-img"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Center Call to Action -->
+      <div class="container cta-container">
+        <div class="cta-center-content">
+          <h2 class="cta-title">HUNGRY? WE'RE READY COME AND ENJOY</h2>
+          <p class="cta-subtitle">
+            Order your favorite meals now and enjoy fresh, flavorful food
+            delivered fast right to your doorstep with quick service.
+          </p>
+          <a href="#menu-showcase" class="cta-order-btn">
+            <span>Order Now</span>
+            <span class="cta-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Food Platter Cutout -->
+      <div class="cta-plate cta-plate-right" aria-hidden="true">
+        <img
+          src="assets/images/bun-thit-nuong-cutout.png"
+          alt="Char-Grilled Pork Vermicelli Bowl Bún Thịt Nướng"
+          class="cta-plate-img"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Bottom Organic Wave Transition into Deep Crimson Footer -->
+      <div class="cta-wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 140" fill="none" preserveAspectRatio="none">
+          <path
+            d="M0,52 C140,52 180,104 320,104 C480,104 560,22 740,22 C920,22 980,106 1140,106 C1280,106 1340,38 1440,38 L1440,140 L0,140 Z"
+            fill="#7e0e1b"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       15. Grand Footer ("PHO SYDNEY" - Deep Crimson)
+       ======================================================================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main-grid">
+          <!-- Left Column: Brand & Address -->
+          <div class="footer-brand-col">
+            <h3 class="footer-logo-title">PHO SYDNEY</h3>
+            <div class="footer-address-block">
+              <h4 class="footer-section-subtitle">ADDRESS</h4>
+              <p class="footer-address-line">Pho Sydney Restaurant</p>
+              <p class="footer-address-line">
+                2323 Atlantic Ave, Atlantic City, NJ 08401
+              </p>
+              <a href="tel:+16093485946" class="footer-phone-link">
+                <span>📞</span>
+                <span>(609) 348-5946</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Columns: Menu, Company, Support, Legal -->
+          <div class="footer-nav-groups">
+            <div class="footer-nav-col">
+              <h4 class="footer-group-heading">Menu</h4>
+              <ul class="footer-menu-links">
+                <li><a href="#menu-showcase">Menu</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#popular-categories">Categories</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-nav-col">
+              <h4 class="footer-group-heading">Company</h4>
+              <ul class="footer-menu-links">
+                <li><a href="#experience">About</a></li>
+                <li><a href="#catering">Catering</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-nav-col">
+              <h4 class="footer-group-heading">Support</h4>
+              <ul class="footer-menu-links">
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="tel:+16093485946">Contact</a></li>
+                <li><a href="#parking">Free Parking</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-nav-col">
+              <h4 class="footer-group-heading">Legal</h4>
+              <ul class="footer-menu-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Bar with Copyright & Social Icons -->
+        <div class="footer-bottom-bar">
+          <div class="footer-copyright">
+            &copy; 2026 Pho Sydney. All rights reserved.
+          </div>
+          <div class="footer-social-links">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button
+      type="button"
+      class="scroll-top-btn"
+      id="scrollTopBtn"
+      aria-label="Scroll to top"
+      title="Back to top"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
