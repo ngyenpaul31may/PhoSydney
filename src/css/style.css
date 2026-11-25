@@ -2254,8 +2254,9 @@ body.menu-popup-open {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 12px;
   flex: 1;
-  padding: 14px 0 28px;
+  padding: 12px 0 18px;
   margin-bottom: 0;
 }
 
@@ -2264,7 +2265,7 @@ body.menu-popup-open {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 15px 16px;
+  padding: 12px 15px;
   border-radius: 12px;
   background: #fff9f0;
   border: 1px solid rgba(126, 14, 27, 0.15);
@@ -2287,6 +2288,7 @@ body.menu-popup-open {
   height: 66px;
   border-radius: 10px;
   object-fit: cover;
+  background: #edeae5;
   border: 1.5px solid rgba(126, 14, 27, 0.18);
   flex-shrink: 0;
 }
