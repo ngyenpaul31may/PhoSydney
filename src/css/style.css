@@ -4459,13 +4459,13 @@ body.menu-popup-open {
 }
 
 .cta-plate-left {
-  left: -40px;
+  left: clamp(-40px, calc(50% - 870px), 390px);
   width: 450px;
   height: 450px;
 }
 
 .cta-plate-right {
-  right: -45px;
+  right: clamp(-45px, calc(50% - 885px), 375px);
   width: 470px;
   height: 470px;
 }
