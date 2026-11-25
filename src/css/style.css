@@ -134,7 +134,7 @@ button {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
   list-style: none;
 }
 
@@ -144,6 +144,7 @@ button {
   color: #2b2725;
   transition: color 0.2s ease;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-item a:hover {
@@ -4370,7 +4371,7 @@ body.menu-popup-open {
 .cta-banner-section {
   position: relative;
   background: linear-gradient(135deg, #f9be28 0%, #f7b420 50%, #f5a618 100%);
-  padding: 95px 0 130px;
+  padding: 95px 0 165px;
   overflow: hidden;
   text-align: center;
 }
@@ -4451,7 +4452,7 @@ body.menu-popup-open {
 /* Platter Cutouts */
 .cta-plate {
   position: absolute;
-  top: 48%;
+  top: 45%;
   transform: translateY(-50%);
   filter: drop-shadow(0 22px 36px rgba(0, 0, 0, 0.32));
   z-index: 2;
@@ -4491,7 +4492,7 @@ body.menu-popup-open {
 .cta-wave-divider svg {
   display: block;
   width: 100%;
-  height: 85px;
+  height: 125px;
 }
 
 /* ==========================================================================
@@ -4672,7 +4673,10 @@ body.menu-popup-open {
 
 @media (max-width: 600px) {
   .cta-banner-section {
-    padding: 70px 0 110px;
+    padding: 70px 0 130px;
+  }
+  .cta-wave-divider svg {
+    height: 80px;
   }
   .cta-title {
     font-size: 38px;
@@ -4710,4 +4714,60 @@ body.menu-popup-open {
 .menu-footer-toc-link:hover {
   opacity: 0.75;
   transform: translateX(-2px);
+}
+
+/* Scroll-to-Top Button */
+.scroll-top-btn {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-hero-red);
+  color: #fff8ee;
+  border: 2px solid rgba(255, 248, 238, 0.85);
+  box-shadow: 0 8px 24px rgba(34, 8, 11, 0.28);
+  z-index: 900;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s ease, border-color 0.2s ease, visibility 0.25s ease;
+}
+
+.scroll-top-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background-color: var(--color-hero-dark-red);
+  border-color: #f8b824;
+  transform: translateY(-3px);
+}
+
+.scroll-top-btn:focus-visible {
+  outline: 3px solid #f8b824;
+  outline-offset: 2px;
+}
+
+body.menu-popup-open .scroll-top-btn {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .scroll-top-btn {
+    right: 18px;
+    bottom: 20px;
+    width: 42px;
+    height: 42px;
+  }
 }

@@ -830,4 +830,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // 7. Scroll-to-Top Button
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (scrollTopBtn) {
+    const toggleScrollTop = () => {
+      scrollTopBtn.classList.toggle('is-visible', window.scrollY > 360);
+    };
+    window.addEventListener('scroll', toggleScrollTop, { passive: true });
+    toggleScrollTop();
+
+    scrollTopBtn.addEventListener('click', () => {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+    });
+  }
 });
